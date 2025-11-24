@@ -1,0 +1,11 @@
+@import "tailwindcss";
+
+@theme {
+  --font-primary: "Cormorant Garamond", serif;
+  --font-secondary: "Montserrat", sans-serif;
+  --font-tertiary: "EB Garamond", serif;
+  --breakpoint-xsm: 380px;
+  --breakpoint-xsmd: 440px;
+  --color-primary: #00544f;
+  --color-secondary: #a8c6c2;
+}

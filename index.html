@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Medical</title>
+
+    <meta
+      name="medical care"
+      content="It provides high-quality medical services, advanced healthcare equipment, diagnostic tools, and professional support for hospitals, clinics, and home care needs."
+    />
+    <meta
+      name="keywords"
+      content="medical services, medical equipment, healthcare devices, diagnostic tools, hospital supplies, clinic equipment, medical technology"
+    />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Advanced Medical Services & Equipment" />
+    <meta
+      property="og:description"
+      content="Trusted provider of medical services, diagnostic solutions, and world-class healthcare equipment for hospitals, clinics, and home care."
+    />
+
+    <!-- Font Awesome Cdn Link -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+      integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- Aos Cdn Link -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
+      integrity="sha512-1cK78a1o+ht2JcaW6g8OXYwqpev9+6GqOkz9xmBN9iUUhIndKtxwILGWYOSibOKjLsEdjyjZvYDq/cZwNeak0w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Tailwind CSS  -->
+    <link rel="stylesheet" href="./src/output.css" />
+
+    <!-- <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script> -->
+
+    <!-- Link Swiper's CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Lora:ital,wght@0,400..700;1,400..700&family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap");
+
+      @import url("https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap");
+
+      body {
+        font-family: "EB Garamond", serif;
+        overflow-x: hidden;
+      }
+
+      /* Hamburger animation */
+      .hamburger span {
+        display: block;
+        width: 1.5rem;
+        height: 0.125rem;
+        margin: 0.4rem auto;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        background-color: currentColor;
+      }
+
+      .hamburger.active span:nth-child(1) {
+        transform: rotate(45deg) translate(6px, 6px);
+      }
+
+      .hamburger.active span:nth-child(2) {
+        opacity: 0;
+      }
+
+      .hamburger.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(6px, -6px);
+      }
+
+      /* Mobile menu slide + fade */
+      .mobile-menu {
+        max-height: 0;
+        opacity: 0;
+        /* height: 100vh; */
+        transform: translateX(-100%);
+        /* overflow: hidden; */
+        transition: all 0.8s ease-in-out;
+      }
+
+      .mobile-menu.open {
+        /* max-height: 1000px; */
+        /* enough for nav links */
+        opacity: 1;
+        transform: translateX(0);
+      }
+    </style>
+
+    <!-- Swiper CSS -->
+    <style>
+      .swiper-button-next,
+      .swiper-button-prev {
+        color: #000000 !important; /* Tailwind’s blue-900 */
+        opacity: 0;
+      }
+
+      /* Optional: background circle style */
+      .swiper-button-next::after,
+      .swiper-button-prev::after {
+        font-size: 20px;
+        background-color: rgba(255, 255, 255, 0.409);
+        border-radius: 9999px;
+        padding: 10px 15px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+
+      .swiper-pagination {
+        color: hsl(0, 0%, 100%);
+      }
+
+      .swiper {
+        inset: 0;
+        width: 100%;
+        height: 420px;
+        z-index: 1;
+      }
+
+      .swiper-slide {
+        position: relative;
+        /* text-align: center; */
+        font-size: 18px;
+        height: 420px;
+        width: 100%;
+        /* background: #444; */
+        border-radius: 1.5rem;
+        display: flex;
+        /* justify-content: center; */
+        /* align-items: center; */
+      }
+
+      .swiper-slide img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .swiper {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .swiper-pagination-bullet {
+        background: #9d9d9d;
+      }
+
+      .swiper-pagination-bullet-active {
+        background: hwb(0 88% 12%);
+      }
+
+      @media screen and (max-width: 512px) {
+        .swiper-button-next,
+        .swiper-button-prev {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+
+  <body class="antialiased bg-white text-black">
+    <!-- Navbar  -->
+    <header class="sticky top-0 z-40 w-full mx-auto lg:px-3 lg:py-3">
+      <div
+        class="flex items-center justify-between h-16 px-5 bg-secondary/20 backdrop-blur-2xl lg:rounded-full"
+      >
+        <!-- Logo -->
+        <a class="" href="./index.html">
+          <img class="h-8" src="./assets/logo.webp" alt="logo" />
+        </a>
+
+        <!-- Desktop Nav -->
+        <nav
+          class="hidden md:flex items-center space-x-2 md:space-x-3 lg:space-x-5 text-sm font-medium"
+        >
+          <!-- Home with Dropdown -->
+          <div class="relative">
+            <!-- Parent Button -->
+            <button
+              class="relative text-primary inline-block after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full cursor-pointer"
+            >
+              <a href="./index.html">Home</a>
+              <i id="homeToggle" class="fa-solid fa-caret-down"></i>
+            </button>
+
+            <!-- Dropdown Menu -->
+            <ul
+              id="homeMenu"
+              class="absolute hidden bg-white text-black backdrop-blur-2xl shadow-lg mt-2 rounded w-40 z-40"
+            >
+              <li>
+                <a href="" class="block px-4 py-2"> Home 2 </a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- About -->
+          <a
+            href=""
+            class="relative inline-block after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full"
+          >
+            About
+          </a>
+
+          <!-- Services -->
+          <a
+            href=""
+            class="relative inline-block after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full"
+          >
+            Services
+          </a>
+          <!-- Products -->
+          <a
+            href=""
+            class="relative inline-block after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full"
+          >
+            Products
+          </a>
+          <!-- Contact -->
+          <a
+            href=""
+            class="relative inline-block after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full"
+          >
+            Contact
+          </a>
+          <!-- Dashboard -->
+          <a
+            href="./dashboard.html"
+            class="relative inline-block after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full"
+          >
+            Dashboard
+          </a>
+        </nav>
+
+        <!-- login -->
+        <div class="flex text-sm gap-4 font-medium">
+          <div class="relative flex items-center gap-2">
+            <a
+              class="md:flex items-center gap-2 rounded-3xl text-sm transform hover:scale-95 transition duration-200 ease-out hidden"
+              href=""
+              ><svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="size-6"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
+                />
+              </svg>
+              Login
+            </a>
+          </div>
+
+          <!-- Hamburger -->
+          <button
+            id="hamburger"
+            class="hamburger cursor-pointer lg:hidden focus:outline-none"
+            aria-label="Menu"
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Menu -->
+      <nav id="mobileMenu" class="mobile-menu h-screen lg:hidden shadow-md">
+        <ul
+          class="flex flex-col space-y-4 p-3 text-sm font-medium h-screen md:w-1/2 bg-white backdrop-blur-2xl"
+        >
+          <!-- Home dropDown  -->
+          <div class="relative">
+            <button class="flex items-center gap-1 w-full text-left lg:hidden">
+              <a href="./index.html">Home</a>
+              <i
+                id="mobileToggle"
+                class="fa-solid fa-caret-down cursor-pointer"
+              ></i>
+            </button>
+
+            <!-- Dropdown Menu -->
+            <ul
+              id="mobileLink"
+              class="hidden bg-white text-black mt-2 rounded w-full md:absolute"
+            >
+              <li>
+                <a href="" class="block px-2 py-2"> Home 2 </a>
+              </li>
+            </ul>
+          </div>
+          <!-- About -->
+          <li>
+            <a href="" class="nav-link block">About</a>
+          </li>
+          <!-- Services -->
+          <li>
+            <a href="" class="nav-link block">Services</a>
+          </li>
+          <!-- Products -->
+          <li>
+            <a href="" class="nav-link block">Products</a>
+          </li>
+          <!-- Contact -->
+          <li>
+            <a href="" class="nav-link block">Contact</a>
+          </li>
+          <!-- Dashboard -->
+          <li>
+            <a href="" class="nav-link block">Dashboard</a>
+          </li>
+          <!-- login  -->
+          <li>
+            <a href="" class="flex items-center gap-2 nav-link"
+              ><svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="size-5"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
+                />
+              </svg>
+              Login</a
+            >
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Dropdown script  -->
+      <script>
+        const homeToggle = document.getElementById("homeToggle");
+        const homeMenu = document.getElementById("homeMenu");
+
+        homeToggle.addEventListener("click", () => {
+          homeMenu.classList.toggle("hidden");
+        });
+
+        const mobileToggle = document.getElementById("mobileToggle");
+        const mobileLink = document.getElementById("mobileLink");
+
+        // Home dropdown toggle (mobile only)
+        mobileToggle.addEventListener("click", () => {
+          mobileLink.classList.toggle("hidden");
+        });
+
+        // Optional: close menu if clicked outside
+        window.addEventListener("click", (e) => {
+          if (!homeToggle.contains(e.target) && !homeMenu.contains(e.target)) {
+            homeMenu.classList.add("hidden");
+          }
+        });
+      </script>
+    </header>
+
+    <!-- home -->
+    <main class="p-3 overflow-hidden text-white">
+      <div class="relative">
+        <div class="swiper mySwiper">
+          <div class="swiper-wrapper">
+            <!-- img1 -->
+            <div class="swiper-slide">
+              <img
+                class="h-full w-full object-cover object-left md:object-[20%_20%] rounded-3xl hidden md:block"
+                src="./assets/home.webp"
+                alt="home1"
+              />
+
+              <!-- contents -->
+              <div
+                class="absolute inset-0 z-10 p-3 md:pl-20 h-[420px] w-full flex flex-col items-start justify-center gap-6 bg-linear-to-b from-transparent to-primary/60 rounded-3xl"
+              >
+                <p data-aos="fade-up" data-aos-delay="50" class="z-30">
+                  Weekly 60% Off
+                </p>
+                <h1
+                  data-aos="fade-up"
+                  data-aos-delay="75"
+                  class="text-2xl md:text-5xl font-primary font-bold z-30 md:max-w-2xl"
+                >
+                  Advanced Medical Equipment & Professional Healthcare Services
+                </h1>
+                <p
+                  data-aos="fade-up"
+                  data-aos-delay="100"
+                  class="text-sm md:text-lg z-30 md:max-w-5xl"
+                >
+                  We are a trusted provider of premium medical equipment,
+                  healthcare supplies, and professional services designed to
+                  support patients, caregivers, and healthcare facilities. With
+                  years of experience, we combine quality products, clinical
+                  expertise.
+                </p>
+                <a
+                  class="px-6 py-3 border border-white/50 transform hover:scale-95 transition duration-300 ease-in-out z-30"
+                  href="#productsGrid"
+                  >View More</a
+                >
+              </div>
+            </div>
+            <!-- img2 -->
+            <div class="swiper-slide">
+              <img
+                class="h-full w-full object-cover object-right md:object-[20%_20%] rounded-3xl"
+                src="./assets/home2.webp"
+                alt="home2"
+              />
+              <!-- contents -->
+              <div
+                class="absolute inset-0 z-10 p-3 md:pl-20 h-[420px] flex flex-col items-start justify-center gap-6 bg-linear-to-b from-transparent to-primary/60 rounded-3xl"
+              >
+                <p data-aos="fade-up" data-aos-delay="50" class="z-30">
+                  Casual & Everyday
+                </p>
+                <h1
+                  data-aos="fade-up"
+                  data-aos-delay="75"
+                  class="text-2xl md:text-5xl font-primary font-bold z-30 md:max-w-2xl"
+                >
+                  Your Trusted Partner in Medical Equipment & Healthcare
+                  Services
+                </h1>
+                <p class="text-sm md:text-lg z-30 md:max-w-5xl">
+                  Delivering certified medical devices, home-care solutions, and
+                  professional support for hospitals, clinics, and families.
+                </p>
+                <a
+                  data-aos="fade-up"
+                  data-aos-delay="50"
+                  class="px-6 py-3 border border-white/50 transform hover:scale-95 transition duration-300 ease-in-out z-30"
+                  href="#productsGrid"
+                  >View Collections</a
+                >
+              </div>
+            </div>
+            <!-- img3 -->
+            <div class="swiper-slide">
+              <img
+                class="h-full w-full object-cover object-right md:object-[20%_20%] rounded-3xl"
+                src="./assets/home3.webp"
+                alt="home3"
+              />
+              <!-- contents -->
+              <div
+                class="absolute inset-0 z-10 p-3 md:pl-20 h-[420px] flex flex-col items-start justify-center gap-6 bg-linear-to-b from-transparent to-primary/60 rounded-3xl"
+              >
+                <p data-aos="fade-up" data-aos-delay="50" class="z-30">
+                  Casual & Everyday
+                </p>
+                <h1
+                  data-aos="fade-up"
+                  data-aos-delay="75"
+                  class="text-2xl md:text-5xl font-primary font-bold z-30 md:max-w-2xl"
+                >
+                  Quality Medical Equipment for Health, Comfort & Care
+                </h1>
+                <p
+                  data-aos="fade-up"
+                  data-aos-delay="100"
+                  class="text-sm md:text-lg z-30 md:max-w-5xl"
+                >
+                  Helping patients and families access reliable, easy-to-use
+                  medical devices at home or in healthcare facilities.
+                </p>
+                <a
+                  class="px-6 py-3 border border-white/50 transform hover:scale-95 transition duration-300 ease-in-out z-30"
+                  href="#productsGrid"
+                  >View Collections</a
+                >
+              </div>
+            </div>
+            <!-- img4 -->
+            <div class="swiper-slide">
+              <img
+                class="h-full w-full object-cover object-right md:object-[20%_20%] rounded-3xl"
+                src="./assets/home4.webp"
+                alt="home4"
+              />
+              <!-- contents -->
+              <div
+                class="absolute inset-0 z-10 p-3 md:pl-20 h-[420px] flex flex-col items-start justify-center gap-6 bg-linear-to-b from-transparent to-primary/60 rounded-3xl"
+              >
+                <p data-aos="fade-up" data-aos-delay="50" class="z-30">
+                  Casual & Everyday
+                </p>
+                <h1
+                  data-aos="fade-up"
+                  data-aos-delay="75"
+                  class="text-2xl md:text-5xl font-primary font-bold z-30 md:max-w-2xl"
+                >
+                  Top-Quality Medical Equipment & Home Healthcare Services
+                </h1>
+                <p
+                  data-aos="fade-up"
+                  data-aos-delay="100"
+                  class="text-sm md:text-lg z-30 md:max-w-5xl"
+                >
+                  We supply a full range of hospital equipment, home-care
+                  devices, diagnostic tools, and disposable medical supplies.
+                </p>
+                <a
+                  data-aos="fade-up"
+                  data-aos-delay="50"
+                  class="px-6 py-3 border border-white/50 transform hover:scale-95 transition duration-300 ease-in-out z-30"
+                  href="#productsGrid"
+                  >View Collections</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+
+      <!-- Swiper JS -->
+      <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+      <!-- Initialize Swiper -->
+      <script>
+        var swiper = new Swiper(".mySwiper", {
+          slidesPerView: 1,
+          spaceBetween: 30,
+          speed: 3000,
+          loop: true,
+          autoplay: {
+            delay: 5000,
+            disableOnInteraction: false,
+          },
+          pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+          },
+          navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+          },
+        });
+      </script>
+    </main>
+
+    <!-- products grid -->
+    <section class="p-3 overflow-hidden text-black">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- group-1 -->
+        <div class="relative group">
+          <div
+            class="h-[300px] md:h-[350px] w-full overflow-hidden rounded-2xl"
+          >
+            <img
+              class="h-[300px] md:h-[350px] w-full object-cover rounded-2xl group-hover:scale-120 transition duration-500 ease-in-out"
+              src="./assets/banner-1.webp"
+              alt="banner1"
+            />
+          </div>
+          <div class="grid grid-cols-2 absolute inset-0">
+            <div></div>
+            <div
+              class="rounded-2xl flex flex-col items-start justify-center gap-2"
+            >
+              <h2 class="text-xl md:text-2xl font-bold mb-2">
+                60% Off Medical Supplies
+              </h2>
+              <p>Stay Safe & Healthy with Our Top-Quality Medical Supplies!</p>
+              <a
+                href="#productsGrid"
+                class="px-4 py-2 border border-black/50 transition"
+                >Shop Now</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- group-2 -->
+        <div class="relative group">
+          <div
+            class="h-[300px] md:h-[350px] w-full overflow-hidden rounded-2xl"
+          >
+            <img
+              class="h-[300px] md:h-[350px] w-full object-cover rounded-2xl group-hover:scale-120 transition duration-500 ease-in-out"
+              src="./assets/banner-2.webp"
+              alt="banner2"
+            />
+          </div>
+          <div class="grid grid-cols-2 absolute inset-0 px-3">
+            <div
+              class="rounded-2xl flex flex-col items-start justify-center gap-2"
+            >
+              <h2 class="text-xl md:text-2xl font-bold mb-2">
+                60% Off Medical Supplies
+              </h2>
+              <p>Stay Safe & Healthy with Our Top-Quality Medical Supplies!</p>
+              <a
+                href="#productsGrid"
+                class="px-4 py-2 border border-black/50 transition"
+                >Shop Now</a
+              >
+            </div>
+            <div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Aos Animation  -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"
+      integrity="sha512-A7AYk1fGKX6S2SsHywmPkrnzTZHrgiVT7GcQkLGDe2ev0aWb8zejytzS8wjo7PGEXKqJOrjQ4oORtnimIRZBtw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <!-- mobile menu script -->
+    <script>
+      // Aos Animation Init
+      AOS.init({
+        duration: 800,
+        delay: 200, // default delay for all elements
+        once: false,
+        mirror: true,
+      });
+
+      // Hamburger Menu Toggle
+      const hamburger = document.getElementById("hamburger");
+      const mobileMenu = document.getElementById("mobileMenu");
+      const links = mobileMenu.querySelectorAll(".nav-link");
+
+      hamburger.addEventListener("click", () => {
+        hamburger.classList.toggle("active");
+        mobileMenu.classList.toggle("open");
+      });
+
+      links.forEach((link) => {
+        link.addEventListener("click", () => {
+          hamburger.classList.remove("active");
+          mobileMenu.classList.remove("open");
+        });
+      });
+
+      // Optional: close menu if clicked outside
+      window.addEventListener("click", (e) => {
+        if (!homeToggle.contains(e.target) && !homeMenu.contains(e.target)) {
+          homeMenu.classList.add("hidden");
+        }
+      });
+    </script>
+  </body>
+</html>
