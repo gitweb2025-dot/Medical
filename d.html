@@ -9,9 +9,7 @@
 <!-- <script src="https://cdn.tailwindcss.com"></script> -->
  <link rel="stylesheet" href="./src/output.css">
 
-<!-- AOS for subtle scroll reveals -->
-<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
 
 <!-- Font Awesome -->
 <script src="https://kit.fontawesome.com/a2e0d6df52.js" crossorigin="anonymous"></script>
@@ -122,328 +120,261 @@
     .timeline-fill { transition: none; }
   }
 </style>
+
+<style>
+  .card {
+  transition: all 0.25s ease;
+  border: 1px solid #e5e7eb;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px rgba(0, 84, 79, 0.18);
+  border-color: #d1e7e5;
+}
+
+.modal.show {
+  opacity: 1 !important;
+  pointer-events: auto !important;
+}
+
+.modal.show > div {
+  scale: 1 !important;
+}
+
+</style>
 </head>
 <body class="bg-white text-gray-800 antialiased">
 
-<!-- HEADER / HERO -->
-<header class="relative overflow-hidden">
-  <div class="max-w-7xl mx-auto px-6 py-20 grid lg:grid-cols-2 gap-12 items-center">
-    <!-- Left copy -->
-    <div class="relative z-20" data-aos="fade-right">
-      <p class="text-xs font-semibold uppercase tracking-widest text-primary mb-3">About MedEquip</p>
-      <h1 class="hero-title text-4xl md:text-5xl font-extrabold leading-tight mb-6">
-        We design, deliver and maintain medical equipment that powers modern care.
-      </h1>
-      <p class="muted max-w-xl mb-8">
-        MedEquip combines clinical expertise with engineering discipline to supply hospitals and clinics with reliable devices, safe installations, and dependable lifetime support.
-      </p>
 
-      <div class="flex gap-4 flex-wrap">
-        <a href="#journey" class="inline-flex items-center gap-3 bg-primary text-white px-5 py-3 rounded-lg shadow hover:brightness-95 transition">
-          <i class="fas fa-handshake"></i> Our Journey
-        </a>
-        <a href="#team" class="inline-flex items-center gap-3 border border-gray-200 px-5 py-3 rounded-lg text-sm hover:bg-gray-50 transition">
-          Meet the Team
-        </a>
-      </div>
 
-      <!-- Stats -->
-      <div class="mt-10 grid grid-cols-2 sm:grid-cols-4 gap-4">
-        <div class="glass p-4 rounded-xl text-center">
-          <div class="text-2xl font-bold text-primary">10+</div>
-          <div class="text-xs muted mt-1">Years Experience</div>
-        </div>
-        <div class="glass p-4 rounded-xl text-center">
-          <div class="text-2xl font-bold text-primary">500+</div>
-          <div class="text-xs muted mt-1">Healthcare Clients</div>
-        </div>
-        <div class="glass p-4 rounded-xl text-center">
-          <div class="text-2xl font-bold text-primary">24/7</div>
-          <div class="text-xs muted mt-1">Technical Support</div>
-        </div>
-        <div class="glass p-4 rounded-xl text-center">
-          <div class="text-2xl font-bold text-primary">99%</div>
-          <div class="text-xs muted mt-1">Service Reliability</div>
-        </div>
-      </div>
-    </div>
+<!-- Product Listing -->
+<section
+  id="productsGrid"
+  class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"
+></section>
 
-    <!-- Right visual (uses uploaded image) -->
-    <div class="relative hidden lg:block" data-aos="fade-left">
-      <div class="rounded-3xl overflow-hidden shadow-2xl">
-        <img src="/mnt/data/b714886c-3929-4c64-bc18-9cfcb71b6a50.png" alt="Medical professional" class="w-full h-[520px] object-cover">
-      </div>
+<!-- Modal -->
+<div id="productModal" class="modal px-3 overflow-hidden fixed inset-0 bg-black/40 backdrop-blur-sm flex justify-center items-center z-50 opacity-0 pointer-events-none transition-all duration-300">
+  <div class="bg-white rounded-2xl p-6 max-w-md w-full shadow-xl scale-95 transition-all duration-300 relative">
 
-      <!-- curved SVG overlay -->
-      <div class="hero-curve" aria-hidden="true">
-        <svg viewBox="0 0 100 100" preserveAspectRatio="none" class="w-full h-full">
-          <defs>
-            <linearGradient id="gA" x1="0" x2="1">
-              <stop offset="0%" stop-color="#ffffff" stop-opacity="0.06" />
-              <stop offset="100%" stop-color="#00544f" stop-opacity="0.06" />
-            </linearGradient>
-          </defs>
-          <path d="M0,0 L70,0 C85,10 100,25 100,40 L100,100 L0,100 Z" fill="url(#gA)" />
-        </svg>
-      </div>
+    <!-- Close -->
+    <button id="closeModalBtn"
+      class="absolute top-3 right-3 text-gray-600 hover:text-red-600 text-2xl">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
 
-      <!-- floating icons -->
-      <div class="absolute -left-8 -top-8">
-        <div class="float-icon p-3 glass">
-          <i class="fas fa-stethoscope"></i>
-        </div>
-      </div>
-      <div class="absolute -right-8 bottom-12">
-        <div class="float-icon p-3 glass">
-          <i class="fas fa-tools"></i>
-        </div>
-      </div>
-    </div>
+    <img id="modalImg" class="w-full h-60 object-cover rounded-xl shadow-md" />
+
+    <h2 id="modalTitle" class="text-2xl font-bold mt-4 text-gray-800"></h2>
+
+    <div id="modalRating" class="flex gap-1 mt-2"></div>
+
+    <p id="modalDesc" class="text-gray-600 mt-3 leading-relaxed"></p>
+
+    <p id="modalPrice" class="text-primary font-bold text-3xl mt-5"></p>
   </div>
-</header>
+</div>
 
-<!-- STORY -->
-<section class="max-w-7xl mx-auto px-6 py-12">
-  <div class="grid md:grid-cols-2 gap-10 items-center">
-    <div data-aos="fade-up" class="rounded-2xl overflow-hidden shadow-lg">
-      <img src="https://images.pexels.com/photos/7088522/pexels-photo-7088522.jpeg" alt="Team" class="w-full h-72 object-cover">
-    </div>
-    <div data-aos="fade-left">
-      <h2 class="text-3xl font-bold mb-4">Our Story</h2>
-      <p class="muted mb-4">
-        Founded by clinical engineers and healthcare leaders, MedEquip began with a simple aim — make hospital equipment reliable and predictable. Over the years we expanded through partnerships, technology, and a relentless focus on service quality.
-      </p>
 
-      <ul class="grid gap-3">
-        <li class="flex gap-3 items-start">
-          <div class="text-primary mt-1"><i class="fas fa-check-circle"></i></div>
-          <div class="muted">Clinical-grade procurement & rigorous quality assurance</div>
-        </li>
-        <li class="flex gap-3 items-start">
-          <div class="text-primary mt-1"><i class="fas fa-check-circle"></i></div>
-          <div class="muted">Certified installations, calibration and preventive maintenance</div>
-        </li>
-        <li class="flex gap-3 items-start">
-          <div class="text-primary mt-1"><i class="fas fa-check-circle"></i></div>
-          <div class="muted">Hands-on training programs for clinical staff</div>
-        </li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<!-- MISSION / VISION / VALUES -->
-<section class="bg-secondary py-12">
-  <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-3 gap-6">
-    <div class="p-6 rounded-2xl glass" data-aos="fade-up">
-      <div class="w-12 h-12 rounded-lg bg-primary/10 text-primary grid place-items-center mb-4">
-        <i class="fas fa-bullseye"></i>
-      </div>
-      <h3 class="font-semibold">Mission</h3>
-      <p class="muted text-sm mt-2">Deliver reliable medical equipment and services that empower healthcare teams to deliver superior patient care.</p>
-    </div>
-
-    <div class="p-6 rounded-2xl glass" data-aos="fade-up" data-aos-delay="80">
-      <div class="w-12 h-12 rounded-lg bg-primary/10 text-primary grid place-items-center mb-4">
-        <i class="fas fa-eye"></i>
-      </div>
-      <h3 class="font-semibold">Vision</h3>
-      <p class="muted text-sm mt-2">A world where technology and service remove barriers to quality care — everywhere.</p>
-    </div>
-
-    <div class="p-6 rounded-2xl glass" data-aos="fade-up" data-aos-delay="160">
-      <div class="w-12 h-12 rounded-lg bg-primary/10 text-primary grid place-items-center mb-4">
-        <i class="fas fa-heart"></i>
-      </div>
-      <h3 class="font-semibold">Values</h3>
-      <p class="muted text-sm mt-2">Integrity, reliability, clinical safety and people-first support.</p>
-    </div>
-  </div>
-</section>
-
-<!-- TIMELINE (redesigned premium zig-zag with floating icons & animated fill) -->
-<section id="journey" class="py-20">
-  <div class="max-w-6xl mx-auto px-6 timeline">
-    <h2 class="text-3xl font-bold text-gray-900 text-center mb-12">Our Journey</h2>
-
-    <!-- Spine and fill -->
-    <div class="timeline-spine" aria-hidden="true"></div>
-    <div id="timelineFill" class="timeline-fill" aria-hidden="true"></div>
-
-    <div class="space-y-12">
-      <!-- Row 1 (left content) -->
-      <div class="timeline-row" data-aos="fade-right">
-        <div class="content-left">
-          <div class="bg-white p-6 rounded-2xl shadow" style="display:inline-block;">
-            <div class="text-2xl font-bold">2014</div>
-            <h3 class="text-lg font-semibold mt-2">Company Founded</h3>
-            <p class="muted mt-2">Started by a small team of biomedical engineers focused on service excellence and patient outcomes.</p>
-          </div>
-        </div>
-
-        <div class="center">
-          <div class="timeline-icon">
-            <i class="fas fa-seedling fa-lg"></i>
-          </div>
-        </div>
-
-        <div class="content-right"></div>
-      </div>
-
-      <!-- Row 2 (right content) -->
-      <div class="timeline-row" data-aos="fade-left">
-        <div class="content-left"></div>
-
-        <div class="center">
-          <div class="timeline-icon">
-            <i class="fas fa-hospital fa-lg"></i>
-          </div>
-        </div>
-
-        <div class="content-right">
-          <div class="bg-white p-6 rounded-2xl shadow" style="display:inline-block;">
-            <div class="text-2xl font-bold">2017</div>
-            <h3 class="text-lg font-semibold mt-2">Partnerships with Hospitals</h3>
-            <p class="muted mt-2">Expanded installations and service agreements with regional hospital networks.</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Row 3 (left content) -->
-      <div class="timeline-row" data-aos="fade-right">
-        <div class="content-left">
-          <div class="bg-white p-6 rounded-2xl shadow" style="display:inline-block;">
-            <div class="text-2xl font-bold">2020</div>
-            <h3 class="text-lg font-semibold mt-2">Scaling Support Services</h3>
-            <p class="muted mt-2">Launched 24/7 remote triage, logistics and rapid spare parts provisioning.</p>
-          </div>
-        </div>
-
-        <div class="center">
-          <div class="timeline-icon">
-            <i class="fas fa-tools fa-lg"></i>
-          </div>
-        </div>
-
-        <div class="content-right"></div>
-      </div>
-
-      <!-- Row 4 (right content) -->
-      <div class="timeline-row" data-aos="fade-left">
-        <div class="content-left"></div>
-
-        <div class="center">
-          <div class="timeline-icon">
-            <i class="fas fa-award fa-lg"></i>
-          </div>
-        </div>
-
-        <div class="content-right">
-          <div class="bg-white p-6 rounded-2xl shadow" style="display:inline-block;">
-            <div class="text-2xl font-bold">2023</div>
-            <h3 class="text-lg font-semibold mt-2">Certified Service Provider</h3>
-            <p class="muted mt-2">Achieved multiple accreditations for safety, compliance and quality.</p>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- TEAM -->
-<section id="team" class="py-12 bg-secondary">
-  <div class="max-w-6xl mx-auto px-6">
-    <h2 class="text-3xl font-bold text-gray-900 mb-8">Leadership Team</h2>
-    <div class="grid md:grid-cols-3 gap-6">
-      <div class="bg-white p-6 rounded-2xl shadow" data-aos="fade-up">
-        <img src="https://images.pexels.com/photos/3874762/pexels-photo-3874762.jpeg" class="w-16 h-16 rounded-lg object-cover mb-4" alt="">
-        <div class="font-semibold">Dr. Asha Kapoor</div>
-        <div class="text-xs muted">CEO & Co-Founder</div>
-        <p class="muted text-sm mt-3">Clinical engineer with 15+ years experience in biomedical equipment and hospital workflows.</p>
-      </div>
-
-      <div class="bg-white p-6 rounded-2xl shadow" data-aos="fade-up" data-aos-delay="80">
-        <img src="https://images.pexels.com/photos/1181690/pexels-photo-1181690.jpeg" class="w-16 h-16 rounded-lg object-cover mb-4" alt="">
-        <div class="font-semibold">Ravi Menon</div>
-        <div class="text-xs muted">Head of Engineering</div>
-        <p class="muted text-sm mt-3">Leads installations and technical teams with a focus on uptime and safety.</p>
-      </div>
-
-      <div class="bg-white p-6 rounded-2xl shadow" data-aos="fade-up" data-aos-delay="160">
-        <img src="https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg" class="w-16 h-16 rounded-lg object-cover mb-4" alt="">
-        <div class="font-semibold">Meera Singh</div>
-        <div class="text-xs muted">Head of Operations</div>
-        <p class="muted text-sm mt-3">Coordinates field teams, spare parts and rapid response operations.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CERTIFICATIONS -->
-<section class="py-12">
-  <div class="max-w-6xl mx-auto px-6">
-    <h3 class="text-xl font-semibold mb-6">Certifications & Partners</h3>
-    <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-6">
-      <div class="bg-white p-4 rounded-lg shadow-sm text-center"><img src="https://images.pexels.com/photos/3846142/pexels-photo-3846142.jpeg" class="mx-auto mb-2 w-24 h-16 object-contain" alt=""><div class="muted text-sm">ISO 9001</div></div>
-      <div class="bg-white p-4 rounded-lg shadow-sm text-center"><img src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg" class="mx-auto mb-2 w-24 h-16 object-contain" alt=""><div class="muted text-sm">CE / EMC</div></div>
-      <div class="bg-white p-4 rounded-lg shadow-sm text-center"><img src="https://images.pexels.com/photos/265087/pexels-photo-265087.jpeg" class="mx-auto mb-2 w-24 h-16 object-contain" alt=""><div class="muted text-sm">Healthcare Partner</div></div>
-      <div class="bg-white p-4 rounded-lg shadow-sm text-center"><img src="https://images.pexels.com/photos/373543/pexels-photo-373543.jpeg" class="mx-auto mb-2 w-24 h-16 object-contain" alt=""><div class="muted text-sm">Safety Accreditation</div></div>
-    </div>
-  </div>
-</section>
-
-<!-- CTA -->
-<section class="bg-primary text-white py-12">
-  <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
-    <div>
-      <h3 class="text-2xl font-bold">Ready to partner for reliable medical equipment?</h3>
-      <p class="muted text-sm mt-1 text-white/90">Let's design a plan tailored to your facility.</p>
-    </div>
-    <div>
-      <a href="#" class="inline-flex gap-3 items-center bg-white text-primary px-5 py-3 rounded-lg font-medium shadow">Contact Sales</a>
-    </div>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer class="py-8 text-center text-sm muted">© MedEquip — Medical Equipment & Services</footer>
-
-<!-- SCRIPTS: AOS init + timeline fill animation -->
 <script>
-  AOS.init({ once: true, duration: 700, easing: 'ease-out-quart' });
+  const products = [
+        {
+          id: 1,
+          name: "Digital Thermometer",
+          price: 999,
+          rating: 4.7,
+          desc: "High-accuracy body temperature measurement.",
+          img: "./assets/therm.webp",
+        },
+        {
+          id: 2,
+          name: "Stethoscope",
+          price: 1499,
+          rating: 4.5,
+          desc: "Professional heart/lung auscultation.",
+          img: "./assets/seth.webp",
+        },
+        {
+          id: 3,
+          name: "Pulse Oximeter",
+          price: 699,
+          rating: 4.3,
+          desc: "Measures SpO2 accurately.",
+          img: "./assets/pulse.webp",
+        },
+        {
+          id: 4,
+          name: "Blood Pressure Monitor",
+          price: 2799,
+          rating: 4.6,
+          desc: "Automatic arm BP monitor.",
+          img: "./assets/bp.webp",
+        },
+        {
+          id: 5,
+          name: "Surgical Gloves",
+          price: 499,
+          rating: 4.2,
+          desc: "Powder-free latex gloves.",
+          img: "./assets/gloves.webp",
+        },
+        {
+          id: 6,
+          name: "Face Mask (50 pcs)",
+          price: 699,
+          rating: 4.3,
+          desc: "Protective disposable masks.",
+          img: "./assets/mask.webp",
+        },
+        {
+          id: 7,
+          name: "Nebulizer",
+          price: 2599,
+          rating: 4.5,
+          desc: "Compact nebulization unit.",
+          img: "./assets/nebu.webp",
+        },
+        {
+          id: 8,
+          name: "Wheelchair",
+          price: 7999,
+          rating: 4.7,
+          desc: "Lightweight foldable wheelchair.",
+          img: "./assets/wc.webp",
+        },
+        {
+          id: 9,
+          name: "Hospital Bed",
+          price: 15999,
+          rating: 4.6,
+          desc: "Adjustable patient bed.",
+          img: "./assets/bed.webp",
+        },
+        {
+          id: 10,
+          name: "Medical Scissors",
+          price: 299,
+          rating: 4.1,
+          desc: "Durable stainless steel scissors.",
+          img: "./assets/scisor.webp",
+        },
+        {
+          id: 11,
+          name: "Glucose Meter",
+          price: 899,
+          rating: 4.4,
+          desc: "Accurate glucose monitoring.",
+          img: "./assets/gm.webp",
+        },
+        {
+          id: 12,
+          name: "Otoscope",
+          price: 2999,
+          rating: 4.5,
+          desc: "Ear examination device.",
+          img: "./assets/oto.webp",
+        },
+        {
+          id: 13,
+          name: "Defibrillator",
+          price: 24999,
+          rating: 4.9,
+          desc: "Portable emergency defibrillator.",
+          img: "./assets/defi.webp",
+        },
+        {
+          id: 14,
+          name: "IV Stand",
+          price: 1999,
+          rating: 4.3,
+          desc: "Adjustable IV stand with wheels.",
+          img: "./assets/iv.webp",
+        },
+        {
+          id: 15,
+          name: "First Aid Kit",
+          price: 1499,
+          rating: 4.6,
+          desc: "Emergency medical essentials.",
+          img: "./assets/fid.webp",
+        },
+        {
+          id: 16,
+          name: "Thermal Scanner",
+          price: 3999,
+          rating: 4.5,
+          desc: "Infrared temp scanner.",
+          img: "./assets/ts.webp",
+        },
+        {
+          id: 17,
+          name: "Sphygmomanometer",
+          price: 1199,
+          rating: 4.4,
+          desc: "Manual BP monitor.",
+          img: "./assets/sp.webp",
+        },
+      ];
+      
+  function render(productsList) {
+  productsGrid.innerHTML = "";
+  if (productsList.length === 0) {
+    productsGrid.innerHTML = `<p class='col-span-full text-center text-gray-500 text-lg py-10'>No products found.</p>`;
+    return;
+  }
 
-  // Timeline fill animation: fills proportionally as user scrolls the timeline section
-  (function(){
-    const fill = document.getElementById('timelineFill');
-    const timeline = document.querySelector('#journey .max-w-6xl') || document.getElementById('journey');
-    const section = document.getElementById('journey') || document.querySelector('[id="journey"]');
+  productsList.forEach((p) => {
+    const card = document.createElement("div");
+    card.className =
+      "card bg-white p-4 rounded-2xl hover:shadow-xl cursor-pointer transition";
+    card.innerHTML = `
+      <img src="${p.img}" class="w-full h-52 object-cover rounded-xl shadow-sm" />
 
-    function updateFill(){
-      if(!fill || !section) return;
-      const rect = section.getBoundingClientRect();
-      const winH = window.innerHeight;
-      // calculate how much of the section is visible (0..1)
-      const visibleTop = Math.max(0, -rect.top);
-      const visible = Math.max(0, Math.min(rect.height, winH - rect.top));
-      const progress = Math.min(1, Math.max(0, (winH - rect.top) / (rect.height)));
-      // better mapping: when top enters viewport, start growing; when bottom reaches top, full
-      // compute ratio of how far through section's viewport we've scrolled
-      const start = Math.max(0, Math.min(1, (winH - rect.top) / (winH + rect.height)));
-      const percentage = Math.min(100, Math.max(0, (visible / rect.height) * 100));
-      // smoother: map visible portion to height
-      fill.style.height = percentage + "%";
-    }
+      <div class="mt-3">
+        <h3 class="text-lg font-semibold text-gray-900">${p.name}</h3>
+        <p class="text-sm text-gray-500 mt-1 line-clamp-2">${p.desc}</p>
 
-    // initial
-    updateFill();
-    window.addEventListener('scroll', updateFill, {passive:true});
-    window.addEventListener('resize', updateFill);
-    // respect reduced motion
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      fill.style.transition = 'none';
-    }
-  })();
+        <div class="flex items-center justify-between mt-4">
+          <p class="text-primary font-bold text-xl">₹${p.price}</p>
+
+          <span class="px-2 py-1 bg-yellow-100 text-yellow-700 rounded-lg text-xs font-semibold">
+            ⭐ ${p.rating}
+          </span>
+        </div>
+      </div>
+    `;
+
+    card.addEventListener("click", () => showModal(p));
+    productsGrid.appendChild(card);
+  });
+}
+
+function showModal(p) {
+  modalImg.src = p.img;
+  modalTitle.textContent = p.name;
+
+  // Better rating stars
+  modalRating.innerHTML = "";
+  const fullStars = Math.floor(p.rating);
+  for (let i = 0; i < fullStars; i++) {
+    modalRating.innerHTML += `<i class="fa-solid fa-star text-yellow-400"></i>`;
+  }
+
+  modalDesc.textContent = p.desc;
+  modalPrice.textContent = `₹${p.price}`;
+
+  modal.classList.add("show");
+}
+
+closeModalBtn.addEventListener("click", () =>
+  modal.classList.remove("show")
+);
+
+modal.addEventListener("click", (e) => {
+  if (e.target === modal) modal.classList.remove("show");
+});
+
 </script>
 
 </body>

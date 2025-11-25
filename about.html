@@ -138,68 +138,82 @@
         border: 1px solid rgba(255, 255, 255, 0.45);
       }
 
-      /* Timeline styles */
+      /* ---- TIMELINE BASE ---- */
       .timeline {
         position: relative;
-        padding-left: 1.5rem;
-        padding-right: 1.5rem;
+        max-width: 1100px;
       }
+
       .timeline-spine {
         position: absolute;
-        margin-top: 5%;
         left: 50%;
-        top: 0;
         transform: translateX(-50%);
         width: 6px;
         height: 100%;
-        background: linear-gradient(
-          180deg,
-          rgba(0, 84, 79, 0.12),
-          rgba(0, 84, 79, 0.04)
-        );
+        top: 5%;
+        background: rgba(0, 84, 79, 0.18);
         border-radius: 6px;
-        z-index: -1;
       }
+
       .timeline-fill {
-        margin-top: 5%;
         position: absolute;
         left: 50%;
         transform: translateX(-50%);
         width: 6px;
-        background: linear-gradient(
-          180deg,
-          var(--primary),
-          rgba(0, 84, 79, 0.6)
-        );
-        border-radius: 6px;
-        top: 0;
         height: 0%;
-        z-index: -1;
-        transition: height 300ms ease-out;
+        top: 5%;
+        background: linear-gradient(180deg, #00544f, rgba(0, 84, 79, 0.5));
+        border-radius: 6px;
+        transition: height 350ms ease-out;
       }
 
-      .timeline-item {
-        position: relative;
-        z-index: 2;
-        display: flex;
-        gap: 1.25rem;
-        align-items: center;
+      /* ---- CARD ---- */
+      .timeline-card {
+        background: #ffffff;
+        padding: 1.75rem;
+        border-radius: 1.25rem;
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+        border-left: 5px solid var(--primary);
       }
+
+      .timeline-card .year {
+        font-size: 1.6rem;
+        font-weight: 800;
+        color: var(--primary);
+        margin-bottom: 0.4rem;
+      }
+
+      .timeline-card h3 {
+        font-size: 1.25rem;
+        font-weight: 700;
+        margin-bottom: 0.4rem;
+      }
+
+      .timeline-card p {
+        color: #6b7280;
+      }
+
+      /* ---- CENTER ICON ---- */
       .timeline-icon {
-        width: 64px;
-        height: 64px;
-        border-radius: 14px;
+        width: 70px;
+        height: 70px;
+        border-radius: 16px;
         display: grid;
         place-items: center;
-        background: #00544f;
-        box-shadow: var(--card-shadow);
+        font-size: 28px;
         color: white;
-        flex-shrink: 0;
+        background: var(--primary);
+        z-index: 20;
         position: relative;
-        z-index: 10;
       }
 
-      /* Desktop zig-zag layout */
+      /* glossy effect */
+      .glossy {
+        background: linear-gradient(145deg, #007e75, #00423f);
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+      }
+
+      /* ---- DESKTOP GRID ---- */
       @media (min-width: 768px) {
         .timeline-row {
           display: grid;
@@ -207,70 +221,70 @@
           align-items: center;
           gap: 1rem;
         }
-        .timeline-row .content-left {
+
+        .content-left {
           text-align: right;
           padding-right: 2rem;
         }
-        .timeline-row .content-right {
+
+        .content-right {
           text-align: left;
           padding-left: 2rem;
         }
-        .timeline-row .center {
+
+        .center {
           display: flex;
           justify-content: center;
           align-items: center;
         }
       }
 
-      /* Mobile stacking */
+      /* ---- MOBILE ---- */
+      /* MOBILE FIXES */
       @media (max-width: 767px) {
-        .timeline-spine {
-          left: 28px;
-          transform: none;
-          width: 4px;
+        .timeline {
+          padding-left: 0;
+          padding-right: 0;
         }
-        .timeline-fill {
-          left: 28px;
-          transform: none;
-          width: 4px;
-        }
+
         .timeline-row {
+          position: relative;
           display: flex;
-          flex-direction: row;
-          gap: 1rem;
-          align-items: flex-start;
-          padding-left: 24px;
+          flex-direction: column;
+          padding-left: 70px; /* enough for spine & icons */
+          margin-bottom: 2.5rem;
         }
+
+        /* Spine alignment */
+        .timeline-spine,
+        .timeline-fill {
+          left: 32px;
+          width: 3px;
+        }
+
+        /* Icon better position */
         .timeline-icon {
           position: absolute;
-          left: 0;
-          top: 0;
-          transform: none;
-          width: 48px;
-          height: 48px;
+          left: 8px;
+          top: 5%;
+          width: 42px;
+          height: 42px;
           border-radius: 10px;
         }
-        .timeline-item .text {
-          margin-left: 56px;
-        }
-        .timeline {
-          padding-left: 0.5rem;
-          padding-right: 0.5rem;
-        }
-      }
 
-      /* Minor helpers */
-      .hero-title {
-        color: #032b2a;
-      }
-      .muted {
-        color: #6b7280;
-      }
+        /* Cards — FULL WIDTH & BEAUTIFUL */
+        .timeline-row .content-left,
+        .timeline-row .content-right {
+          width: 100%;
+          padding: 0;
+          text-align: left !important;
+        }
 
-      /* Respect reduced motion */
-      @media (prefers-reduced-motion: reduce) {
-        .timeline-fill {
-          transition: none;
+        .timeline-row .content-left > div,
+        .timeline-row .content-right > div {
+          width: 100%;
+          margin-top: 1rem;
+          margin-left: 0;
         }
       }
     </style>
@@ -540,53 +554,244 @@
         </div>
 
         <!-- Right visual (uses uploaded image) -->
-        <div class="relative hidden lg:block" data-aos="fade-left">
-          <div class="rounded-3xl overflow-hidden shadow-2xl">
+        <div class="relative block" data-aos="fade-left">
+          <div class="rounded-3xl overflow-hidden">
             <img
-              src="./assets/06-per.webp"
+              src="./assets/about1.webp"
               alt="Medical professional"
-              class="w-full h-[520px] object-contain"
+              class="w-full lg:h-[520px] object-cover"
             />
-          </div>
-
-          <!-- curved SVG overlay -->
-          <div class="hero-curve" aria-hidden="true">
-            <svg
-              viewBox="0 0 100 100"
-              preserveAspectRatio="none"
-              class="w-full h-full"
-            >
-              <defs>
-                <linearGradient id="gA" x1="0" x2="1">
-                  <stop offset="0%" stop-color="#ffffff" stop-opacity="0.06" />
-                  <stop
-                    offset="100%"
-                    stop-color="#00544f"
-                    stop-opacity="0.06"
-                  />
-                </linearGradient>
-              </defs>
-              <path
-                d="M0,0 L70,0 C85,10 100,25 100,40 L100,100 L0,100 Z"
-                fill="url(#gA)"
-              />
-            </svg>
-          </div>
-
-          <!-- floating icons -->
-          <div class="absolute -left-8 -top-8">
-            <div class="float-icon p-3 glass">
-              <i class="fas fa-stethoscope"></i>
-            </div>
-          </div>
-          <div class="absolute -right-8 bottom-12">
-            <div class="float-icon p-3 glass">
-              <i class="fas fa-tools"></i>
-            </div>
           </div>
         </div>
       </div>
     </main>
+
+    <!-- MISSION / VISION / VALUES -->
+    <section class="py-6 px-3 overflow-hidden">
+      <div data-aos="fade-right" class="mb-4">
+        <h1 class="text-2xl md:text-3xl font-bold">Mission & Vision</h1>
+      </div>
+      <div class="mx-auto grid md:grid-cols-3 gap-6">
+        <div
+          class="p-6 rounded-2xl shadow-md shadow-tertiary"
+          data-aos="zoom-in"
+          data-aos-delay="50"
+        >
+          <div
+            class="w-12 h-12 rounded-lg bg-primary/10 text-primary grid place-items-center mb-4"
+          >
+            <i class="fas fa-bullseye"></i>
+          </div>
+          <h3 class="font-semibold">Mission</h3>
+          <p class="muted text-sm mt-2">
+            Deliver reliable medical equipment and services that empower
+            healthcare teams to deliver superior patient care.
+          </p>
+        </div>
+
+        <div
+          class="p-6 rounded-2xl shadow-tertiary shadow-md"
+          data-aos="zoom-in"
+          data-aos-delay="80"
+        >
+          <div
+            class="w-12 h-12 rounded-lg bg-primary/10 text-primary grid place-items-center mb-4"
+          >
+            <i class="fas fa-eye"></i>
+          </div>
+          <h3 class="font-semibold">Vision</h3>
+          <p class="muted text-sm mt-2">
+            A world where technology and service remove barriers to quality care
+            — everywhere.
+          </p>
+        </div>
+
+        <div
+          class="p-6 rounded-2xl shadow-tertiary shadow-md"
+          data-aos="zoom-in"
+          data-aos-delay="160"
+        >
+          <div
+            class="w-12 h-12 rounded-lg bg-primary/10 text-primary grid place-items-center mb-4"
+          >
+            <i class="fas fa-heart"></i>
+          </div>
+          <h3 class="font-semibold">Values</h3>
+          <p class="muted text-sm mt-2">
+            Integrity, reliability, clinical safety and people-first support.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- TIMELINE (redesigned premium zig-zag with floating icons & animated fill) -->
+    <section id="journey" class="py-20 px-3 overflow-hidden">
+      <div class="mx-auto timeline">
+        <h2 class="text-3xl font-bold text-gray-900 text-center mb-16">
+          Our Journey
+        </h2>
+
+        <!-- Spine + Fill -->
+        <div class="timeline-spine"></div>
+        <div id="timelineFill" class="timeline-fill"></div>
+
+        <div class="space-y-20">
+          <!-- Row 1 -->
+          <div class="timeline-row">
+            <div class="content-left" data-aos="fade-right">
+              <div class="timeline-card">
+                <div class="year">2015</div>
+                <h3>Company Founded</h3>
+                <p>
+                  Started by a core team of biomedical engineers focused on
+                  reliability and clinical-grade quality.
+                </p>
+              </div>
+            </div>
+
+            <div class="center">
+              <div class="timeline-icon glossy">
+                <i class="fas fa-seedling"></i>
+              </div>
+            </div>
+
+            <div class="content-right"></div>
+          </div>
+
+          <!-- Row 2 -->
+          <div class="timeline-row">
+            <div class="content-left"></div>
+
+            <div class="center">
+              <div class="timeline-icon glossy">
+                <i class="fas fa-hospital"></i>
+              </div>
+            </div>
+
+            <div class="content-right" data-aos="fade-left">
+              <div class="timeline-card">
+                <div class="year">2018</div>
+                <h3>Hospital Partnerships</h3>
+                <p>
+                  Expanded into regional hospital networks with structured
+                  maintenance & installation programs.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Row 3 -->
+          <div class="timeline-row">
+            <div class="content-left" data-aos="fade-right">
+              <div class="timeline-card">
+                <div class="year">2021</div>
+                <h3>Scaling Support Services</h3>
+                <p>
+                  Introduced 24/7 support, logistics automation, and
+                  rapid-response triage systems.
+                </p>
+              </div>
+            </div>
+
+            <div class="center">
+              <div class="timeline-icon glossy">
+                <i class="fas fa-tools"></i>
+              </div>
+            </div>
+
+            <div class="content-right"></div>
+          </div>
+
+          <!-- Row 4 -->
+          <div class="timeline-row">
+            <div class="content-left"></div>
+
+            <div class="center">
+              <div class="timeline-icon glossy">
+                <i class="fas fa-award"></i>
+              </div>
+            </div>
+
+            <div class="content-right" data-aos="fade-left">
+              <div class="timeline-card">
+                <div class="year">2024</div>
+                <h3>Certified Service Provider</h3>
+                <p>
+                  Recognized for meeting international medical device servicing
+                  standards and quality frameworks.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TEAM -->
+    <section
+      id="team"
+      class="scroll-mt-6 py-12 px-3 bg-primary/80 overflow-hidden"
+    >
+      <div class="mx-auto">
+        <h2 class="text-xl md:text-3xl font-bold text-gray-900 mb-8">
+          Leadership Team
+        </h2>
+        <div class="grid md:grid-cols-3 gap-6">
+          <div
+            class="bg-white p-6 rounded-2xl shadow text-center"
+            data-aos="zoom-in-up"
+          >
+            <img
+              src="./assets/doc1.webp"
+              class="size-24 rounded-full object-cover mb-4 mx-auto"
+              alt="doc1"
+            />
+            <div class="font-semibold">Dr. Asha Kapoor</div>
+            <div class="text-xs muted">CEO & Co-Founder</div>
+            <p class="muted text-sm mt-3">
+              Clinical engineer with 15+ years experience in biomedical
+              equipment and hospital workflows.
+            </p>
+          </div>
+
+          <div
+            class="bg-white p-6 rounded-2xl shadow text-center"
+            data-aos="zoom-in-up"
+            data-aos-delay="80"
+          >
+            <img
+              src="./assets/doc2.webp"
+              class="size-24 rounded-full object-cover mb-4 mx-auto"
+              alt="doc2"
+            />
+            <div class="font-semibold">Ravi Menon</div>
+            <div class="text-xs muted">Head of Engineering</div>
+            <p class="muted text-sm mt-3">
+              Leads installations and technical teams with a focus on uptime and
+              safety.
+            </p>
+          </div>
+
+          <div
+            class="bg-white p-6 rounded-2xl shadow text-center"
+            data-aos="zoom-in-up"
+            data-aos-delay="160"
+          >
+            <img
+              src="./assets/doc3.webp"
+              class="size-24 rounded-full object-cover mb-4 mx-auto"
+              alt="doc3"
+            />
+            <div class="font-semibold">Meera Singh</div>
+            <div class="text-xs muted">Head of Operations</div>
+            <p class="muted text-sm mt-3">
+              Coordinates field teams, spare parts and rapid response
+              operations.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- STORY -->
     <section class="mx-auto px-3 py-12 overflow-hidden">
@@ -596,7 +801,7 @@
           class="rounded-2xl overflow-hidden shadow-lg"
         >
           <img
-            src="https://images.pexels.com/photos/7088522/pexels-photo-7088522.jpeg"
+            src="./assets/contact.webp"
             alt="Team"
             class="w-full h-72 object-cover"
           />
@@ -640,274 +845,42 @@
       </div>
     </section>
 
-    <!-- MISSION / VISION / VALUES -->
-    <section class="bg-secondary py-12 px-3 overflow-hidden">
-      <div class="mx-auto grid md:grid-cols-3 gap-6">
-        <div
-          class="p-6 rounded-2xl glass"
-          data-aos="zoom-in"
-          data-aos-delay="50"
-        >
-          <div
-            class="w-12 h-12 rounded-lg bg-primary/10 text-primary grid place-items-center mb-4"
-          >
-            <i class="fas fa-bullseye"></i>
-          </div>
-          <h3 class="font-semibold">Mission</h3>
-          <p class="muted text-sm mt-2">
-            Deliver reliable medical equipment and services that empower
-            healthcare teams to deliver superior patient care.
-          </p>
-        </div>
-
-        <div
-          class="p-6 rounded-2xl glass"
-          data-aos="zoom-in"
-          data-aos-delay="80"
-        >
-          <div
-            class="w-12 h-12 rounded-lg bg-primary/10 text-primary grid place-items-center mb-4"
-          >
-            <i class="fas fa-eye"></i>
-          </div>
-          <h3 class="font-semibold">Vision</h3>
-          <p class="muted text-sm mt-2">
-            A world where technology and service remove barriers to quality care
-            — everywhere.
-          </p>
-        </div>
-
-        <div
-          class="p-6 rounded-2xl glass"
-          data-aos="zoom-in"
-          data-aos-delay="160"
-        >
-          <div
-            class="w-12 h-12 rounded-lg bg-primary/10 text-primary grid place-items-center mb-4"
-          >
-            <i class="fas fa-heart"></i>
-          </div>
-          <h3 class="font-semibold">Values</h3>
-          <p class="muted text-sm mt-2">
-            Integrity, reliability, clinical safety and people-first support.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- TIMELINE (redesigned premium zig-zag with floating icons & animated fill) -->
-    <section id="journey" class="py-20 px-3 overflow-hidden">
-      <div class="mx-auto timeline">
-        <h2 class="text-3xl font-bold text-gray-900 text-center mb-12">
-          Our Journey
-        </h2>
-
-        <!-- Spine and fill -->
-        <div class="timeline-spine" aria-hidden="true"></div>
-        <div id="timelineFill" class="timeline-fill" aria-hidden="true"></div>
-
-        <div class="space-y-12">
-          <!-- Row 1 (left content) -->
-          <div class="timeline-row" data-aos="fade-right">
-            <div class="content-left">
-              <div
-                class="bg-white p-6 rounded-2xl shadow"
-                style="display: inline-block"
-              >
-                <div class="text-2xl font-bold">2014</div>
-                <h3 class="text-lg font-semibold mt-2">Company Founded</h3>
-                <p class="muted mt-2">
-                  Started by a small team of biomedical engineers focused on
-                  service excellence and patient outcomes.
-                </p>
-              </div>
-            </div>
-
-            <div class="center">
-              <div class="timeline-icon">
-                <i class="fas fa-seedling fa-lg"></i>
-              </div>
-            </div>
-
-            <div class="content-right"></div>
-          </div>
-
-          <!-- Row 2 (right content) -->
-          <div class="timeline-row" data-aos="fade-left">
-            <div class="content-left"></div>
-
-            <div class="center">
-              <div class="timeline-icon">
-                <i class="fas fa-hospital fa-lg"></i>
-              </div>
-            </div>
-
-            <div class="content-right">
-              <div
-                class="bg-white p-6 rounded-2xl shadow"
-                style="display: inline-block"
-              >
-                <div class="text-2xl font-bold">2017</div>
-                <h3 class="text-lg font-semibold mt-2">
-                  Partnerships with Hospitals
-                </h3>
-                <p class="muted mt-2">
-                  Expanded installations and service agreements with regional
-                  hospital networks.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Row 3 (left content) -->
-          <div class="timeline-row" data-aos="fade-right">
-            <div class="content-left">
-              <div
-                class="bg-white p-6 rounded-2xl shadow"
-                style="display: inline-block"
-              >
-                <div class="text-2xl font-bold">2020</div>
-                <h3 class="text-lg font-semibold mt-2">
-                  Scaling Support Services
-                </h3>
-                <p class="muted mt-2">
-                  Launched 24/7 remote triage, logistics and rapid spare parts
-                  provisioning.
-                </p>
-              </div>
-            </div>
-
-            <div class="center">
-              <div class="timeline-icon">
-                <i class="fas fa-tools fa-lg"></i>
-              </div>
-            </div>
-
-            <div class="content-right"></div>
-          </div>
-
-          <!-- Row 4 (right content) -->
-          <div class="timeline-row" data-aos="fade-left">
-            <div class="content-left"></div>
-
-            <div class="center">
-              <div class="timeline-icon">
-                <i class="fas fa-award fa-lg"></i>
-              </div>
-            </div>
-
-            <div class="content-right">
-              <div
-                class="bg-white p-6 rounded-2xl shadow"
-                style="display: inline-block"
-              >
-                <div class="text-2xl font-bold">2023</div>
-                <h3 class="text-lg font-semibold mt-2">
-                  Certified Service Provider
-                </h3>
-                <p class="muted mt-2">
-                  Achieved multiple accreditations for safety, compliance and
-                  quality.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- TEAM -->
-    <section id="team" class="py-12 px-3 bg-secondary">
-      <div class=" mx-auto ">
-        <h2 class="text-3xl font-bold text-gray-900 mb-8">Leadership Team</h2>
-        <div class="grid md:grid-cols-3 gap-6">
-          <div class="bg-white p-6 rounded-2xl shadow" data-aos="fade-up">
-            <img
-              src="https://images.pexels.com/photos/3874762/pexels-photo-3874762.jpeg"
-              class="w-16 h-16 rounded-lg object-cover mb-4"
-              alt=""
-            />
-            <div class="font-semibold">Dr. Asha Kapoor</div>
-            <div class="text-xs muted">CEO & Co-Founder</div>
-            <p class="muted text-sm mt-3">
-              Clinical engineer with 15+ years experience in biomedical
-              equipment and hospital workflows.
-            </p>
-          </div>
-
-          <div
-            class="bg-white p-6 rounded-2xl shadow"
-            data-aos="fade-up"
-            data-aos-delay="80"
-          >
-            <img
-              src="https://images.pexels.com/photos/1181690/pexels-photo-1181690.jpeg"
-              class="w-16 h-16 rounded-lg object-cover mb-4"
-              alt=""
-            />
-            <div class="font-semibold">Ravi Menon</div>
-            <div class="text-xs muted">Head of Engineering</div>
-            <p class="muted text-sm mt-3">
-              Leads installations and technical teams with a focus on uptime and
-              safety.
-            </p>
-          </div>
-
-          <div
-            class="bg-white p-6 rounded-2xl shadow"
-            data-aos="fade-up"
-            data-aos-delay="160"
-          >
-            <img
-              src="https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg"
-              class="w-16 h-16 rounded-lg object-cover mb-4"
-              alt=""
-            />
-            <div class="font-semibold">Meera Singh</div>
-            <div class="text-xs muted">Head of Operations</div>
-            <p class="muted text-sm mt-3">
-              Coordinates field teams, spare parts and rapid response
-              operations.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <!-- CERTIFICATIONS -->
-    <section class="py-12">
-      <div class=" mx-auto px-3">
-        <h3 class="text-xl font-semibold mb-6">Certifications & Partners</h3>
+    <section class="py-12 overflow-hidden">
+      <div class="mx-auto px-3">
+        <h3 data-aos="zoom-in" class="text-xl md:text-3xl font-semibold mb-6">
+          Certifications & Partners
+        </h3>
         <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-6">
           <div class="bg-white p-4 rounded-lg shadow-sm text-center">
             <img
-              src="https://images.pexels.com/photos/3846142/pexels-photo-3846142.jpeg"
-              class="mx-auto mb-2 w-full h-[200px] object-cover"
-              alt=""
+              src="./assets/iso.webp"
+              class="mx-auto mb-2 w-full h-[100px] object-contain"
+              alt="iso"
             />
             <div class="muted text-sm">ISO 9001</div>
           </div>
           <div class="bg-white p-4 rounded-lg shadow-sm text-center">
             <img
-              src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg"
-              class="mx-auto mb-2 w-full h-[200px] object-cover"
-              alt=""
+              src="./assets/ce.webp"
+              class="mx-auto mb-2 w-full h-[100px] object-contain"
+              alt="ce"
             />
             <div class="muted text-sm">CE / EMC</div>
           </div>
           <div class="bg-white p-4 rounded-lg shadow-sm text-center">
             <img
-              src="https://images.pexels.com/photos/265087/pexels-photo-265087.jpeg"
-              class="mx-auto mb-2 w-full h-[200px] object-cover"
-              alt=""
+              src="./assets/hcp.webp"
+              class="mx-auto mb-2 w-full h-[100px] object-contain"
+              alt="hcp"
             />
             <div class="muted text-sm">Healthcare Partner</div>
           </div>
           <div class="bg-white p-4 rounded-lg shadow-sm text-center">
             <img
-              src="https://images.pexels.com/photos/373543/pexels-photo-373543.jpeg"
-              class="mx-auto mb-2 w-full h-[200px] object-cover"
-              alt=""
+              src="./assets/hca.webp"
+              class="mx-auto mb-2 w-full h-[100px] object-contain"
+              alt="hca"
             />
             <div class="muted text-sm">Safety Accreditation</div>
           </div>
@@ -916,15 +889,15 @@
     </section>
 
     <!-- CTA -->
-    <section class="bg-primary text-white py-12">
+    <section class="bg-primary text-white py-12 px-3">
       <div
-        class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6"
+        class="mx-auto flex flex-col md:flex-row items-center justify-between gap-6"
       >
         <div>
-          <h3 class="text-2xl font-bold">
+          <h3 class="text-2xl md:text-4xl font-bold">
             Ready to partner for reliable medical equipment?
           </h3>
-          <p class="muted text-sm mt-1 text-white/90">
+          <p class="text-sm md:text-xl mt-1 text-gray-400">
             Let's design a plan tailored to your facility.
           </p>
         </div>
@@ -1112,49 +1085,24 @@
 
     <!-- SCRIPTS: timeline fill animation -->
     <script>
-      // Timeline fill animation: fills proportionally as user scrolls the timeline section
       (function () {
         const fill = document.getElementById("timelineFill");
-        const timeline =
-          document.querySelector("#journey .max-w-6xl") ||
-          document.getElementById("journey");
-        const section =
-          document.getElementById("journey") ||
-          document.querySelector('[id="journey"]');
+        const section = document.getElementById("journey");
 
         function updateFill() {
-          if (!fill || !section) return;
           const rect = section.getBoundingClientRect();
-          const winH = window.innerHeight;
-          // calculate how much of the section is visible (0..1)
-          const visibleTop = Math.max(0, -rect.top);
-          const visible = Math.max(0, Math.min(rect.height, winH - rect.top));
-          const progress = Math.min(
-            1,
-            Math.max(0, (winH - rect.top) / rect.height)
-          );
-          // better mapping: when top enters viewport, start growing; when bottom reaches top, full
-          // compute ratio of how far through section's viewport we've scrolled
-          const start = Math.max(
+          const windowHeight = window.innerHeight;
+          const visibleHeight = Math.max(
             0,
-            Math.min(1, (winH - rect.top) / (winH + rect.height))
+            Math.min(rect.height, windowHeight - rect.top)
           );
-          const percentage = Math.min(
-            100,
-            Math.max(0, (visible / rect.height) * 100)
-          );
-          // smoother: map visible portion to height
-          fill.style.height = percentage + "%";
+          const percentage = (visibleHeight / rect.height) * 100;
+          fill.style.height = Math.min(100, Math.max(0, percentage)) + "%";
         }
 
-        // initial
         updateFill();
         window.addEventListener("scroll", updateFill, { passive: true });
         window.addEventListener("resize", updateFill);
-        // respect reduced motion
-        if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-          fill.style.transition = "none";
-        }
       })();
     </script>
   </body>
