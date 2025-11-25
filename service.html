@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Medical</title>
+
+    <meta
+      name="medical care"
+      content="It provides high-quality medical services, advanced healthcare equipment, diagnostic tools, and professional support for hospitals, clinics, and home care needs."
+    />
+    <meta
+      name="keywords"
+      content="medical services, medical equipment, healthcare devices, diagnostic tools, hospital supplies, clinic equipment, medical technology"
+    />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Advanced Medical Services & Equipment" />
+    <meta
+      property="og:description"
+      content="Trusted provider of medical services, diagnostic solutions, and world-class healthcare equipment for hospitals, clinics, and home care."
+    />
+
+    <!-- Font Awesome Cdn Link -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+      integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- Aos Cdn Link -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
+      integrity="sha512-1cK78a1o+ht2JcaW6g8OXYwqpev9+6GqOkz9xmBN9iUUhIndKtxwILGWYOSibOKjLsEdjyjZvYDq/cZwNeak0w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Tailwind CSS  -->
+    <link rel="stylesheet" href="./src/output.css" />
+
+    <!-- <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script> -->
+
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Lora:ital,wght@0,400..700;1,400..700&family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap");
+
+      @import url("https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap");
+
+      body {
+        font-family: "EB Garamond", serif;
+        overflow-x: hidden;
+      }
+
+      /* Hamburger animation */
+      .hamburger span {
+        display: block;
+        width: 1.5rem;
+        height: 0.125rem;
+        margin: 0.4rem auto;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        background-color: currentColor;
+      }
+
+      .hamburger.active span:nth-child(1) {
+        transform: rotate(45deg) translate(6px, 6px);
+      }
+
+      .hamburger.active span:nth-child(2) {
+        opacity: 0;
+      }
+
+      .hamburger.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(6px, -6px);
+      }
+
+      /* Mobile menu slide + fade */
+      .mobile-menu {
+        max-height: 0;
+        opacity: 0;
+        /* height: 100vh; */
+        transform: translateX(-100%);
+        /* overflow: hidden; */
+        transition: all 0.8s ease-in-out;
+      }
+
+      .mobile-menu.open {
+        /* max-height: 1000px; */
+        /* enough for nav links */
+        opacity: 1;
+        transform: translateX(0);
+      }
+    </style>
+  </head>
+
+  <body class="antialiased bg-white text-black">
+    <!-- Navbar  -->
+    <header class="sticky top-0 z-40 w-full mx-auto">
+      <div
+        class="flex items-center justify-between h-16 px-5 bg-white shadow-lg shadow-tertiary backdrop-blur-2xl"
+      >
+        <!-- Logo -->
+        <a class="" href="./index.html">
+          <img class="h-8" src="./assets/logo.webp" alt="logo" />
+        </a>
+
+        <!-- Desktop Nav -->
+        <nav
+          class="hidden md:flex items-center space-x-2 md:space-x-3 lg:space-x-5 text-sm font-medium"
+        >
+          <!-- Home with Dropdown -->
+          <div class="relative">
+            <!-- Parent Button -->
+            <button
+              class="relative inline-block after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full cursor-pointer"
+            >
+              <a href="./index.html">Home</a>
+              <i id="homeToggle" class="fa-solid fa-caret-down"></i>
+            </button>
+
+            <!-- Dropdown Menu -->
+            <ul
+              id="homeMenu"
+              class="absolute hidden bg-white text-black backdrop-blur-2xl shadow-lg mt-2 rounded w-40 z-40"
+            >
+              <li>
+                <a href="" class="block px-4 py-2"> Home 2 </a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- About -->
+          <a
+            href="./about.html"
+            class="relative inline-block after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full"
+          >
+            About
+          </a>
+
+          <!-- Services -->
+          <a
+            href="./service.html"
+            class="relative text-primary inline-block after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full"
+          >
+            Services
+          </a>
+          <!-- Products -->
+          <a
+            href="./product.html"
+            class="relative inline-block after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full"
+          >
+            Products
+          </a>
+          <!-- Contact -->
+          <a
+            href="./contact.html"
+            class="relative inline-block after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full"
+          >
+            Contact
+          </a>
+          <!-- Dashboard -->
+          <a
+            href="./dashboard.html"
+            class="relative inline-block after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full"
+          >
+            Dashboard
+          </a>
+        </nav>
+
+        <!-- login -->
+        <div class="flex text-sm gap-4 font-medium">
+          <div class="relative flex items-center gap-2">
+            <a
+              class="md:flex items-center gap-2 rounded-3xl text-sm transform hover:scale-95 transition duration-200 ease-out hidden"
+              href="./signin.html"
+              ><svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="size-6"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
+                />
+              </svg>
+              Login
+            </a>
+          </div>
+
+          <!-- Hamburger -->
+          <button
+            id="hamburger"
+            class="hamburger cursor-pointer lg:hidden focus:outline-none"
+            aria-label="Menu"
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Menu -->
+      <nav id="mobileMenu" class="mobile-menu h-screen lg:hidden shadow-md">
+        <ul
+          class="flex flex-col space-y-4 p-3 text-sm font-medium h-screen md:w-1/2 bg-white backdrop-blur-2xl"
+        >
+          <!-- Home dropDown  -->
+          <div class="relative">
+            <button class="flex items-center gap-1 w-full text-left lg:hidden">
+              <a href="./index.html">Home</a>
+              <i
+                id="mobileToggle"
+                class="fa-solid fa-caret-down cursor-pointer"
+              ></i>
+            </button>
+
+            <!-- Dropdown Menu -->
+            <ul
+              id="mobileLink"
+              class="hidden bg-white text-black mt-2 rounded w-full md:absolute"
+            >
+              <li>
+                <a href="" class="block px-2 py-2"> Home 2 </a>
+              </li>
+            </ul>
+          </div>
+          <!-- About -->
+          <li>
+            <a href="./about.html" class="nav-link block">About</a>
+          </li>
+          <!-- Services -->
+          <li>
+            <a href="./service.html" class="nav-link block">Services</a>
+          </li>
+          <!-- Products -->
+          <li>
+            <a href="./product.html" class="nav-link block">Products</a>
+          </li>
+          <!-- Contact -->
+          <li>
+            <a href="./contact.html" class="nav-link block">Contact</a>
+          </li>
+          <!-- Dashboard -->
+          <li>
+            <a href="./dashboard.html" class="nav-link block">Dashboard</a>
+          </li>
+          <!-- login  -->
+          <li>
+            <a href="./signin.html" class="flex items-center gap-2 nav-link"
+              ><svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="size-5"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
+                />
+              </svg>
+              Login</a
+            >
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Dropdown script  -->
+      <script>
+        const homeToggle = document.getElementById("homeToggle");
+        const homeMenu = document.getElementById("homeMenu");
+
+        homeToggle.addEventListener("click", () => {
+          homeMenu.classList.toggle("hidden");
+        });
+
+        const mobileToggle = document.getElementById("mobileToggle");
+        const mobileLink = document.getElementById("mobileLink");
+
+        // Home dropdown toggle (mobile only)
+        mobileToggle.addEventListener("click", () => {
+          mobileLink.classList.toggle("hidden");
+        });
+
+        // Optional: close menu if clicked outside
+        window.addEventListener("click", (e) => {
+          if (!homeToggle.contains(e.target) && !homeMenu.contains(e.target)) {
+            homeMenu.classList.add("hidden");
+          }
+        });
+      </script>
+    </header>
+
+    <!-- MAIN SERVICES SECTION -->
+    <section class="mx-auto px-3 py-12 lg:py-24 grid lg:grid-cols-2 gap-16 items-center">
+      <div>
+        <p
+          class="text-sm font-semibold uppercase tracking-widest text-primary mb-2"
+        >
+          What We Offer
+        </p>
+        <h2 class="text-4xl font-extrabold text-gray-900 leading-snug">
+          Trusted Medical Equipment Services You Can Rely On
+        </h2>
+        <p class="mt-5 text-gray-600 text-lg">
+          From advanced diagnostic devices to preventive maintenance and
+          technical training — we ensure your equipment performs flawlessly and
+          elevates patient care.
+        </p>
+        <div class="mt-10 space-y-7">
+          <div class="flex items-center gap-4">
+            <i class="fas fa-laptop-medical text-primary text-2xl"></i>
+            <div>
+              <h3 class="font-semibold text-lg text-gray-900">
+                Medical Device Supply
+              </h3>
+              <p class="text-gray-600 text-sm">
+                Delivered, installed, and supported by experts.
+              </p>
+            </div>
+          </div>
+          <div class="flex items-center gap-4">
+            <i class="fas fa-cogs text-primary text-2xl"></i>
+            <div>
+              <h3 class="font-semibold text-lg text-gray-900">
+                Maintenance & Repairs
+              </h3>
+              <p class="text-gray-600 text-sm">
+                Preventive servicing to reduce downtime.
+              </p>
+            </div>
+          </div>
+          <div class="flex items-center gap-4">
+            <i class="fas fa-user-graduate text-primary text-2xl"></i>
+            <div>
+              <h3 class="font-semibold text-lg text-gray-900">
+                Technical Training
+              </h3>
+              <p class="text-gray-600 text-sm">
+                Staff training for safe equipment usage.
+              </p>
+            </div>
+          </div>
+
+          <a
+            href="#services"
+            class="mt-10 px-7 py-3 bg-primary text-white rounded-lg text-sm font-medium hover:bg-teal-900 transition"
+          >
+            Explore All Services
+          </a>
+        </div>
+      </div>
+
+      <div class="relative">
+        <div
+          class="absolute -top-8 -left-3 smmd:-left-8 w-36 h-36 bg-primary opacity-10 rounded-xl"
+        ></div>
+        <img
+          src="./assets/ser.webp"
+          class="rounded-2xl shadow-xl w-full lg:h-[600px] object-cover"
+          alt="Healthcare professional using device"
+        />
+      </div>
+    </section>
+
+    <!-- WHY CHOOSE US SECTION -->
+    <section class="bg-primary/10 py-20 px-3 overflow-hidden">
+      <div class="mx-auto px-6 text-center">
+        <h2 class="text-3xl font-bold text-gray-900 mb-12">Why Choose Us?</h2>
+
+        <div
+          class="grid grid-cols-1 smmd:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10"
+        >
+          <div>
+            <h3
+              class="text-5xl font-bold text-primary counter"
+              data-target="50"
+            >
+              0
+            </h3>
+            <p class="text-gray-600 mt-2">Years Experience</p>
+          </div>
+          <div>
+            <h3
+              class="text-5xl font-bold text-primary counter"
+              data-target="500"
+            >
+              0
+            </h3>
+
+            <p class="text-gray-600 mt-2">Healthcare Clients</p>
+          </div>
+          <div>
+            <h3
+              class="text-5xl font-bold text-primary counter"
+              data-target="240"
+            >
+              0
+            </h3>
+            <p class="text-gray-600 mt-2">Technical Support</p>
+          </div>
+          <div>
+            <h3
+              class="text-5xl font-bold text-primary counter"
+              data-target="99"
+            >
+              0
+            </h3>
+            <p class="text-gray-600 mt-2">Service Reliability</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EQUIPMENT WE SPECIALIZE IN -->
+    <section
+      id="services"
+      class="scroll-mt-16 mx-auto px-3 py-24 overflow-hidden"
+    >
+      <div class="flex flex-col items-start mb-12 gap-4">
+        <h2 class="text-xl md:text-3xl font-bold text-gray-900 ">
+          Equipment We Specialize In
+        </h2>
+        <p class="text-lg md:text-xl max-w-3xl">
+          From advanced diagnostic devices to preventive maintenance and
+          technical training and we ensure your equipment performs flawlessly and
+          elevates patient care.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-10">
+        <script>
+          const services = [
+            ["fa-x-ray", "Diagnostic Imaging", "X-ray, Ultrasound, CT, MRI"],
+            ["fa-heartbeat", "Cardiology Equipment", "ECG, Defibrillators"],
+            ["fa-procedures", "Patient Care Devices", "Monitors, Beds"],
+            ["fa-lungs", "Respiratory Care", "Ventilators & Nebulizers"],
+            ["fa-vial", "Lab & Pathology Devices", "Analyzers & Microscopes"],
+            ["fa-hospital", "Hospital Furniture", "OT Tables, Stretchers"],
+            ["fa-brain", "Neurology Systems", "EEG, EMG & Diagnostics"],
+            ["fa-thermometer", "Temperature Management", "ICU Cooling Systems"],
+            ["fa-syringe", "Infusion & Injection Systems", "Smart Pumps"],
+          ];
+          document.write(
+            services
+              .map(
+                ([icon, title, desc]) => `
+          <div class="p-8 border border-gray-200 rounded-xl hover:shadow-xl hover:-translate-y-1 transition duration-500 ease-in-out">
+            <i class="fas ${icon} text-3xl text-primary mb-5"></i>
+            <h3 class="font-semibold text-xl">${title}</h3>
+            <p class="text-gray-600 text-sm mt-2">${desc}</p>
+          </div>
+        `
+              )
+              .join("")
+          );
+        </script>
+      </div>
+    </section>
+
+    <!-- HOW WE WORK — NEW PREMIUM TIMELINE -->
+    <section class="bg-primary text-white py-24">
+      <div class="max-w-6xl mx-auto px-6">
+        <h2 class="text-3xl font-bold mb-20 text-center">How We Work</h2>
+
+        <div class="relative">
+          <div
+            class="hidden md:block absolute top-0 left-1/2 -translate-x-1/2 h-full w-1 bg-white/25"
+          ></div>
+
+          <div class="space-y-20">
+            <!-- Step Template Start -->
+            <script>
+              const steps = [
+                [
+                  "fa-stethoscope",
+                  "Consult & Evaluate Needs",
+                  "We assess the exact requirements of your facility.",
+                ],
+                [
+                  "fa-truck-medical",
+                  "Delivery & Installation",
+                  "Installed safely by certified technicians.",
+                ],
+                [
+                  "fa-user-graduate",
+                  "Training & Activation",
+                  "Staff trained for confident usage.",
+                ],
+                [
+                  "fa-headset",
+                  "24/7 Technical Support",
+                  "Always available — no downtime.",
+                ],
+              ];
+              steps.forEach((i, index) => {
+                const [icon, title, desc] = i;
+                const reverse = index % 2 !== 0;
+                document.write(`
+                <div class="grid md:grid-cols-2 items-center gap-12">
+                  <div class="text-center ${
+                    reverse
+                      ? "md:order-2 md:text-left md:pl-10"
+                      : "md:text-right md:pr-10"
+                  }">
+                    <h3 class="text-xl font-semibold">${title}</h3>
+                    <p class="text-sm text-white/90 mt-2">${desc}</p>
+                  </div>
+
+                  <div class="flex justify-center ${
+                    reverse ? "" : "md:order-2"
+                  }">
+                    <div class="relative">
+                      <div class="bg-white text-primary p-5 rounded-full shadow-xl text-3xl">
+                        <i class="fa-solid ${icon}"></i>
+                      </div>
+                      <div class="hidden md:block h-16 border-l-2 border-white/30 absolute top-full left-1/2 -translate-x-1/2"></div>
+                    </div>
+                  </div>
+                </div>
+              `);
+              });
+            </script>
+            <!-- Step Template End -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA SECTION -->
+    <section class="text-center py-20">
+      <h2 class="text-3xl font-bold text-gray-900">
+        Ready to Upgrade Your Facility?
+      </h2>
+      <p class="text-gray-600 mt-3 mb-8">
+        Let’s build a safer and smarter healthcare environment.
+      </p>
+      <a href="./404.html"
+        class=" bg-primary text-white px-10 py-3 rounded-lg text-sm font-medium hover:bg-teal-900 transition"
+      >
+        Request Callback
+      </a>
+    </section>
+
+    <!-- COUNTER JS -->
+    <script>
+      const counters = document.querySelectorAll(".counter");
+      let started = false;
+
+      function startCounters() {
+        if (started) return;
+        if (window.scrollY + window.innerHeight >= counters[0].offsetTop) {
+          counters.forEach((counter) => {
+            const animate = () => {
+              const target = +counter.getAttribute("data-target");
+              const current = +counter.innerText;
+              const inc = target / 80;
+              if (current < target) {
+                counter.innerText = Math.ceil(current + inc);
+                requestAnimationFrame(animate);
+              }
+            };
+            animate();
+          });
+          started = true;
+        }
+      }
+      window.addEventListener("scroll", startCounters);
+    </script>
+
+    <!-- footer -->
+    <footer class="px-3 mt-10 overflow-hidden">
+      <div
+        class="flex justify-between flex-wrap w-full md:gap-20 gap-8 pb-6"
+        data-aos="fade-up"
+        data-aos-delay="150"
+      >
+        <div class="md:max-w-96 flex flex-col items-start space-y-2">
+          <img class="h-8" src="./assets/logo.webp" alt="logo" />
+          <p class="mt-2 text-sm md:text-lg">
+            MedEquip Store is a trusted provider of high-quality medical
+            equipment and supplies for hospitals, clinics, and home care. We are
+            committed to delivering reliable & safe.
+          </p>
+        </div>
+
+        <div class="flex flex-col lg:items-center lg:justify-center">
+          <div class="flex flex-col text-sm md:text-lg space-y-2.5 md:px-8">
+            <h2 class="font-semibold mb-5 text-primary uppercase">
+              Easier Acces
+            </h2>
+            <a class="hover:text-slate-600 transition" href="./index.html"
+              >Home</a
+            >
+            <a class="hover:text-slate-600 transition" href="./about.html"
+              >About us</a
+            >
+            <a class="hover:text-slate-600 transition" href="./service.html"
+              >Services<span
+                class="text-xs text-white bg-gray-600 rounded-bl-xl rounded-tr-xl ml-2 px-2 py-1"
+                >New</span
+              ></a
+            >
+            <a class="hover:text-slate-600 transition" href="./product.html"
+              >Products</a
+            >
+            <a class="hover:text-slate-600 transition" href="./contact.html"
+              >Contact us</a
+            >
+          </div>
+        </div>
+
+        <div>
+          <h2
+            class="font-semibold mb-5 text-sm md:text-lg text-primary uppercase"
+          >
+            Subscribe to our newsletter
+          </h2>
+          <div class="text-sm md:text-lg space-y-6 max-w-sm">
+            <p>
+              The latest news, articles, and resources, sent to your inbox
+              weekly.
+            </p>
+            <form
+              id="sub-form"
+              method="get"
+              action="./404.html"
+              class="flex items-center justify-center gap-2 p-2 rounded-xl bg-primary/5"
+            >
+              <input
+                pattern=".+@gmail\.com$"
+                title="Email must end with @gmail.com"
+                required
+                class="focus:ring-0 outline-none w-full max-w-64 py-2 rounded px-2"
+                type="email"
+                placeholder="Enter your email"
+              />
+              <button
+                type="submit"
+                class="bg-primary px-4 py-2 rounded-lg cursor-pointer transform hover:scale-95 transition duration-500 ease-out text-white"
+              >
+                Subscribe
+              </button>
+            </form>
+          </div>
+        </div>
+
+        <div class="flex items-start">
+          <div class="">
+            <h2
+              class="font-semibold mb-5 text-sm md:text-lg text-primary uppercase"
+            >
+              Get in touch
+            </h2>
+            <div class="text-sm md:text-lg space-y-2 flex flex-col items-start">
+              <a href="./404.html">+1-212-456-7890</a>
+              <a href="./404.html">contact@example.com</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="overflow-hidden">
+        <!-- Google Map -->
+        <div
+          data-aos="fade-up"
+          data-aos-delay="200"
+          class="rounded-2xl w-full overflow-hidden shadow-lg mb-3"
+        >
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3907.1616097152896!2d78.1739798!3d11.682956599999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3babefef7fd970bb%3A0xe11aef1a71994f9!2sStackly!5e0!3m2!1sen!2sin!4v1755667813665!5m2!1sen!2sin"
+            width="100%"
+            height="250"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+      </div>
+
+      <div
+        class="flex items-center justify-center text-center border-t border-gray-500/30"
+      >
+        <div>
+          <p class="pt-4 text-lg pb-4">
+            Copyright 2025 © <a href="./404.html">Stackly</a>. All Right
+            Reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Aos Animation  -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"
+      integrity="sha512-A7AYk1fGKX6S2SsHywmPkrnzTZHrgiVT7GcQkLGDe2ev0aWb8zejytzS8wjo7PGEXKqJOrjQ4oORtnimIRZBtw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <!-- mobile menu script -->
+    <script>
+      // sub-form reset
+      const form = document.querySelector("#sub-form");
+      form.addEventListener("submit", () => {
+        form.reset();
+      });
+
+      // Aos Animation Init
+      AOS.init({
+        duration: 800,
+        delay: 200, // default delay for all elements
+        once: false,
+        mirror: true,
+      });
+
+      // Hamburger Menu Toggle
+      const hamburger = document.getElementById("hamburger");
+      const mobileMenu = document.getElementById("mobileMenu");
+      const links = mobileMenu.querySelectorAll(".nav-link");
+
+      hamburger.addEventListener("click", () => {
+        hamburger.classList.toggle("active");
+        mobileMenu.classList.toggle("open");
+      });
+
+      links.forEach((link) => {
+        link.addEventListener("click", () => {
+          hamburger.classList.remove("active");
+          mobileMenu.classList.remove("open");
+        });
+      });
+
+      // Optional: close menu if clicked outside
+      window.addEventListener("click", (e) => {
+        if (!homeToggle.contains(e.target) && !homeMenu.contains(e.target)) {
+          homeMenu.classList.add("hidden");
+        }
+      });
+    </script>
+  </body>
+</html>

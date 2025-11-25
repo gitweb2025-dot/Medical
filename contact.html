@@ -1,0 +1,1146 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Medical</title>
+
+    <meta
+      name="medical care"
+      content="It provides high-quality medical services, advanced healthcare equipment, diagnostic tools, and professional support for hospitals, clinics, and home care needs."
+    />
+    <meta
+      name="keywords"
+      content="medical services, medical equipment, healthcare devices, diagnostic tools, hospital supplies, clinic equipment, medical technology"
+    />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Advanced Medical Services & Equipment" />
+    <meta
+      property="og:description"
+      content="Trusted provider of medical services, diagnostic solutions, and world-class healthcare equipment for hospitals, clinics, and home care."
+    />
+
+    <!-- Font Awesome Cdn Link -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+      integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- Aos Cdn Link -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
+      integrity="sha512-1cK78a1o+ht2JcaW6g8OXYwqpev9+6GqOkz9xmBN9iUUhIndKtxwILGWYOSibOKjLsEdjyjZvYDq/cZwNeak0w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Tailwind CSS  -->
+    <link rel="stylesheet" href="./src/output.css" />
+
+    <!-- <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script> -->
+
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Lora:ital,wght@0,400..700;1,400..700&family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap");
+
+      @import url("https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap");
+
+      body {
+        font-family: "EB Garamond", serif;
+        overflow-x: hidden;
+      }
+
+      /* Hamburger animation */
+      .hamburger span {
+        display: block;
+        width: 1.5rem;
+        height: 0.125rem;
+        margin: 0.4rem auto;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        background-color: currentColor;
+      }
+
+      .hamburger.active span:nth-child(1) {
+        transform: rotate(45deg) translate(6px, 6px);
+      }
+
+      .hamburger.active span:nth-child(2) {
+        opacity: 0;
+      }
+
+      .hamburger.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(6px, -6px);
+      }
+
+      /* Mobile menu slide + fade */
+      .mobile-menu {
+        max-height: 0;
+        opacity: 0;
+        /* height: 100vh; */
+        transform: translateX(-100%);
+        /* overflow: hidden; */
+        transition: all 0.8s ease-in-out;
+      }
+
+      .mobile-menu.open {
+        /* max-height: 1000px; */
+        /* enough for nav links */
+        opacity: 1;
+        transform: translateX(0);
+      }
+    </style>
+  </head>
+
+  <body class="antialiased bg-white text-black">
+    <!-- Navbar  -->
+    <header class="sticky top-0 z-40 w-full mx-auto">
+      <div
+        class="flex items-center justify-between h-16 px-5 bg-white shadow-lg shadow-tertiary backdrop-blur-2xl"
+      >
+        <!-- Logo -->
+        <a class="" href="./index.html">
+          <img class="h-8" src="./assets/logo.webp" alt="logo" />
+        </a>
+
+        <!-- Desktop Nav -->
+        <nav
+          class="hidden md:flex items-center space-x-2 md:space-x-3 lg:space-x-5 text-sm font-medium"
+        >
+          <!-- Home with Dropdown -->
+          <div class="relative">
+            <!-- Parent Button -->
+            <button
+              class="relative inline-block after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full cursor-pointer"
+            >
+              <a href="./index.html">Home</a>
+              <i id="homeToggle" class="fa-solid fa-caret-down"></i>
+            </button>
+
+            <!-- Dropdown Menu -->
+            <ul
+              id="homeMenu"
+              class="absolute hidden bg-white text-black backdrop-blur-2xl shadow-lg mt-2 rounded w-40 z-40"
+            >
+              <li>
+                <a href="" class="block px-4 py-2"> Home 2 </a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- About -->
+          <a
+            href="./about.html"
+            class="relative  inline-block after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full"
+          >
+            About
+          </a>
+
+          <!-- Services -->
+          <a
+            href="./service.html"
+            class="relative inline-block after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full"
+          >
+            Services
+          </a>
+          <!-- Products -->
+          <a
+            href="./product.html"
+            class="relative inline-block after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full"
+          >
+            Products
+          </a>
+          <!-- Contact -->
+          <a
+            href="./contact.html"
+            class="relative text-primary inline-block after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full"
+          >
+            Contact
+          </a>
+          <!-- Dashboard -->
+          <a
+            href="./dashboard.html"
+            class="relative inline-block after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full"
+          >
+            Dashboard
+          </a>
+        </nav>
+
+        <!-- login -->
+        <div class="flex text-sm gap-4 font-medium">
+          <div class="relative flex items-center gap-2">
+            <a
+              class="md:flex items-center gap-2 rounded-3xl text-sm transform hover:scale-95 transition duration-200 ease-out hidden"
+              href="./signin.html"
+              ><svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="size-6"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
+                />
+              </svg>
+              Login
+            </a>
+          </div>
+
+          <!-- Hamburger -->
+          <button
+            id="hamburger"
+            class="hamburger cursor-pointer lg:hidden focus:outline-none"
+            aria-label="Menu"
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Menu -->
+      <nav id="mobileMenu" class="mobile-menu h-screen lg:hidden shadow-md">
+        <ul
+          class="flex flex-col space-y-4 p-3 text-sm font-medium h-screen md:w-1/2 bg-white backdrop-blur-2xl"
+        >
+          <!-- Home dropDown  -->
+          <div class="relative">
+            <button class="flex items-center gap-1 w-full text-left lg:hidden">
+              <a href="./index.html">Home</a>
+              <i
+                id="mobileToggle"
+                class="fa-solid fa-caret-down cursor-pointer"
+              ></i>
+            </button>
+
+            <!-- Dropdown Menu -->
+            <ul
+              id="mobileLink"
+              class="hidden bg-white text-black mt-2 rounded w-full md:absolute"
+            >
+              <li>
+                <a href="" class="block px-2 py-2"> Home 2 </a>
+              </li>
+            </ul>
+          </div>
+          <!-- About -->
+          <li>
+            <a href="./about.html" class="nav-link block">About</a>
+          </li>
+          <!-- Services -->
+          <li>
+            <a href="./service.html" class="nav-link block">Services</a>
+          </li>
+          <!-- Products -->
+          <li>
+            <a href="./product.html" class="nav-link block">Products</a>
+          </li>
+          <!-- Contact -->
+          <li>
+            <a href="./contact.html" class="nav-link block">Contact</a>
+          </li>
+          <!-- Dashboard -->
+          <li>
+            <a href="./dashboard.html" class="nav-link block">Dashboard</a>
+          </li>
+          <!-- login  -->
+          <li>
+            <a href="./signin.html" class="flex items-center gap-2 nav-link"
+              ><svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="size-5"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
+                />
+              </svg>
+              Login</a
+            >
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Dropdown script  -->
+      <script>
+        const homeToggle = document.getElementById("homeToggle");
+        const homeMenu = document.getElementById("homeMenu");
+
+        homeToggle.addEventListener("click", () => {
+          homeMenu.classList.toggle("hidden");
+        });
+
+        const mobileToggle = document.getElementById("mobileToggle");
+        const mobileLink = document.getElementById("mobileLink");
+
+        // Home dropdown toggle (mobile only)
+        mobileToggle.addEventListener("click", () => {
+          mobileLink.classList.toggle("hidden");
+        });
+
+        // Optional: close menu if clicked outside
+        window.addEventListener("click", (e) => {
+          if (!homeToggle.contains(e.target) && !homeMenu.contains(e.target)) {
+            homeMenu.classList.add("hidden");
+          }
+        });
+      </script>
+    </header>
+
+    <!-- Contact -->
+    <section class="px-3 py-8 md:py-16 overflow-hidden">
+      <div id="contact-form" class="mx-auto bg-white ">
+        <div class="text-center">
+          <h2
+            data-aos="fade-left"
+            data-aos-delay="50"
+            class="text-2xl md:text-3xl font-semibold uppercase font-primary"
+          >
+            Contact Us
+          </h2>
+          <p
+            data-aos="fade-right"
+            data-aos-delay="100"
+            class="text-sm md:text-lg text-slate-600 mt-4"
+          >
+            Have some big idea or brand to develop and need help?
+          </p>
+        </div>
+
+         <!-- static contact cards   -->
+        <div
+          class="mt-10 grid grid-cols-1 smmd:grid-cols-2 lg:grid-cols-3 gap-6 bg-white/5 py-4 rounded-2xl w-full overflow-hidden"
+        >
+          <div
+            data-aos="zoom-in"
+            data-aos-delay="50"
+            class="flex flex-col items-start md:items-center shadow-lg shadow-tertiary p-4 rounded-2xl"
+          >
+            <svg
+              class="text-white bg-primary p-2.5 aspect-square rounded-full size-10"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M21 4.125H3A1.125 1.125 0 0 0 1.875 5.25V18a1.875 1.875 0 0 0 1.875 1.875h16.5A1.875 1.875 0 0 0 22.125 18V5.25A1.125 1.125 0 0 0 21 4.125m-2.892 2.25L12 11.974 5.892 6.375zM4.125 17.625V7.808l7.115 6.522a1.125 1.125 0 0 0 1.52 0l7.115-6.522v9.817z"
+                fill="currentColor"
+              />
+            </svg>
+            <p class="text-lg font-bold mt-2">Email Support</p>
+            <p class="text-gray-400 mt-1 mb-4">
+              Our team can respond in real time.
+            </p>
+            <a href="../404.html" class="text-gray-500 font-semibold">
+              contact@eventiz.com
+            </a>
+          </div>
+          <div
+            data-aos="zoom-in"
+            data-aos-delay="150"
+            class="flex flex-col items-start md:items-center  shadow-lg shadow-tertiary p-4 rounded-2xl"
+          >
+            <svg
+              class="text-white bg-primary p-2.5 aspect-square rounded-full size-10"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M22.875 19.125H21.75V9.309a1.125 1.125 0 0 0-.375-2.184h-3.75V4.809a1.125 1.125 0 0 0-.375-2.184H3.75a1.125 1.125 0 0 0-.375 2.184v14.316H2.25a1.125 1.125 0 1 0 0 2.25h20.625a1.125 1.125 0 1 0 0-2.25M19.5 9.375v9.75h-1.875v-9.75zm-13.875-4.5h9.75v14.25h-1.5V15a1.125 1.125 0 0 0-1.125-1.125h-4.5A1.125 1.125 0 0 0 7.125 15v4.125h-1.5zm6 14.25h-2.25v-3h2.25zM6.75 7.5a1.125 1.125 0 0 1 1.125-1.125h.75a1.125 1.125 0 0 1 0 2.25h-.75A1.125 1.125 0 0 1 6.75 7.5m4.5 0a1.125 1.125 0 0 1 1.125-1.125h.75a1.125 1.125 0 0 1 0 2.25h-.75A1.125 1.125 0 0 1 11.25 7.5m-4.5 3.75a1.125 1.125 0 0 1 1.125-1.125h.75a1.125 1.125 0 1 1 0 2.25h-.75A1.125 1.125 0 0 1 6.75 11.25m4.5 0a1.125 1.125 0 0 1 1.125-1.125h.75a1.125 1.125 0 1 1 0 2.25h-.75a1.125 1.125 0 0 1-1.125-1.125"
+                fill="currentColor"
+              />
+            </svg>
+            <p class="text-lg font-bold mt-2">Visit Our Office</p>
+            <p class="text-gray-400 mt-1 mb-4">
+              Visit our location in real life.
+            </p>
+            <span class="text-gray-500 font-semibold">
+              221b Elementary Avenue, NY
+            </span>
+          </div>
+          <div
+            data-aos="zoom-in"
+            data-aos-delay="250"
+            class="flex flex-col items-start md:items-center shadow-lg shadow-tertiary p-4 rounded-2xl"
+          >
+            <svg
+              class="text-white bg-primary p-2.5 aspect-square rounded-full size-10"
+              width="21"
+              height="21"
+              viewBox="0 0 21 21"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="m19 13.513-4.415-1.98-.017-.007a1.87 1.87 0 0 0-1.886.243l-2.091 1.781c-1.22-.66-2.478-1.91-3.14-3.113l1.787-2.125q.043-.051.08-.108a1.88 1.88 0 0 0 .148-1.782L7.488 2A1.88 1.88 0 0 0 5.539.89 5.65 5.65 0 0 0 .625 6.5c0 7.651 6.224 13.875 13.875 13.875a5.65 5.65 0 0 0 5.61-4.914A1.88 1.88 0 0 0 19 13.513m-4.5 4.612A11.64 11.64 0 0 1 2.875 6.5a3.4 3.4 0 0 1 2.67-3.332l1.764 3.938-1.796 2.14q-.044.051-.08.108a1.88 1.88 0 0 0-.12 1.841c.883 1.808 2.702 3.615 4.529 4.5a1.88 1.88 0 0 0 1.845-.136q.055-.036.105-.08l2.102-1.787 3.938 1.763a3.4 3.4 0 0 1-3.332 2.67"
+                fill="currentColor"
+              />
+            </svg>
+            <p class="text-lg font-bold mt-2">Call Us Directly</p>
+            <p class="text-gray-400 mt-1 mb-4">
+              Available during working hours.
+            </p>
+            <a href="../404.html" class="text-gray-500 font-semibold">
+              (+1) 234 - 4567 - 789
+            </a>
+          </div>
+        </div>
+
+        <div
+          class="grid lg:grid-cols-5 items-center p-2  shadow-lg shadow-tertiary rounded-lg mt-12"
+        >
+          <div
+            data-aos="zoom-in"
+            class="lg:col-span-2 rounded-lg p-6 h-full max-lg:order-1 relative overflow-hidden max-lg:mt-12"
+          >
+            <h3 class="text-[24px] text-white font-medium">
+              Contact Information
+            </h3>
+            <p class="text-[15px] text-slate-300 leading-relaxed mt-4">
+              Have some big idea or brand to develop and need help?
+            </p>
+            <div class="mt-16 relative z-50 text-white">
+              <ul class="space-y-8">
+                <li class="flex items-center hover:text-white">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="currentColor"
+                    width="16px"
+                    height="16px"
+                    viewBox="0 0 479.058 479.058"
+                  >
+                    <path
+                      d="M434.146 59.882H44.912C20.146 59.882 0 80.028 0 104.794v269.47c0 24.766 20.146 44.912 44.912 44.912h389.234c24.766 0 44.912-20.146 44.912-44.912v-269.47c0-24.766-20.146-44.912-44.912-44.912zm0 29.941c2.034 0 3.969.422 5.738 1.159L239.529 264.631 39.173 90.982a14.902 14.902 0 0 1 5.738-1.159zm0 299.411H44.912c-8.26 0-14.971-6.71-14.971-14.971V122.615l199.778 173.141c2.822 2.441 6.316 3.655 9.81 3.655s6.988-1.213 9.81-3.655l199.778-173.141v251.649c-.001 8.26-6.711 14.97-14.971 14.97z"
+                      data-original="#000000"
+                    />
+                  </svg>
+                  <a href="javascript:void(0)" class="text-[15px] ml-4">
+                    info@example.com
+                  </a>
+                </li>
+                <li class="flex items-center hover:text-white">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="currentColor"
+                    width="16px"
+                    height="16px"
+                    viewBox="0 0 482.6 482.6"
+                  >
+                    <path
+                      d="M98.339 320.8c47.6 56.9 104.9 101.7 170.3 133.4 24.9 11.8 58.2 25.8 95.3 28.2 2.3.1 4.5.2 6.8.2 24.9 0 44.9-8.6 61.2-26.3.1-.1.3-.3.4-.5 5.8-7 12.4-13.3 19.3-20 4.7-4.5 9.5-9.2 14.1-14 21.3-22.2 21.3-50.4-.2-71.9l-60.1-60.1c-10.2-10.6-22.4-16.2-35.2-16.2-12.8 0-25.1 5.6-35.6 16.1l-35.8 35.8c-3.3-1.9-6.7-3.6-9.9-5.2-4-2-7.7-3.9-11-6-32.6-20.7-62.2-47.7-90.5-82.4-14.3-18.1-23.9-33.3-30.6-48.8 9.4-8.5 18.2-17.4 26.7-26.1 3-3.1 6.1-6.2 9.2-9.3 10.8-10.8 16.6-23.3 16.6-36s-5.7-25.2-16.6-36l-29.8-29.8c-3.5-3.5-6.8-6.9-10.2-10.4-6.6-6.8-13.5-13.8-20.3-20.1-10.3-10.1-22.4-15.4-35.2-15.4-12.7 0-24.9 5.3-35.6 15.5l-37.4 37.4c-13.6 13.6-21.3 30.1-22.9 49.2-1.9 23.9 2.5 49.3 13.9 80 17.5 47.5 43.9 91.6 83.1 138.7zm-72.6-216.6c1.2-13.3 6.3-24.4 15.9-34l37.2-37.2c5.8-5.6 12.2-8.5 18.4-8.5 6.1 0 12.3 2.9 18 8.7 6.7 6.2 13 12.7 19.8 19.6 3.4 3.5 6.9 7 10.4 10.6l29.8 29.8c6.2 6.2 9.4 12.5 9.4 18.7s-3.2 12.5-9.4 18.7c-3.1 3.1-6.2 6.3-9.3 9.4-9.3 9.4-18 18.3-27.6 26.8l-.5.5c-8.3 8.3-7 16.2-5 22.2.1.3.2.5.3.8 7.7 18.5 18.4 36.1 35.1 57.1 30 37 61.6 65.7 96.4 87.8 4.3 2.8 8.9 5 13.2 7.2 4 2 7.7 3.9 11 6 .4.2.7.4 1.1.6 3.3 1.7 6.5 2.5 9.7 2.5 8 0 13.2-5.1 14.9-6.8l37.4-37.4c5.8-5.8 12.1-8.9 18.3-8.9 7.6 0 13.8 4.7 17.7 8.9l60.3 60.2c12 12 11.9 25-.3 37.7-4.2 4.5-8.6 8.8-13.3 13.3-7 6.8-14.3 13.8-20.9 21.7-11.5 12.4-25.2 18.2-42.9 18.2-1.7 0-3.5-.1-5.2-.2-32.8-2.1-63.3-14.9-86.2-25.8-62.2-30.1-116.8-72.8-162.1-127-37.3-44.9-62.4-86.7-79-131.5-10.3-27.5-14.2-49.6-12.6-69.7z"
+                      data-original="#000000"
+                    ></path>
+                  </svg>
+                  <a href="javascript:void(0)" class="text-[15px] ml-4">
+                    +158 996 888
+                  </a>
+                </li>
+                <li class="flex items-center hover:text-white">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="currentColor"
+                    width="16px"
+                    height="16px"
+                    viewBox="0 0 368.16 368.16"
+                  >
+                    <path
+                      d="M184.08 0c-74.992 0-136 61.008-136 136 0 24.688 11.072 51.24 11.536 52.36 3.576 8.488 10.632 21.672 15.72 29.4l93.248 141.288c3.816 5.792 9.464 9.112 15.496 9.112s11.68-3.32 15.496-9.104l93.256-141.296c5.096-7.728 12.144-20.912 15.72-29.4.464-1.112 11.528-27.664 11.528-52.36 0-74.992-61.008-136-136-136zM293.8 182.152c-3.192 7.608-9.76 19.872-14.328 26.8l-93.256 141.296c-1.84 2.792-2.424 2.792-4.264 0L88.696 208.952c-4.568-6.928-11.136-19.2-14.328-26.808-.136-.328-10.288-24.768-10.288-46.144 0-66.168 53.832-120 120-120s120 53.832 120 120c0 21.408-10.176 45.912-10.28 46.152z"
+                      data-original="#000000"
+                    ></path>
+                    <path
+                      d="M184.08 64.008c-39.704 0-72 32.304-72 72s32.296 72 72 72 72-32.304 72-72-32.296-72-72-72zm0 128c-30.872 0-56-25.12-56-56s25.128-56 56-56 56 25.12 56 56-25.128 56-56 56z"
+                      data-original="#000000"
+                    ></path>
+                  </svg>
+                  <a href="javascript:void(0)" class="text-[15px] ml-4">
+                    123 Street 256 House
+                  </a>
+                </li>
+              </ul>
+
+              <ul class="flex flex-wrap gap-y-4 gap-x-5 mt-16">
+                <li
+                  class="bg-slate-200 hover:bg-white h-9 w-9 rounded-full flex items-center justify-center shrink-0"
+                >
+                  <a href="javascript:void(0)">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="w-[18px] h-[18px] fill-slate-900"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M6.812 13.937H9.33v9.312c0 .414.335.75.75.75l4.007.001a.75.75 0 0 0 .75-.75v-9.312h2.387a.75.75 0 0 0 .744-.657l.498-4a.75.75 0 0 0-.744-.843h-2.885c.113-2.471-.435-3.202 1.172-3.202 1.088-.13 2.804.421 2.804-.75V.909a.75.75 0 0 0-.648-.743A26.926 26.926 0 0 0 15.071 0c-7.01 0-5.567 7.772-5.74 8.437H6.812a.75.75 0 0 0-.75.75v4c0 .414.336.75.75.75zm.75-3.999h2.518a.75.75 0 0 0 .75-.75V6.037c0-2.883 1.545-4.536 4.24-4.536.878 0 1.686.043 2.242.087v2.149c-.402.205-3.976-.884-3.976 2.697v2.755c0 .414.336.75.75.75h2.786l-.312 2.5h-2.474a.75.75 0 0 0-.75.75V22.5h-2.505v-9.312a.75.75 0 0 0-.75-.75H7.562z"
+                        data-original="#000000"
+                      />
+                    </svg>
+                  </a>
+                </li>
+                <li
+                  class="bg-slate-200 hover:bg-white h-9 w-9 rounded-full flex items-center justify-center shrink-0"
+                >
+                  <a href="javascript:void(0)">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="w-[18px] h-[18px] fill-slate-900"
+                      viewBox="0 0 511 512"
+                    >
+                      <path
+                        d="M111.898 160.664H15.5c-8.285 0-15 6.719-15 15V497c0 8.285 6.715 15 15 15h96.398c8.286 0 15-6.715 15-15V175.664c0-8.281-6.714-15-15-15zM96.898 482H30.5V190.664h66.398zM63.703 0C28.852 0 .5 28.352.5 63.195c0 34.852 28.352 63.2 63.203 63.2 34.848 0 63.195-28.352 63.195-63.2C126.898 28.352 98.551 0 63.703 0zm0 96.395c-18.308 0-33.203-14.891-33.203-33.2C30.5 44.891 45.395 30 63.703 30c18.305 0 33.195 14.89 33.195 33.195 0 18.309-14.89 33.2-33.195 33.2zm289.207 62.148c-22.8 0-45.273 5.496-65.398 15.777-.684-7.652-7.11-13.656-14.942-13.656h-96.406c-8.281 0-15 6.719-15 15V497c0 8.285 6.719 15 15 15h96.406c8.285 0 15-6.715 15-15V320.266c0-22.735 18.5-41.23 41.235-41.23 22.734 0 41.226 18.495 41.226 41.23V497c0 8.285 6.719 15 15 15h96.403c8.285 0 15-6.715 15-15V302.066c0-79.14-64.383-143.523-143.524-143.523zM466.434 482h-66.399V320.266c0-39.278-31.953-71.23-71.226-71.23-39.282 0-71.239 31.952-71.239 71.23V482h-66.402V190.664h66.402v11.082c0 5.77 3.309 11.027 8.512 13.524a15.01 15.01 0 0 0 15.875-1.82c20.313-16.294 44.852-24.907 70.953-24.907 62.598 0 113.524 50.926 113.524 113.523zm0 0"
+                        data-original="#000000"
+                      />
+                    </svg>
+                  </a>
+                </li>
+                <li
+                  class="bg-slate-200 hover:bg-white h-9 w-9 rounded-full flex items-center justify-center shrink-0"
+                >
+                  <a href="javascript:void(0)">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="w-[18px] h-[18px] fill-slate-900"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="M12 9.3a2.7 2.7 0 1 0 0 5.4 2.7 2.7 0 0 0 0-5.4Zm0-1.8a4.5 4.5 0 1 1 0 9 4.5 4.5 0 0 1 0-9Zm5.85-.225a1.125 1.125 0 1 1-2.25 0 1.125 1.125 0 0 1 2.25 0ZM12 4.8c-2.227 0-2.59.006-3.626.052-.706.034-1.18.128-1.618.299a2.59 2.59 0 0 0-.972.633 2.601 2.601 0 0 0-.634.972c-.17.44-.265.913-.298 1.618C4.805 9.367 4.8 9.714 4.8 12c0 2.227.006 2.59.052 3.626.034.705.128 1.18.298 1.617.153.392.333.674.632.972.303.303.585.484.972.633.445.172.918.267 1.62.3.993.047 1.34.052 3.626.052 2.227 0 2.59-.006 3.626-.052.704-.034 1.178-.128 1.617-.298.39-.152.674-.333.972-.632.304-.303.485-.585.634-.972.171-.444.266-.918.299-1.62.047-.993.052-1.34.052-3.626 0-2.227-.006-2.59-.052-3.626-.034-.704-.128-1.18-.299-1.618a2.619 2.619 0 0 0-.633-.972 2.595 2.595 0 0 0-.972-.634c-.44-.17-.914-.265-1.618-.298-.993-.047-1.34-.052-3.626-.052ZM12 3c2.445 0 2.75.009 3.71.054.958.045 1.61.195 2.185.419A4.388 4.388 0 0 1 19.49 4.51c.457.45.812.994 1.038 1.595.222.573.373 1.227.418 2.185.042.96.054 1.265.054 3.71 0 2.445-.009 2.75-.054 3.71-.045.958-.196 1.61-.419 2.185a4.395 4.395 0 0 1-1.037 1.595 4.44 4.44 0 0 1-1.595 1.038c-.573.222-1.227.373-2.185.418-.96.042-1.265.054-3.71.054-2.445 0-2.75-.009-3.71-.054-.958-.045-1.61-.196-2.185-.419A4.402 4.402 0 0 1 4.51 19.49a4.414 4.414 0 0 1-1.037-1.595c-.224-.573-.374-1.227-.419-2.185C3.012 14.75 3 14.445 3 12c0-2.445.009-2.75.054-3.71s.195-1.61.419-2.185A4.392 4.392 0 0 1 4.51 4.51c.45-.458.994-.812 1.595-1.037.574-.224 1.226-.374 2.185-.419C9.25 3.012 9.555 3 12 3Z"
+                      ></path>
+                    </svg>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="absolute inset-0">
+              <img
+                class="w-full h-full object-cover object-[20%_40%]"
+                src="./assets/contact1.webp"
+                alt="contact"
+              />
+            </div>
+          </div>
+
+          <div class="px-4 py-4 lg:col-span-3">
+            <form id="contact-form1" method="get" action="./404.html">
+              <div class="grid md:grid-cols-2 gap-8">
+                <div class="relative flex items-center">
+                  <input
+                    required
+                    type="text"
+                    placeholder="First Name"
+                    class="px-2 py-3 bg-white w-full text-sm text-slate-900 border-b border-gray-300 focus:border-slate-900 outline-none"
+                  />
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="#bbb"
+                    stroke="#bbb"
+                    class="w-4 h-4 absolute right-2"
+                    viewBox="0 0 24 24"
+                  >
+                    <circle
+                      cx="10"
+                      cy="7"
+                      r="6"
+                      data-original="#000000"
+                    ></circle>
+                    <path
+                      d="M14 15H6a5 5 0 0 0-5 5 3 3 0 0 0 3 3h12a3 3 0 0 0 3-3 5 5 0 0 0-5-5zm8-4h-2.59l.3-.29a1 1 0 0 0-1.42-1.42l-2 2a1 1 0 0 0 0 1.42l2 2a1 1 0 0 0 1.42 0 1 1 0 0 0 0-1.42l-.3-.29H22a1 1 0 0 0 0-2z"
+                      data-original="#000000"
+                    ></path>
+                  </svg>
+                </div>
+                <div class="relative flex items-center">
+                  <input
+                    required
+                    type="text"
+                    placeholder="Last Name"
+                    class="px-2 py-3 bg-white w-full text-sm text-slate-900 border-b border-gray-300 focus:border-slate-900 outline-none"
+                  />
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="#bbb"
+                    stroke="#bbb"
+                    class="w-4 h-4 absolute right-2"
+                    viewBox="0 0 24 24"
+                  >
+                    <circle
+                      cx="10"
+                      cy="7"
+                      r="6"
+                      data-original="#000000"
+                    ></circle>
+                    <path
+                      d="M14 15H6a5 5 0 0 0-5 5 3 3 0 0 0 3 3h12a3 3 0 0 0 3-3 5 5 0 0 0-5-5zm8-4h-2.59l.3-.29a1 1 0 0 0-1.42-1.42l-2 2a1 1 0 0 0 0 1.42l2 2a1 1 0 0 0 1.42 0 1 1 0 0 0 0-1.42l-.3-.29H22a1 1 0 0 0 0-2z"
+                      data-original="#000000"
+                    ></path>
+                  </svg>
+                </div>
+                <div class="relative flex items-center">
+                  <input
+                    required
+                    type="number"
+                    placeholder="Phone No."
+                    class="px-2 py-3 bg-white w-full text-sm text-slate-900 border-b border-gray-300 focus:border-slate-900 outline-none [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:m-0 [appearance:textfield]"
+                  />
+                  <svg
+                    fill="#bbb"
+                    class="w-4 h-4 absolute right-2"
+                    viewBox="0 0 64 64"
+                  >
+                    <path
+                      d="m52.148 42.678-6.479-4.527a5 5 0 0 0-6.963 1.238l-1.504 2.156c-2.52-1.69-5.333-4.05-8.014-6.732-2.68-2.68-5.04-5.493-6.73-8.013l2.154-1.504a4.96 4.96 0 0 0 2.064-3.225 4.98 4.98 0 0 0-.826-3.739l-4.525-6.478C20.378 10.5 18.85 9.69 17.24 9.69a4.69 4.69 0 0 0-1.628.291 8.97 8.97 0 0 0-1.685.828l-.895.63a6.782 6.782 0 0 0-.63.563c-1.092 1.09-1.866 2.472-2.303 4.104-1.865 6.99 2.754 17.561 11.495 26.301 7.34 7.34 16.157 11.9 23.011 11.9 1.175 0 2.281-.136 3.29-.406 1.633-.436 3.014-1.21 4.105-2.302.199-.199.388-.407.591-.67l.63-.899a9.007 9.007 0 0 0 .798-1.64c.763-2.06-.007-4.41-1.871-5.713z"
+                      data-original="#000000"
+                    ></path>
+                  </svg>
+                </div>
+                <div class="relative flex items-center">
+                  <input
+                    type="email"
+                    placeholder="Email"
+                    required
+                    pattern=".+@gmail\.com$"
+                    title="Email must end with @gmail.com"
+                    class="px-2 py-3 bg-white w-full text-sm text-slate-900 border-b border-gray-300 focus:border-slate-900 outline-none"
+                  />
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="#bbb"
+                    stroke="#bbb"
+                    class="w-4 h-4 absolute right-2"
+                    viewBox="0 0 682.667 682.667"
+                  >
+                    <defs>
+                      <clipPath id="a" clipPathUnits="userSpaceOnUse">
+                        <path
+                          d="M0 512h512V0H0Z"
+                          data-original="#000000"
+                        ></path>
+                      </clipPath>
+                    </defs>
+                    <g
+                      clip-path="url(#a)"
+                      transform="matrix(1.33 0 0 -1.33 0 682.667)"
+                    >
+                      <path
+                        fill="none"
+                        stroke-miterlimit="10"
+                        stroke-width="40"
+                        d="M452 444H60c-22.091 0-40-17.909-40-40v-39.446l212.127-157.782c14.17-10.54 33.576-10.54 47.746 0L492 364.554V404c0 22.091-17.909 40-40 40Z"
+                        data-original="#000000"
+                      ></path>
+                      <path
+                        d="M472 274.9V107.999c0-11.027-8.972-20-20-20H60c-11.028 0-20 8.973-20 20V274.9L0 304.652V107.999c0-33.084 26.916-60 60-60h392c33.084 0 60 26.916 60 60v196.653Z"
+                        data-original="#000000"
+                      ></path>
+                    </g>
+                  </svg>
+                </div>
+                <div class="relative flex items-center col-span-full">
+                  <textarea
+                    required
+                    placeholder="Write Message"
+                    class="px-2 pt-3 bg-white w-full text-sm text-slate-900 border-b border-gray-300 focus:border-slate-900 outline-none"
+                  ></textarea>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="#bbb"
+                    stroke="#bbb"
+                    class="w-4 h-4 absolute right-2"
+                    viewBox="0 0 682.667 682.667"
+                  >
+                    <defs>
+                      <clipPath id="a" clipPathUnits="userSpaceOnUse">
+                        <path
+                          d="M0 512h512V0H0Z"
+                          data-original="#000000"
+                        ></path>
+                      </clipPath>
+                    </defs>
+                    <g
+                      clip-path="url(#a)"
+                      transform="matrix(1.33 0 0 -1.33 0 682.667)"
+                    >
+                      <path
+                        fill="none"
+                        stroke-miterlimit="10"
+                        stroke-width="40"
+                        d="M452 444H60c-22.091 0-40-17.909-40-40v-39.446l212.127-157.782c14.17-10.54 33.576-10.54 47.746 0L492 364.554V404c0 22.091-17.909 40-40 40Z"
+                        data-original="#000000"
+                      ></path>
+                      <path
+                        d="M472 274.9V107.999c0-11.027-8.972-20-20-20H60c-11.028 0-20 8.973-20 20V274.9L0 304.652V107.999c0-33.084 26.916-60 60-60h392c33.084 0 60 26.916 60 60v196.653Z"
+                        data-original="#000000"
+                      ></path>
+                    </g>
+                  </svg>
+                </div>
+
+                <div class="col-span-full">
+                  <h6 class="text-[15px] text-slate-900 font-medium">
+                    Select Subject
+                  </h6>
+                  <div class="flex flex-wrap gap-6 mt-4">
+                    <div class="flex items-center">
+                      <input
+                        required
+                        id="radio1"
+                        type="radio"
+                        name="value1"
+                        class="hidden peer"
+                        checked
+                      />
+                      <label
+                        for="radio1"
+                        class="relative p-0.5 flex items-center justify-center shrink-0 peer-checked:before:hidden before:block before:absolute before:w-full before:h-full before:bg-white w-5 h-5 cursor-pointer border-2 border-[#011c2b] rounded-full overflow-hidden"
+                      >
+                        <span
+                          class="border-4 border-[#011c2b] rounded-full w-full h-full"
+                        ></span>
+                      </label>
+                      <p class="text-sm text-slate-600 ml-3">General Inquiry</p>
+                    </div>
+                    <div class="flex items-center">
+                      <input
+                        id="radio2"
+                        type="radio"
+                        name="value1"
+                        class="hidden peer"
+                      />
+                      <label
+                        for="radio2"
+                        class="relative p-0.5 flex items-center justify-center shrink-0 peer-checked:before:hidden before:block before:absolute before:w-full before:h-full before:bg-white w-5 h-5 cursor-pointer border-2 border-[#011c2b] rounded-full overflow-hidden"
+                      >
+                        <span
+                          class="border-4 border-[#011c2b] rounded-full w-full h-full"
+                        ></span>
+                      </label>
+                      <p class="text-sm text-slate-600 ml-3">
+                        Technical Support
+                      </p>
+                    </div>
+                    <div class="flex items-center">
+                      <input
+                        id="radio3"
+                        type="radio"
+                        name="value1"
+                        class="hidden peer"
+                      />
+                      <label
+                        for="radio3"
+                        class="relative p-0.5 flex items-center justify-center shrink-0 peer-checked:before:hidden before:block before:absolute before:w-full before:h-full before:bg-white w-5 h-5 cursor-pointer border-2 border-[#011c2b] rounded-full overflow-hidden"
+                      >
+                        <span
+                          class="border-4 border-[#011c2b] rounded-full w-full h-full"
+                        ></span>
+                      </label>
+                      <p class="text-sm text-slate-600 ml-3">
+                        Website Feedback
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <button
+                type="submit"
+                class="mt-12 flex items-center justify-center text-sm font-medium lg:ml-auto max-lg:w-full rounded-lg px-4 py-3 tracking-wide cursor-pointer text-white bg-primary/80 hover:bg-primary transition duration-300 ease-out"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16px"
+                  height="16px"
+                  fill="#fff"
+                  class="mr-2"
+                  viewBox="0 0 548.244 548.244"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M392.19 156.054 211.268 281.667 22.032 218.58C8.823 214.168-.076 201.775 0 187.852c.077-13.923 9.078-26.24 22.338-30.498L506.15 1.549c11.5-3.697 24.123-.663 32.666 7.88 8.542 8.543 11.577 21.165 7.879 32.666L390.89 525.906c-4.258 13.26-16.575 22.261-30.498 22.338-13.923.076-26.316-8.823-30.728-22.032l-63.393-190.153z"
+                    clip-rule="evenodd"
+                    data-original="#000000"
+                  />
+                </svg>
+                Send Message
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Faq -->
+    <section class="px-3 py-8 md:py-16 overflow-hidden bg-white">
+      <div class="mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16">
+        <!-- LEFT -->
+        <div
+          data-aos="zoom-in-right"
+          data-aos-delay="50"
+          class="flex flex-col gap-4 justify-start"
+        >
+          <span
+            class="px-4 py-1 bg-primary/10 text-primary rounded-md font-semibold text-sm tracking-wide w-fit"
+          >
+            FREQUENTLY ASKED QUESTIONS
+          </span>
+
+          <h2 class="text-4xl font-extrabold text-gray-900 leading-tight">
+            General Questions
+          </h2>
+
+          <p class="text-gray-500 text-lg">
+            Find quick answers to the most common questions. Can't find your
+            question? Contact our support anytime.
+          </p>
+
+          <a
+            href="./contact.html#contact-form"
+            class="bg-primary hover:bg-primary transition text-white px-7 py-3 rounded-full font-semibold shadow-lg hover:shadow-xl duration-300 w-fit"
+          >
+            Contact Support
+          </a>
+        </div>
+
+        <!-- RIGHT / FAQ -->
+        <div data-aos="zoom-in-left" data-aos-delay="50" class="space-y-4">
+          <!-- FAQ ITEM -->
+          <div
+            class="faq-card bg-white border border-gray-200 rounded-2xl shadow-sm transition-all duration-300"
+          >
+            <button
+              class="faq-toggle w-full flex items-center justify-between px-6 py-5 text-left cursor-pointer outline-none"
+            >
+              <span class="text-lg font-semibold text-gray-900"
+                >How do I enroll in a course?</span
+              >
+              <svg
+                class="faq-arrow w-6 h-6 text-gray-600 transition-transform duration-300"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M19 9l-7 7-7-7"
+                />
+              </svg>
+            </button>
+
+            <div
+              class="faq-content overflow-hidden max-h-0 opacity-0 transform -translate-y-2 transition-all duration-500 ease-out px-6 pb-5"
+            >
+              <p class="text-gray-600 leading-relaxed">
+                Enrolling is simple — choose your course, click "Enroll", make
+                payment, and you'll immediately receive access to all lessons
+                and downloadable files.
+              </p>
+            </div>
+          </div>
+
+          <!-- FAQ ITEM -->
+          <div
+            class="faq-card bg-white border border-gray-200 rounded-2xl shadow-sm transition-all duration-300"
+          >
+            <button
+              class="faq-toggle w-full flex items-center justify-between px-6 py-5 text-left cursor-pointer outline-none"
+            >
+              <span class="text-lg font-semibold text-gray-900"
+                >Are the courses mobile friendly?</span
+              >
+              <svg
+                class="faq-arrow w-6 h-6 text-gray-600 transition-transform duration-300"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M19 9l-7 7-7-7"
+                />
+              </svg>
+            </button>
+
+            <div
+              class="faq-content overflow-hidden max-h-0 opacity-0 transform -translate-y-2 transition-all duration-500 ease-out px-6 pb-5"
+            >
+              <p class="text-gray-600 leading-relaxed">
+                Yes! All courses work on phones, tablets, laptops, and desktops.
+                Video players and UI elements are fully responsive.
+              </p>
+            </div>
+          </div>
+
+          <!-- FAQ ITEM -->
+          <div
+            class="faq-card bg-white border border-gray-200 rounded-2xl shadow-sm transition-all duration-300"
+          >
+            <button
+              class="faq-toggle w-full flex items-center justify-between px-6 py-5 text-left cursor-pointer outline-none"
+            >
+              <span class="text-lg font-semibold text-gray-900"
+                >Do I get a certificate after completion?</span
+              >
+              <svg
+                class="faq-arrow w-6 h-6 text-gray-600 transition-transform duration-300"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M19 9l-7 7-7-7"
+                />
+              </svg>
+            </button>
+
+            <div
+              class="faq-content overflow-hidden max-h-0 opacity-0 transform -translate-y-2 transition-all duration-500 ease-out px-6 pb-5"
+            >
+              <p class="text-gray-600 leading-relaxed">
+                Absolutely! You will receive a verified certificate after
+                successfully completing the course and passing required
+                assessments.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Faq script -->
+    <script>
+      document.querySelectorAll(".faq-toggle").forEach((toggle) => {
+        toggle.addEventListener("click", () => {
+          const card = toggle.parentElement;
+          const content = card.querySelector(".faq-content");
+          const arrow = toggle.querySelector(".faq-arrow");
+
+          const isOpen =
+            content.style.maxHeight && content.style.maxHeight !== "0px";
+
+          // Smooth collapse all other FAQ
+          document.querySelectorAll(".faq-content").forEach((el) => {
+            el.style.maxHeight = "0px";
+            el.style.opacity = "0";
+            el.style.transform = "translateY(-6px)";
+          });
+          document.querySelectorAll(".faq-arrow").forEach((icon) => {
+            icon.classList.remove("rotate-180");
+          });
+
+          // If clicked one was closed → open it
+          if (!isOpen) {
+            content.style.maxHeight = content.scrollHeight + "px";
+            content.style.opacity = "1";
+            content.style.transform = "translateY(0)";
+            arrow.classList.add("rotate-180");
+          }
+        });
+      });
+    </script>
+
+    <!-- footer -->
+    <footer class="px-3 mt-10 overflow-hidden">
+      <div
+        class="flex justify-between flex-wrap w-full md:gap-20 gap-8 pb-6"
+        data-aos="fade-up"
+        data-aos-delay="150"
+      >
+        <div class="md:max-w-96 flex flex-col items-start space-y-2">
+          <img class="h-8" src="./assets/logo.webp" alt="logo" />
+          <p class="mt-2 text-sm md:text-lg">
+            MedEquip Store is a trusted provider of high-quality medical
+            equipment and supplies for hospitals, clinics, and home care. We are
+            committed to delivering reliable & safe.
+          </p>
+        </div>
+
+        <div class="flex flex-col lg:items-center lg:justify-center">
+          <div class="flex flex-col text-sm md:text-lg space-y-2.5 md:px-8">
+            <h2 class="font-semibold mb-5 text-primary uppercase">
+              Easier Acces
+            </h2>
+            <a class="hover:text-slate-600 transition" href="./index.html"
+              >Home</a
+            >
+            <a class="hover:text-slate-600 transition" href="./about.html"
+              >About us</a
+            >
+            <a class="hover:text-slate-600 transition" href="./service.html"
+              >Services<span
+                class="text-xs text-white bg-gray-600 rounded-bl-xl rounded-tr-xl ml-2 px-2 py-1"
+                >New</span
+              ></a
+            >
+            <a class="hover:text-slate-600 transition" href="./product.html"
+              >Products</a
+            >
+            <a class="hover:text-slate-600 transition" href="./contact.html"
+              >Contact us</a
+            >
+          </div>
+        </div>
+
+        <div>
+          <h2
+            class="font-semibold mb-5 text-sm md:text-lg text-primary uppercase"
+          >
+            Subscribe to our newsletter
+          </h2>
+          <div class="text-sm md:text-lg space-y-6 max-w-sm">
+            <p>
+              The latest news, articles, and resources, sent to your inbox
+              weekly.
+            </p>
+            <form
+              id="sub-form"
+              method="get"
+              action="./404.html"
+              class="flex items-center justify-center gap-2 p-2 rounded-xl bg-primary/5"
+            >
+              <input
+                pattern=".+@gmail\.com$"
+                title="Email must end with @gmail.com"
+                required
+                class="focus:ring-0 outline-none w-full max-w-64 py-2 rounded px-2"
+                type="email"
+                placeholder="Enter your email"
+              />
+              <button
+                type="submit"
+                class="bg-primary px-4 py-2 rounded-lg cursor-pointer transform hover:scale-95 transition duration-500 ease-out text-white"
+              >
+                Subscribe
+              </button>
+            </form>
+          </div>
+        </div>
+
+        <div class="flex items-start">
+          <div class="">
+            <h2
+              class="font-semibold mb-5 text-sm md:text-lg text-primary uppercase"
+            >
+              Get in touch
+            </h2>
+            <div class="text-sm md:text-lg space-y-2 flex flex-col items-start">
+              <a href="./404.html">+1-212-456-7890</a>
+              <a href="./404.html">contact@example.com</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="overflow-hidden">
+        <!-- Google Map -->
+        <div
+          data-aos="fade-up"
+          data-aos-delay="200"
+          class="rounded-2xl w-full overflow-hidden shadow-lg mb-3"
+        >
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3907.1616097152896!2d78.1739798!3d11.682956599999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3babefef7fd970bb%3A0xe11aef1a71994f9!2sStackly!5e0!3m2!1sen!2sin!4v1755667813665!5m2!1sen!2sin"
+            width="100%"
+            height="250"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+      </div>
+
+      <div
+        class="flex items-center justify-center text-center border-t border-gray-500/30"
+      >
+        <div>
+          <p class="pt-4 text-lg pb-4">
+            Copyright 2025 © <a href="./404.html">Stackly</a>. All Right
+            Reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Aos Animation  -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"
+      integrity="sha512-A7AYk1fGKX6S2SsHywmPkrnzTZHrgiVT7GcQkLGDe2ev0aWb8zejytzS8wjo7PGEXKqJOrjQ4oORtnimIRZBtw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <!-- mobile menu script -->
+    <script>
+      // sub-form reset
+      const form = document.querySelector("#sub-form");
+      form.addEventListener("submit", () => {
+        form.reset();
+      });
+
+      // Aos Animation Init
+      AOS.init({
+        duration: 800,
+        delay: 200, // default delay for all elements
+        once: false,
+        mirror: true,
+      });
+
+      // Hamburger Menu Toggle
+      const hamburger = document.getElementById("hamburger");
+      const mobileMenu = document.getElementById("mobileMenu");
+      const links = mobileMenu.querySelectorAll(".nav-link");
+
+      hamburger.addEventListener("click", () => {
+        hamburger.classList.toggle("active");
+        mobileMenu.classList.toggle("open");
+      });
+
+      links.forEach((link) => {
+        link.addEventListener("click", () => {
+          hamburger.classList.remove("active");
+          mobileMenu.classList.remove("open");
+        });
+      });
+
+      // Optional: close menu if clicked outside
+      window.addEventListener("click", (e) => {
+        if (!homeToggle.contains(e.target) && !homeMenu.contains(e.target)) {
+          homeMenu.classList.add("hidden");
+        }
+      });
+    </script>
+  </body>
+</html>

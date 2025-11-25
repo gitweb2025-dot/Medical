@@ -120,18 +120,8 @@
         opacity: 0;
       }
 
-      /* Optional: background circle style */
-      .swiper-button-next::after,
-      .swiper-button-prev::after {
-        font-size: 20px;
-        background-color: rgba(255, 255, 255, 0.409);
-        border-radius: 9999px;
-        padding: 10px 15px;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-      }
-
       .swiper-pagination {
-        color: hsl(0, 0%, 100%);
+        color: lab(100% 0.01 -0.01);
       }
 
       .swiper {
@@ -167,11 +157,11 @@
       }
 
       .swiper-pagination-bullet {
-        background: #9d9d9d;
+        background: #ffffff;
       }
 
       .swiper-pagination-bullet-active {
-        background: hwb(0 88% 12%);
+        background: hsl(0, 0%, 100%);
       }
 
       @media screen and (max-width: 512px) {
@@ -185,9 +175,9 @@
 
   <body class="antialiased bg-white text-black">
     <!-- Navbar  -->
-    <header class="sticky top-0 z-40 w-full mx-auto lg:px-3 lg:py-3">
+    <header class="sticky top-0 z-40 w-full mx-auto">
       <div
-        class="flex items-center justify-between h-16 px-5 bg-secondary/20 backdrop-blur-2xl lg:rounded-full"
+        class="flex items-center justify-between h-16 px-5 bg-white shadow-lg shadow-tertiary backdrop-blur-2xl"
       >
         <!-- Logo -->
         <a class="" href="./index.html">
@@ -221,7 +211,7 @@
 
           <!-- About -->
           <a
-            href=""
+            href="./about.html"
             class="relative inline-block after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full"
           >
             About
@@ -229,21 +219,21 @@
 
           <!-- Services -->
           <a
-            href=""
+            href="./service.html"
             class="relative inline-block after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full"
           >
             Services
           </a>
           <!-- Products -->
           <a
-            href=""
+            href="./product.html"
             class="relative inline-block after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full"
           >
             Products
           </a>
           <!-- Contact -->
           <a
-            href=""
+            href="./contact.html"
             class="relative inline-block after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full"
           >
             Contact
@@ -262,7 +252,7 @@
           <div class="relative flex items-center gap-2">
             <a
               class="md:flex items-center gap-2 rounded-3xl text-sm transform hover:scale-95 transition duration-200 ease-out hidden"
-              href=""
+              href="./signin.html"
               ><svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -321,27 +311,27 @@
           </div>
           <!-- About -->
           <li>
-            <a href="" class="nav-link block">About</a>
+            <a href="./about.html" class="nav-link block">About</a>
           </li>
           <!-- Services -->
           <li>
-            <a href="" class="nav-link block">Services</a>
+            <a href="./service.html" class="nav-link block">Services</a>
           </li>
           <!-- Products -->
           <li>
-            <a href="" class="nav-link block">Products</a>
+            <a href="./product.html" class="nav-link block">Products</a>
           </li>
           <!-- Contact -->
           <li>
-            <a href="" class="nav-link block">Contact</a>
+            <a href="./contact.html" class="nav-link block">Contact</a>
           </li>
           <!-- Dashboard -->
           <li>
-            <a href="" class="nav-link block">Dashboard</a>
+            <a href="./dashboard.html" class="nav-link block">Dashboard</a>
           </li>
           <!-- login  -->
           <li>
-            <a href="" class="flex items-center gap-2 nav-link"
+            <a href="./signin.html" class="flex items-center gap-2 nav-link"
               ><svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -428,7 +418,7 @@
                 </p>
                 <a
                   class="px-6 py-3 border border-white/50 transform hover:scale-95 transition duration-300 ease-in-out z-30"
-                  href="#productsGrid"
+                  href="./product.html"
                   >View More</a
                 >
               </div>
@@ -445,7 +435,7 @@
                 class="absolute inset-0 z-10 p-3 md:pl-20 h-[420px] flex flex-col items-start justify-center gap-6 bg-linear-to-b from-transparent to-primary/60 rounded-3xl"
               >
                 <p data-aos="fade-up" data-aos-delay="50" class="z-30">
-                  Casual & Everyday
+                  Trusted Medical Solutions
                 </p>
                 <h1
                   data-aos="fade-up"
@@ -463,8 +453,8 @@
                   data-aos="fade-up"
                   data-aos-delay="50"
                   class="px-6 py-3 border border-white/50 transform hover:scale-95 transition duration-300 ease-in-out z-30"
-                  href="#productsGrid"
-                  >View Collections</a
+                  href="./product.html"
+                  >View Products</a
                 >
               </div>
             </div>
@@ -480,7 +470,7 @@
                 class="absolute inset-0 z-10 p-3 md:pl-20 h-[420px] flex flex-col items-start justify-center gap-6 bg-linear-to-b from-transparent to-primary/60 rounded-3xl"
               >
                 <p data-aos="fade-up" data-aos-delay="50" class="z-30">
-                  Casual & Everyday
+                  Care & Comfort
                 </p>
                 <h1
                   data-aos="fade-up"
@@ -499,8 +489,8 @@
                 </p>
                 <a
                   class="px-6 py-3 border border-white/50 transform hover:scale-95 transition duration-300 ease-in-out z-30"
-                  href="#productsGrid"
-                  >View Collections</a
+                  href="./product.html"
+                  >View Products</a
                 >
               </div>
             </div>
@@ -516,7 +506,7 @@
                 class="absolute inset-0 z-10 p-3 md:pl-20 h-[420px] flex flex-col items-start justify-center gap-6 bg-linear-to-b from-transparent to-primary/60 rounded-3xl"
               >
                 <p data-aos="fade-up" data-aos-delay="50" class="z-30">
-                  Casual & Everyday
+                  Medical Excellence
                 </p>
                 <h1
                   data-aos="fade-up"
@@ -537,8 +527,8 @@
                   data-aos="fade-up"
                   data-aos-delay="50"
                   class="px-6 py-3 border border-white/50 transform hover:scale-95 transition duration-300 ease-in-out z-30"
-                  href="#productsGrid"
-                  >View Collections</a
+                  href="./product.html"
+                  >View Products</a
                 >
               </div>
             </div>
@@ -599,7 +589,7 @@
               </h2>
               <p>Stay Safe & Healthy with Our Top-Quality Medical Supplies!</p>
               <a
-                href="#productsGrid"
+                href="./product.html#prodctsInit"
                 class="px-4 py-2 border border-black/50 transition"
                 >Shop Now</a
               >
@@ -627,7 +617,7 @@
               </h2>
               <p>Stay Safe & Healthy with Our Top-Quality Medical Supplies!</p>
               <a
-                href="#productsGrid"
+                href="./product.html#prodctsInit"
                 class="px-4 py-2 border border-black/50 transition"
                 >Shop Now</a
               >
@@ -637,6 +627,464 @@
         </div>
       </div>
     </section>
+
+    <!-- Your faithful partners Medical Goods -->
+    <section class="p-3 overflow-hidden text-black mx-auto py-20">
+      <div class="flex flex-col lg:flex-row items-center gap-12">
+        <!-- Left Image -->
+        <div class="flex justify-center lg:flex-1">
+          <img
+            src="./assets/home6.webp"
+            alt="Medical Shield Icon"
+            class="w-full h-full lg:h-[450px] object-cover rounded-2xl"
+          />
+        </div>
+
+        <!-- Right Content -->
+        <div class="lg:flex-1">
+          <h2
+            class="text-3xl lg:text-4xl font-semibold text-gray-900 leading-tight mb-6"
+          >
+            Your faithful partners <br />
+            Medical Goods
+          </h2>
+          <p class="text-gray-700 mb-8">
+            Houzez allow you to design unlimited panels and real estate custom
+            forms to capture leads and keep record of all information
+          </p>
+
+          <!-- List -->
+          <ul class="space-y-4 mb-10">
+            <li class="flex items-start gap-3">
+              <div
+                class="shrink-0 w-7 h-7 bg-green-50 rounded-md flex items-center justify-center"
+              >
+                <svg
+                  class="w-4 h-4 text-green-600"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M5 13l4 4L19 7"></path>
+                </svg>
+              </div>
+              <p class="font-semibold text-gray-900">
+                Better security for patient privacy and information.
+              </p>
+            </li>
+            <li class="flex items-start gap-3">
+              <div
+                class="shrink-0 w-7 h-7 bg-green-50 rounded-md flex items-center justify-center"
+              >
+                <svg
+                  class="w-4 h-4 text-green-600"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M5 13l4 4L19 7"></path>
+                </svg>
+              </div>
+              <p class="font-semibold text-gray-900">
+                More products at lower prices.
+              </p>
+            </li>
+            <li class="flex items-start gap-3">
+              <div
+                class="shrink-0 w-7 h-7 bg-green-50 rounded-md flex items-center justify-center"
+              >
+                <svg
+                  class="w-4 h-4 text-green-600"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M5 13l4 4L19 7"></path>
+                </svg>
+              </div>
+              <p class="font-semibold text-gray-900">
+                connect customers with the power of eCommerce at all.
+              </p>
+            </li>
+          </ul>
+
+          <hr class="border-gray-300 mb-8" />
+
+          <!-- Footer with Image and Contact -->
+          <div
+            class="flex flex-wrap justify-center xsmd:justify-start items-center gap-6"
+          >
+            <div class="flex items-center gap-3">
+              <img
+                src="./assets/doc2.webp"
+                alt="Jerry Henson"
+                class="w-12 h-12 rounded-full object-cover border border-gray-300"
+              />
+              <div>
+                <p class="font-semibold text-gray-900">Jerry Henson</p>
+                <p class="text-gray-600 text-sm">Medical Specialist</p>
+              </div>
+            </div>
+
+            <div
+              class="hidden xsm:block xsmd:border-l border-gray-300 h-12"
+            ></div>
+
+            <div
+              class="flex items-center gap-3 bg-green-50 px-5 py-3 rounded-md"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-6 h-6 text-green-600"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M3 10l1.5 1.5m0 0A7.5 7.5 0 0112 21a7.5 7.5 0 017.5-9.5m-13.5 0L10 3"
+                />
+              </svg>
+              <div>
+                <p class="text-xs text-gray-700">Get Support</p>
+                <p class="font-semibold text-gray-900">123-456-789-10</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Us -->
+    <section class="p-3 overflow-hidden text-black">
+      <div class="flex flex-col items-center text-center">
+        <h3 class="text-lg font-medium text-primary mb-2">Contact Us</h3>
+        <h1 class="text-3xl md:text-4xl font-semibold mb-4 text-gray-800">
+          Meet Our People
+        </h1>
+        <p class="md:w-3/5 mb-14 text-gray-500 text-sm">
+          Lorem Ipsum is simply dummy text of the printing and typesetting
+          industry. Lorem Ipsum has been the industry's standard dummy text.
+        </p>
+
+        <div
+          class="grid grid-cols-1 xsmd:grid-cols-2 lg:grid-cols-3 gap-6 items-center justify-center w-full"
+        >
+          <div
+            class="flex flex-col items-center py-8 text-sm bg-white border border-gray-300/60 rounded-2xl cursor-pointer w-full"
+          >
+            <img
+              class="size-24 object-cover object-top rounded-full"
+              src="./assets/doc1.webp"
+              alt="userImage1"
+            />
+            <h2 class="text-gray-700 text-lg font-medium mt-2">
+              Donald Jackman
+            </h2>
+            <p class="text-gray-500">Neuro Surgeon</p>
+            <p class="text-center text-gray-500/60 w-3/4 mt-4">
+              Lorem Ipsum is simply dummy text of the printing
+            </p>
+            <div class="flex items-center space-x-4 mt-6 text-primary">
+              <a href="./404.html">
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M14.882 0H1.167A1.16 1.16 0 0 0 0 1.161V14.84C0 15.459.519 16 1.167 16H14.83a1.16 1.16 0 0 0 1.166-1.161V1.135C16.048.516 15.53 0 14.882 0M4.744 13.6H2.385V5.987h2.36zM3.552 4.929c-.778 0-1.374-.62-1.374-1.368a1.38 1.38 0 0 1 1.374-1.367 1.38 1.38 0 0 1 1.374 1.367c0 .749-.57 1.368-1.374 1.368M11.33 13.6V9.91c0-.878-.026-2.039-1.245-2.039-1.244 0-1.426.98-1.426 1.961V13.6H6.3V5.987h2.307v1.058h.026c.337-.62 1.09-1.239 2.256-1.239 2.411 0 2.852 1.549 2.852 3.665V13.6z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </a>
+              <a href="./404.html">
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M14.095 0H1.905C.855 0 0 .854 0 1.905v12.19C0 15.145.854 16 1.905 16h12.19c1.05 0 1.905-.854 1.905-1.905V1.905C16 .855 15.146 0 14.095 0m-1.521 6.98a2.85 2.85 0 0 1-2.651-1.277v4.395A3.248 3.248 0 1 1 6.674 6.85c.068 0 .134.006.201.01v1.6c-.067-.007-.132-.02-.2-.02a1.658 1.658 0 1 0 0 3.316c.915 0 1.724-.721 1.724-1.637l.016-7.465h1.531a2.85 2.85 0 0 0 2.63 2.547v1.78"
+                    fill="currentColor"
+                  />
+                </svg>
+              </a>
+              <a href="./404.html">
+                <svg
+                  width="19"
+                  height="16"
+                  viewBox="0 0 19 16"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="m16.358 2.613 1.128-1.425c.326-.386.416-.683.445-.832-.89.535-1.722.713-2.256.713h-.208L15.348.95A3.83 3.83 0 0 0 12.795 0c-2.078 0-3.71 1.722-3.71 3.71 0 .12 0 .298.03.417l.088.593-.623-.03C4.78 4.573 1.663 1.307 1.158.743c-.831 1.485-.356 2.91.148 3.8l1.01 1.663-1.603-.89q.044 1.87 1.425 2.938l.801.594-.801.326c.504 1.515 1.632 2.138 2.464 2.375l1.098.297-1.04.713C2.999 13.745.92 13.656 0 13.568c1.87 1.305 4.097 1.602 5.64 1.602 1.158 0 2.02-.118 2.227-.207 8.313-1.96 8.699-9.382 8.699-10.866v-.208l.178-.119c1.01-.95 1.425-1.454 1.662-1.751-.089.03-.208.089-.326.119z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <div
+            class="flex flex-col items-center py-8 text-sm bg-white border border-gray-300/60 rounded-2xl cursor-pointer w-full"
+          >
+            <img
+              class="size-24 object-cover object-top rounded-full"
+              src="./assets/doc2.webp"
+              alt="userImage2"
+            />
+            <h2 class="text-gray-700 text-lg font-medium mt-2">
+              Richard Nelson
+            </h2>
+            <p class="text-gray-500">Heart Specialist</p>
+            <p class="text-center text-gray-500/60 w-3/4 mt-4">
+              Lorem Ipsum is simply dummy text of the printing
+            </p>
+            <div class="flex items-center space-x-4 mt-6 text-primary">
+              <a href="./404.html">
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M14.882 0H1.167A1.16 1.16 0 0 0 0 1.161V14.84C0 15.459.519 16 1.167 16H14.83a1.16 1.16 0 0 0 1.166-1.161V1.135C16.048.516 15.53 0 14.882 0M4.744 13.6H2.385V5.987h2.36zM3.552 4.929c-.778 0-1.374-.62-1.374-1.368a1.38 1.38 0 0 1 1.374-1.367 1.38 1.38 0 0 1 1.374 1.367c0 .749-.57 1.368-1.374 1.368M11.33 13.6V9.91c0-.878-.026-2.039-1.245-2.039-1.244 0-1.426.98-1.426 1.961V13.6H6.3V5.987h2.307v1.058h.026c.337-.62 1.09-1.239 2.256-1.239 2.411 0 2.852 1.549 2.852 3.665V13.6z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </a>
+              <a href="./404.html">
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M14.095 0H1.905C.855 0 0 .854 0 1.905v12.19C0 15.145.854 16 1.905 16h12.19c1.05 0 1.905-.854 1.905-1.905V1.905C16 .855 15.146 0 14.095 0m-1.521 6.98a2.85 2.85 0 0 1-2.651-1.277v4.395A3.248 3.248 0 1 1 6.674 6.85c.068 0 .134.006.201.01v1.6c-.067-.007-.132-.02-.2-.02a1.658 1.658 0 1 0 0 3.316c.915 0 1.724-.721 1.724-1.637l.016-7.465h1.531a2.85 2.85 0 0 0 2.63 2.547v1.78"
+                    fill="currentColor"
+                  />
+                </svg>
+              </a>
+              <a href="./404.html">
+                <svg
+                  width="19"
+                  height="16"
+                  viewBox="0 0 19 16"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="m16.358 2.613 1.128-1.425c.326-.386.416-.683.445-.832-.89.535-1.722.713-2.256.713h-.208L15.348.95A3.83 3.83 0 0 0 12.795 0c-2.078 0-3.71 1.722-3.71 3.71 0 .12 0 .298.03.417l.088.593-.623-.03C4.78 4.573 1.663 1.307 1.158.743c-.831 1.485-.356 2.91.148 3.8l1.01 1.663-1.603-.89q.044 1.87 1.425 2.938l.801.594-.801.326c.504 1.515 1.632 2.138 2.464 2.375l1.098.297-1.04.713C2.999 13.745.92 13.656 0 13.568c1.87 1.305 4.097 1.602 5.64 1.602 1.158 0 2.02-.118 2.227-.207 8.313-1.96 8.699-9.382 8.699-10.866v-.208l.178-.119c1.01-.95 1.425-1.454 1.662-1.751-.089.03-.208.089-.326.119z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <div
+            class="flex flex-col items-center py-8 text-sm bg-white border border-gray-300/60 rounded-2xl cursor-pointer w-full"
+          >
+            <img
+              class="size-24 object-cover object-top rounded-full"
+              src="./assets/doc3.webp"
+              alt="userImage3"
+            />
+            <h2 class="text-gray-700 text-lg font-medium mt-2">
+              James Washington
+            </h2>
+            <p class="text-gray-500">Elbow Specialist</p>
+            <p class="text-center text-gray-500/60 w-3/4 mt-4">
+              Lorem Ipsum is simply dummy text of the printing
+            </p>
+            <div class="flex items-center space-x-4 mt-6 text-primary">
+              <a href="./404.html">
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M14.882 0H1.167A1.16 1.16 0 0 0 0 1.161V14.84C0 15.459.519 16 1.167 16H14.83a1.16 1.16 0 0 0 1.166-1.161V1.135C16.048.516 15.53 0 14.882 0M4.744 13.6H2.385V5.987h2.36zM3.552 4.929c-.778 0-1.374-.62-1.374-1.368a1.38 1.38 0 0 1 1.374-1.367 1.38 1.38 0 0 1 1.374 1.367c0 .749-.57 1.368-1.374 1.368M11.33 13.6V9.91c0-.878-.026-2.039-1.245-2.039-1.244 0-1.426.98-1.426 1.961V13.6H6.3V5.987h2.307v1.058h.026c.337-.62 1.09-1.239 2.256-1.239 2.411 0 2.852 1.549 2.852 3.665V13.6z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </a>
+              <a href="./404.html">
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M14.095 0H1.905C.855 0 0 .854 0 1.905v12.19C0 15.145.854 16 1.905 16h12.19c1.05 0 1.905-.854 1.905-1.905V1.905C16 .855 15.146 0 14.095 0m-1.521 6.98a2.85 2.85 0 0 1-2.651-1.277v4.395A3.248 3.248 0 1 1 6.674 6.85c.068 0 .134.006.201.01v1.6c-.067-.007-.132-.02-.2-.02a1.658 1.658 0 1 0 0 3.316c.915 0 1.724-.721 1.724-1.637l.016-7.465h1.531a2.85 2.85 0 0 0 2.63 2.547v1.78"
+                    fill="currentColor"
+                  />
+                </svg>
+              </a>
+              <a href="./404.html">
+                <svg
+                  width="19"
+                  height="16"
+                  viewBox="0 0 19 16"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="m16.358 2.613 1.128-1.425c.326-.386.416-.683.445-.832-.89.535-1.722.713-2.256.713h-.208L15.348.95A3.83 3.83 0 0 0 12.795 0c-2.078 0-3.71 1.722-3.71 3.71 0 .12 0 .298.03.417l.088.593-.623-.03C4.78 4.573 1.663 1.307 1.158.743c-.831 1.485-.356 2.91.148 3.8l1.01 1.663-1.603-.89q.044 1.87 1.425 2.938l.801.594-.801.326c.504 1.515 1.632 2.138 2.464 2.375l1.098.297-1.04.713C2.999 13.745.92 13.656 0 13.568c1.87 1.305 4.097 1.602 5.64 1.602 1.158 0 2.02-.118 2.227-.207 8.313-1.96 8.699-9.382 8.699-10.866v-.208l.178-.119c1.01-.95 1.425-1.454 1.662-1.751-.089.03-.208.089-.326.119z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- footer -->
+    <footer class="px-3 mt-10 overflow-hidden">
+      <div
+        class="flex justify-between flex-wrap w-full md:gap-20 gap-8 pb-6"
+        data-aos="fade-up"
+        data-aos-delay="150"
+      >
+        <div class="md:max-w-96 flex flex-col items-start space-y-2 ">
+          <img class="h-8" src="./assets/logo.webp" alt="logo" />
+          <p class="mt-2 text-sm md:text-lg">
+            MedEquip Store is a trusted provider of high-quality medical
+            equipment and supplies for hospitals, clinics, and home care. We are
+            committed to delivering reliable & safe.
+          </p>
+        </div>
+
+        <div class="flex flex-col lg:items-center lg:justify-center">
+          <div class="flex flex-col text-sm md:text-lg space-y-2.5 md:px-8">
+            <h2 class="font-semibold mb-5 text-primary uppercase">
+              Easier Acces
+            </h2>
+            <a class="hover:text-slate-600 transition" href="./index.html"
+              >Home</a
+            >
+            <a class="hover:text-slate-600 transition" href="./about.html"
+              >About us</a
+            >
+            <a class="hover:text-slate-600 transition" href="./service.html"
+              >Services<span
+                class="text-xs text-white bg-gray-600 rounded-bl-xl rounded-tr-xl ml-2 px-2 py-1"
+                >New</span
+              ></a
+            >
+            <a class="hover:text-slate-600 transition" href="./product.html"
+              >Products</a
+            >
+            <a class="hover:text-slate-600 transition" href="./contact.html"
+              >Contact us</a
+            >
+          </div>
+        </div>
+
+        <div>
+          <h2 class="font-semibold mb-5 text-sm md:text-lg text-primary uppercase">
+            Subscribe to our newsletter
+          </h2>
+          <div class="text-sm md:text-lg space-y-6 max-w-sm">
+            <p>
+              The latest news, articles, and resources, sent to your inbox
+              weekly.
+            </p>
+            <form
+              id="sub-form"
+              method="get"
+              action="./404.html"
+              class="flex items-center justify-center gap-2 p-2 rounded-xl bg-primary/5"
+            >
+              <input
+                pattern=".+@gmail\.com$"
+                title="Email must end with @gmail.com"
+                required
+                class="focus:ring-0 outline-none w-full max-w-64 py-2 rounded px-2"
+                type="email"
+                placeholder="Enter your email"
+              />
+              <button
+                type="submit"
+                class="bg-primary px-4 py-2 rounded-lg cursor-pointer transform hover:scale-95 transition duration-500 ease-out text-white"
+              >
+                Subscribe
+              </button>
+            </form>
+          </div>
+        </div>
+
+        <div class="flex items-start">
+          <div class="">
+            <h2 class="font-semibold mb-5 text-sm md:text-lg text-primary uppercase">
+              Get in touch
+            </h2>
+            <div class="text-sm md:text-lg space-y-2 flex flex-col items-start">
+              <a href="./404.html">+1-212-456-7890</a>
+              <a href="./404.html">contact@example.com</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="overflow-hidden">
+        <!-- Google Map -->
+        <div
+          data-aos="fade-up"
+          data-aos-delay="200"
+          class="rounded-2xl w-full overflow-hidden shadow-lg mb-3"
+        >
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3907.1616097152896!2d78.1739798!3d11.682956599999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3babefef7fd970bb%3A0xe11aef1a71994f9!2sStackly!5e0!3m2!1sen!2sin!4v1755667813665!5m2!1sen!2sin"
+            width="100%"
+            height="250"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+      </div>
+
+      <div
+        class="flex items-center justify-center text-center border-t border-gray-500/30"
+      >
+        <div>
+          <p class="pt-4 text-lg pb-4">
+            Copyright 2025 © <a href="./404.html">Stackly</a>. All Right
+            Reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
 
     <!-- Aos Animation  -->
     <script
@@ -648,6 +1096,12 @@
 
     <!-- mobile menu script -->
     <script>
+      // sub-form reset
+      const form = document.querySelector("#sub-form");
+      form.addEventListener("submit", () => {
+        form.reset();
+      });
+
       // Aos Animation Init
       AOS.init({
         duration: 800,

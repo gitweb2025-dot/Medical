@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>About — MedEquip (Premium)</title>
+
+<!-- Tailwind CDN -->
+<!-- <script src="https://cdn.tailwindcss.com"></script> -->
+ <link rel="stylesheet" href="./src/output.css">
+
+<!-- AOS for subtle scroll reveals -->
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+<!-- Font Awesome -->
+<script src="https://kit.fontawesome.com/a2e0d6df52.js" crossorigin="anonymous"></script>
+
+<style>
+  :root{
+    --primary: #00544f;
+    --muted: #eef6f5;
+    --glass: rgba(255,255,255,0.55);
+    --card-shadow: 0 10px 30px rgba(2,10,10,0.06);
+  }
+
+  html,body { height:100%; }
+
+  /* Hero curve */
+  .hero-curve {
+    position:absolute;
+    right:0;
+    top:0;
+    width:55%;
+    height:100%;
+    pointer-events:none;
+    overflow:hidden;
+    z-index:0;
+  }
+
+  /* Glass panel */
+  .glass {
+    background: linear-gradient(180deg, rgba(255,255,255,0.6), rgba(255,255,255,0.45));
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255,255,255,0.45);
+  }
+
+  /* Timeline styles */
+  .timeline {
+    position:relative;
+    padding-left:1.5rem;
+    padding-right:1.5rem;
+  }
+  .timeline-spine {
+    position:absolute;
+    left:50%;
+    top:0;
+    transform:translateX(-50%);
+    width:6px;
+    height:100%;
+    background:linear-gradient(180deg, rgba(0,84,79,0.12), rgba(0,84,79,0.04));
+    border-radius:6px;
+    z-index:0;
+  }
+  .timeline-fill {
+    position:absolute;
+    left:50%;
+    transform:translateX(-50%);
+    width:6px;
+    background: linear-gradient(180deg,var(--primary), rgba(0,84,79,0.6));
+    border-radius:6px;
+    top:0;
+    height:0%;
+    z-index:1;
+    transition: height 300ms ease-out;
+  }
+
+  .timeline-item {
+    position:relative;
+    z-index:2;
+    display:flex;
+    gap:1.25rem;
+    align-items:center;
+  }
+  .timeline-icon {
+    width:64px;
+    height:64px;
+    border-radius:14px;
+    display:grid;
+    place-items:center;
+    background:white;
+    box-shadow: var(--card-shadow);
+    color:var(--primary);
+    flex-shrink:0;
+    position:relative;
+  }
+
+  /* Desktop zig-zag layout */
+  @media (min-width: 768px) {
+    .timeline-row { display:grid; grid-template-columns: 1fr 120px 1fr; align-items:center; gap:1rem; }
+    .timeline-row .content-left { text-align:right; padding-right:2rem; }
+    .timeline-row .content-right { text-align:left; padding-left:2rem; }
+    .timeline-row .center { display:flex; justify-content:center; align-items:center; }
+  }
+
+  /* Mobile stacking */
+  @media (max-width: 767px) {
+    .timeline-spine { left:28px; transform:none; width:4px; }
+    .timeline-fill { left:28px; transform:none; width:4px; }
+    .timeline-row { display:flex; flex-direction:row; gap:1rem; align-items:flex-start; padding-left:56px; }
+    .timeline-icon { position:absolute; left:0; top:0; transform:none; width:48px; height:48px; border-radius:10px; }
+    .timeline-item .text { margin-left:56px; }
+  }
+
+  /* Minor helpers */
+  .hero-title { color: #032b2a; }
+  .muted { color: #6b7280; }
+
+  /* Respect reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    .timeline-fill { transition: none; }
+  }
+</style>
+</head>
+<body class="bg-white text-gray-800 antialiased">
+
+<!-- HEADER / HERO -->
+<header class="relative overflow-hidden">
+  <div class="max-w-7xl mx-auto px-6 py-20 grid lg:grid-cols-2 gap-12 items-center">
+    <!-- Left copy -->
+    <div class="relative z-20" data-aos="fade-right">
+      <p class="text-xs font-semibold uppercase tracking-widest text-primary mb-3">About MedEquip</p>
+      <h1 class="hero-title text-4xl md:text-5xl font-extrabold leading-tight mb-6">
+        We design, deliver and maintain medical equipment that powers modern care.
+      </h1>
+      <p class="muted max-w-xl mb-8">
+        MedEquip combines clinical expertise with engineering discipline to supply hospitals and clinics with reliable devices, safe installations, and dependable lifetime support.
+      </p>
+
+      <div class="flex gap-4 flex-wrap">
+        <a href="#journey" class="inline-flex items-center gap-3 bg-primary text-white px-5 py-3 rounded-lg shadow hover:brightness-95 transition">
+          <i class="fas fa-handshake"></i> Our Journey
+        </a>
+        <a href="#team" class="inline-flex items-center gap-3 border border-gray-200 px-5 py-3 rounded-lg text-sm hover:bg-gray-50 transition">
+          Meet the Team
+        </a>
+      </div>
+
+      <!-- Stats -->
+      <div class="mt-10 grid grid-cols-2 sm:grid-cols-4 gap-4">
+        <div class="glass p-4 rounded-xl text-center">
+          <div class="text-2xl font-bold text-primary">10+</div>
+          <div class="text-xs muted mt-1">Years Experience</div>
+        </div>
+        <div class="glass p-4 rounded-xl text-center">
+          <div class="text-2xl font-bold text-primary">500+</div>
+          <div class="text-xs muted mt-1">Healthcare Clients</div>
+        </div>
+        <div class="glass p-4 rounded-xl text-center">
+          <div class="text-2xl font-bold text-primary">24/7</div>
+          <div class="text-xs muted mt-1">Technical Support</div>
+        </div>
+        <div class="glass p-4 rounded-xl text-center">
+          <div class="text-2xl font-bold text-primary">99%</div>
+          <div class="text-xs muted mt-1">Service Reliability</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right visual (uses uploaded image) -->
+    <div class="relative hidden lg:block" data-aos="fade-left">
+      <div class="rounded-3xl overflow-hidden shadow-2xl">
+        <img src="/mnt/data/b714886c-3929-4c64-bc18-9cfcb71b6a50.png" alt="Medical professional" class="w-full h-[520px] object-cover">
+      </div>
+
+      <!-- curved SVG overlay -->
+      <div class="hero-curve" aria-hidden="true">
+        <svg viewBox="0 0 100 100" preserveAspectRatio="none" class="w-full h-full">
+          <defs>
+            <linearGradient id="gA" x1="0" x2="1">
+              <stop offset="0%" stop-color="#ffffff" stop-opacity="0.06" />
+              <stop offset="100%" stop-color="#00544f" stop-opacity="0.06" />
+            </linearGradient>
+          </defs>
+          <path d="M0,0 L70,0 C85,10 100,25 100,40 L100,100 L0,100 Z" fill="url(#gA)" />
+        </svg>
+      </div>
+
+      <!-- floating icons -->
+      <div class="absolute -left-8 -top-8">
+        <div class="float-icon p-3 glass">
+          <i class="fas fa-stethoscope"></i>
+        </div>
+      </div>
+      <div class="absolute -right-8 bottom-12">
+        <div class="float-icon p-3 glass">
+          <i class="fas fa-tools"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- STORY -->
+<section class="max-w-7xl mx-auto px-6 py-12">
+  <div class="grid md:grid-cols-2 gap-10 items-center">
+    <div data-aos="fade-up" class="rounded-2xl overflow-hidden shadow-lg">
+      <img src="https://images.pexels.com/photos/7088522/pexels-photo-7088522.jpeg" alt="Team" class="w-full h-72 object-cover">
+    </div>
+    <div data-aos="fade-left">
+      <h2 class="text-3xl font-bold mb-4">Our Story</h2>
+      <p class="muted mb-4">
+        Founded by clinical engineers and healthcare leaders, MedEquip began with a simple aim — make hospital equipment reliable and predictable. Over the years we expanded through partnerships, technology, and a relentless focus on service quality.
+      </p>
+
+      <ul class="grid gap-3">
+        <li class="flex gap-3 items-start">
+          <div class="text-primary mt-1"><i class="fas fa-check-circle"></i></div>
+          <div class="muted">Clinical-grade procurement & rigorous quality assurance</div>
+        </li>
+        <li class="flex gap-3 items-start">
+          <div class="text-primary mt-1"><i class="fas fa-check-circle"></i></div>
+          <div class="muted">Certified installations, calibration and preventive maintenance</div>
+        </li>
+        <li class="flex gap-3 items-start">
+          <div class="text-primary mt-1"><i class="fas fa-check-circle"></i></div>
+          <div class="muted">Hands-on training programs for clinical staff</div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- MISSION / VISION / VALUES -->
+<section class="bg-secondary py-12">
+  <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-3 gap-6">
+    <div class="p-6 rounded-2xl glass" data-aos="fade-up">
+      <div class="w-12 h-12 rounded-lg bg-primary/10 text-primary grid place-items-center mb-4">
+        <i class="fas fa-bullseye"></i>
+      </div>
+      <h3 class="font-semibold">Mission</h3>
+      <p class="muted text-sm mt-2">Deliver reliable medical equipment and services that empower healthcare teams to deliver superior patient care.</p>
+    </div>
+
+    <div class="p-6 rounded-2xl glass" data-aos="fade-up" data-aos-delay="80">
+      <div class="w-12 h-12 rounded-lg bg-primary/10 text-primary grid place-items-center mb-4">
+        <i class="fas fa-eye"></i>
+      </div>
+      <h3 class="font-semibold">Vision</h3>
+      <p class="muted text-sm mt-2">A world where technology and service remove barriers to quality care — everywhere.</p>
+    </div>
+
+    <div class="p-6 rounded-2xl glass" data-aos="fade-up" data-aos-delay="160">
+      <div class="w-12 h-12 rounded-lg bg-primary/10 text-primary grid place-items-center mb-4">
+        <i class="fas fa-heart"></i>
+      </div>
+      <h3 class="font-semibold">Values</h3>
+      <p class="muted text-sm mt-2">Integrity, reliability, clinical safety and people-first support.</p>
+    </div>
+  </div>
+</section>
+
+<!-- TIMELINE (redesigned premium zig-zag with floating icons & animated fill) -->
+<section id="journey" class="py-20">
+  <div class="max-w-6xl mx-auto px-6 timeline">
+    <h2 class="text-3xl font-bold text-gray-900 text-center mb-12">Our Journey</h2>
+
+    <!-- Spine and fill -->
+    <div class="timeline-spine" aria-hidden="true"></div>
+    <div id="timelineFill" class="timeline-fill" aria-hidden="true"></div>
+
+    <div class="space-y-12">
+      <!-- Row 1 (left content) -->
+      <div class="timeline-row" data-aos="fade-right">
+        <div class="content-left">
+          <div class="bg-white p-6 rounded-2xl shadow" style="display:inline-block;">
+            <div class="text-2xl font-bold">2014</div>
+            <h3 class="text-lg font-semibold mt-2">Company Founded</h3>
+            <p class="muted mt-2">Started by a small team of biomedical engineers focused on service excellence and patient outcomes.</p>
+          </div>
+        </div>
+
+        <div class="center">
+          <div class="timeline-icon">
+            <i class="fas fa-seedling fa-lg"></i>
+          </div>
+        </div>
+
+        <div class="content-right"></div>
+      </div>
+
+      <!-- Row 2 (right content) -->
+      <div class="timeline-row" data-aos="fade-left">
+        <div class="content-left"></div>
+
+        <div class="center">
+          <div class="timeline-icon">
+            <i class="fas fa-hospital fa-lg"></i>
+          </div>
+        </div>
+
+        <div class="content-right">
+          <div class="bg-white p-6 rounded-2xl shadow" style="display:inline-block;">
+            <div class="text-2xl font-bold">2017</div>
+            <h3 class="text-lg font-semibold mt-2">Partnerships with Hospitals</h3>
+            <p class="muted mt-2">Expanded installations and service agreements with regional hospital networks.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Row 3 (left content) -->
+      <div class="timeline-row" data-aos="fade-right">
+        <div class="content-left">
+          <div class="bg-white p-6 rounded-2xl shadow" style="display:inline-block;">
+            <div class="text-2xl font-bold">2020</div>
+            <h3 class="text-lg font-semibold mt-2">Scaling Support Services</h3>
+            <p class="muted mt-2">Launched 24/7 remote triage, logistics and rapid spare parts provisioning.</p>
+          </div>
+        </div>
+
+        <div class="center">
+          <div class="timeline-icon">
+            <i class="fas fa-tools fa-lg"></i>
+          </div>
+        </div>
+
+        <div class="content-right"></div>
+      </div>
+
+      <!-- Row 4 (right content) -->
+      <div class="timeline-row" data-aos="fade-left">
+        <div class="content-left"></div>
+
+        <div class="center">
+          <div class="timeline-icon">
+            <i class="fas fa-award fa-lg"></i>
+          </div>
+        </div>
+
+        <div class="content-right">
+          <div class="bg-white p-6 rounded-2xl shadow" style="display:inline-block;">
+            <div class="text-2xl font-bold">2023</div>
+            <h3 class="text-lg font-semibold mt-2">Certified Service Provider</h3>
+            <p class="muted mt-2">Achieved multiple accreditations for safety, compliance and quality.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section id="team" class="py-12 bg-secondary">
+  <div class="max-w-6xl mx-auto px-6">
+    <h2 class="text-3xl font-bold text-gray-900 mb-8">Leadership Team</h2>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="bg-white p-6 rounded-2xl shadow" data-aos="fade-up">
+        <img src="https://images.pexels.com/photos/3874762/pexels-photo-3874762.jpeg" class="w-16 h-16 rounded-lg object-cover mb-4" alt="">
+        <div class="font-semibold">Dr. Asha Kapoor</div>
+        <div class="text-xs muted">CEO & Co-Founder</div>
+        <p class="muted text-sm mt-3">Clinical engineer with 15+ years experience in biomedical equipment and hospital workflows.</p>
+      </div>
+
+      <div class="bg-white p-6 rounded-2xl shadow" data-aos="fade-up" data-aos-delay="80">
+        <img src="https://images.pexels.com/photos/1181690/pexels-photo-1181690.jpeg" class="w-16 h-16 rounded-lg object-cover mb-4" alt="">
+        <div class="font-semibold">Ravi Menon</div>
+        <div class="text-xs muted">Head of Engineering</div>
+        <p class="muted text-sm mt-3">Leads installations and technical teams with a focus on uptime and safety.</p>
+      </div>
+
+      <div class="bg-white p-6 rounded-2xl shadow" data-aos="fade-up" data-aos-delay="160">
+        <img src="https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg" class="w-16 h-16 rounded-lg object-cover mb-4" alt="">
+        <div class="font-semibold">Meera Singh</div>
+        <div class="text-xs muted">Head of Operations</div>
+        <p class="muted text-sm mt-3">Coordinates field teams, spare parts and rapid response operations.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CERTIFICATIONS -->
+<section class="py-12">
+  <div class="max-w-6xl mx-auto px-6">
+    <h3 class="text-xl font-semibold mb-6">Certifications & Partners</h3>
+    <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-6">
+      <div class="bg-white p-4 rounded-lg shadow-sm text-center"><img src="https://images.pexels.com/photos/3846142/pexels-photo-3846142.jpeg" class="mx-auto mb-2 w-24 h-16 object-contain" alt=""><div class="muted text-sm">ISO 9001</div></div>
+      <div class="bg-white p-4 rounded-lg shadow-sm text-center"><img src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg" class="mx-auto mb-2 w-24 h-16 object-contain" alt=""><div class="muted text-sm">CE / EMC</div></div>
+      <div class="bg-white p-4 rounded-lg shadow-sm text-center"><img src="https://images.pexels.com/photos/265087/pexels-photo-265087.jpeg" class="mx-auto mb-2 w-24 h-16 object-contain" alt=""><div class="muted text-sm">Healthcare Partner</div></div>
+      <div class="bg-white p-4 rounded-lg shadow-sm text-center"><img src="https://images.pexels.com/photos/373543/pexels-photo-373543.jpeg" class="mx-auto mb-2 w-24 h-16 object-contain" alt=""><div class="muted text-sm">Safety Accreditation</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="bg-primary text-white py-12">
+  <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
+    <div>
+      <h3 class="text-2xl font-bold">Ready to partner for reliable medical equipment?</h3>
+      <p class="muted text-sm mt-1 text-white/90">Let's design a plan tailored to your facility.</p>
+    </div>
+    <div>
+      <a href="#" class="inline-flex gap-3 items-center bg-white text-primary px-5 py-3 rounded-lg font-medium shadow">Contact Sales</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="py-8 text-center text-sm muted">© MedEquip — Medical Equipment & Services</footer>
+
+<!-- SCRIPTS: AOS init + timeline fill animation -->
+<script>
+  AOS.init({ once: true, duration: 700, easing: 'ease-out-quart' });
+
+  // Timeline fill animation: fills proportionally as user scrolls the timeline section
+  (function(){
+    const fill = document.getElementById('timelineFill');
+    const timeline = document.querySelector('#journey .max-w-6xl') || document.getElementById('journey');
+    const section = document.getElementById('journey') || document.querySelector('[id="journey"]');
+
+    function updateFill(){
+      if(!fill || !section) return;
+      const rect = section.getBoundingClientRect();
+      const winH = window.innerHeight;
+      // calculate how much of the section is visible (0..1)
+      const visibleTop = Math.max(0, -rect.top);
+      const visible = Math.max(0, Math.min(rect.height, winH - rect.top));
+      const progress = Math.min(1, Math.max(0, (winH - rect.top) / (rect.height)));
+      // better mapping: when top enters viewport, start growing; when bottom reaches top, full
+      // compute ratio of how far through section's viewport we've scrolled
+      const start = Math.max(0, Math.min(1, (winH - rect.top) / (winH + rect.height)));
+      const percentage = Math.min(100, Math.max(0, (visible / rect.height) * 100));
+      // smoother: map visible portion to height
+      fill.style.height = percentage + "%";
+    }
+
+    // initial
+    updateFill();
+    window.addEventListener('scroll', updateFill, {passive:true});
+    window.addEventListener('resize', updateFill);
+    // respect reduced motion
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      fill.style.transition = 'none';
+    }
+  })();
+</script>
+
+</body>
+</html>

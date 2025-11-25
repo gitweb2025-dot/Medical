@@ -1,0 +1,1161 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Medical</title>
+
+    <meta
+      name="medical care"
+      content="It provides high-quality medical services, advanced healthcare equipment, diagnostic tools, and professional support for hospitals, clinics, and home care needs."
+    />
+    <meta
+      name="keywords"
+      content="medical services, medical equipment, healthcare devices, diagnostic tools, hospital supplies, clinic equipment, medical technology"
+    />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Advanced Medical Services & Equipment" />
+    <meta
+      property="og:description"
+      content="Trusted provider of medical services, diagnostic solutions, and world-class healthcare equipment for hospitals, clinics, and home care."
+    />
+
+    <!-- Font Awesome Cdn Link -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+      integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- Aos Cdn Link -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
+      integrity="sha512-1cK78a1o+ht2JcaW6g8OXYwqpev9+6GqOkz9xmBN9iUUhIndKtxwILGWYOSibOKjLsEdjyjZvYDq/cZwNeak0w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Tailwind CSS  -->
+    <link rel="stylesheet" href="./src/output.css" />
+
+    <!-- <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script> -->
+
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Lora:ital,wght@0,400..700;1,400..700&family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap");
+
+      @import url("https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap");
+
+      body {
+        font-family: "EB Garamond", serif;
+        overflow-x: hidden;
+      }
+
+      /* Hamburger animation */
+      .hamburger span {
+        display: block;
+        width: 1.5rem;
+        height: 0.125rem;
+        margin: 0.4rem auto;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        background-color: currentColor;
+      }
+
+      .hamburger.active span:nth-child(1) {
+        transform: rotate(45deg) translate(6px, 6px);
+      }
+
+      .hamburger.active span:nth-child(2) {
+        opacity: 0;
+      }
+
+      .hamburger.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(6px, -6px);
+      }
+
+      /* Mobile menu slide + fade */
+      .mobile-menu {
+        max-height: 0;
+        opacity: 0;
+        /* height: 100vh; */
+        transform: translateX(-100%);
+        /* overflow: hidden; */
+        transition: all 0.8s ease-in-out;
+      }
+
+      .mobile-menu.open {
+        /* max-height: 1000px; */
+        /* enough for nav links */
+        opacity: 1;
+        transform: translateX(0);
+      }
+    </style>
+
+    <style>
+      :root {
+        --primary: #00544f;
+        --muted: #eef6f5;
+        --glass: rgba(255, 255, 255, 0.55);
+        --card-shadow: 0 10px 30px rgba(2, 10, 10, 0.06);
+      }
+
+      /* Hero curve */
+      .hero-curve {
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 55%;
+        height: 100%;
+        pointer-events: none;
+        overflow: hidden;
+        z-index: 0;
+      }
+
+      /* Glass panel */
+      .glass {
+        background: linear-gradient(
+          180deg,
+          rgba(255, 255, 255, 0.6),
+          rgba(255, 255, 255, 0.45)
+        );
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+        border: 1px solid rgba(255, 255, 255, 0.45);
+      }
+
+      /* Timeline styles */
+      .timeline {
+        position: relative;
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+      }
+      .timeline-spine {
+        position: absolute;
+        margin-top: 5%;
+        left: 50%;
+        top: 0;
+        transform: translateX(-50%);
+        width: 6px;
+        height: 100%;
+        background: linear-gradient(
+          180deg,
+          rgba(0, 84, 79, 0.12),
+          rgba(0, 84, 79, 0.04)
+        );
+        border-radius: 6px;
+        z-index: -1;
+      }
+      .timeline-fill {
+        margin-top: 5%;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 6px;
+        background: linear-gradient(
+          180deg,
+          var(--primary),
+          rgba(0, 84, 79, 0.6)
+        );
+        border-radius: 6px;
+        top: 0;
+        height: 0%;
+        z-index: -1;
+        transition: height 300ms ease-out;
+      }
+
+      .timeline-item {
+        position: relative;
+        z-index: 2;
+        display: flex;
+        gap: 1.25rem;
+        align-items: center;
+      }
+      .timeline-icon {
+        width: 64px;
+        height: 64px;
+        border-radius: 14px;
+        display: grid;
+        place-items: center;
+        background: #00544f;
+        box-shadow: var(--card-shadow);
+        color: white;
+        flex-shrink: 0;
+        position: relative;
+        z-index: 10;
+      }
+
+      /* Desktop zig-zag layout */
+      @media (min-width: 768px) {
+        .timeline-row {
+          display: grid;
+          grid-template-columns: 1fr 120px 1fr;
+          align-items: center;
+          gap: 1rem;
+        }
+        .timeline-row .content-left {
+          text-align: right;
+          padding-right: 2rem;
+        }
+        .timeline-row .content-right {
+          text-align: left;
+          padding-left: 2rem;
+        }
+        .timeline-row .center {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+      }
+
+      /* Mobile stacking */
+      @media (max-width: 767px) {
+        .timeline-spine {
+          left: 28px;
+          transform: none;
+          width: 4px;
+        }
+        .timeline-fill {
+          left: 28px;
+          transform: none;
+          width: 4px;
+        }
+        .timeline-row {
+          display: flex;
+          flex-direction: row;
+          gap: 1rem;
+          align-items: flex-start;
+          padding-left: 24px;
+        }
+        .timeline-icon {
+          position: absolute;
+          left: 0;
+          top: 0;
+          transform: none;
+          width: 48px;
+          height: 48px;
+          border-radius: 10px;
+        }
+        .timeline-item .text {
+          margin-left: 56px;
+        }
+        .timeline {
+          padding-left: 0.5rem;
+          padding-right: 0.5rem;
+        }
+      }
+
+      /* Minor helpers */
+      .hero-title {
+        color: #032b2a;
+      }
+      .muted {
+        color: #6b7280;
+      }
+
+      /* Respect reduced motion */
+      @media (prefers-reduced-motion: reduce) {
+        .timeline-fill {
+          transition: none;
+        }
+      }
+    </style>
+  </head>
+
+  <body class="antialiased bg-white text-black">
+    <!-- Navbar  -->
+    <header class="sticky top-0 z-40 w-full mx-auto">
+      <div
+        class="flex items-center justify-between h-16 px-5 bg-white shadow-lg shadow-tertiary backdrop-blur-2xl"
+      >
+        <!-- Logo -->
+        <a class="" href="./index.html">
+          <img class="h-8" src="./assets/logo.webp" alt="logo" />
+        </a>
+
+        <!-- Desktop Nav -->
+        <nav
+          class="hidden md:flex items-center space-x-2 md:space-x-3 lg:space-x-5 text-sm font-medium"
+        >
+          <!-- Home with Dropdown -->
+          <div class="relative">
+            <!-- Parent Button -->
+            <button
+              class="relative inline-block after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full cursor-pointer"
+            >
+              <a href="./index.html">Home</a>
+              <i id="homeToggle" class="fa-solid fa-caret-down"></i>
+            </button>
+
+            <!-- Dropdown Menu -->
+            <ul
+              id="homeMenu"
+              class="absolute hidden bg-white text-black backdrop-blur-2xl shadow-lg mt-2 rounded w-40 z-40"
+            >
+              <li>
+                <a href="" class="block px-4 py-2"> Home 2 </a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- About -->
+          <a
+            href="./about.html"
+            class="relative text-primary inline-block after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full"
+          >
+            About
+          </a>
+
+          <!-- Services -->
+          <a
+            href="./service.html"
+            class="relative inline-block after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full"
+          >
+            Services
+          </a>
+          <!-- Products -->
+          <a
+            href="./product.html"
+            class="relative inline-block after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full"
+          >
+            Products
+          </a>
+          <!-- Contact -->
+          <a
+            href="./contact.html"
+            class="relative inline-block after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full"
+          >
+            Contact
+          </a>
+          <!-- Dashboard -->
+          <a
+            href="./dashboard.html"
+            class="relative inline-block after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full"
+          >
+            Dashboard
+          </a>
+        </nav>
+
+        <!-- login -->
+        <div class="flex text-sm gap-4 font-medium">
+          <div class="relative flex items-center gap-2">
+            <a
+              class="md:flex items-center gap-2 rounded-3xl text-sm transform hover:scale-95 transition duration-200 ease-out hidden"
+              href="./signin.html"
+              ><svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="size-6"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
+                />
+              </svg>
+              Login
+            </a>
+          </div>
+
+          <!-- Hamburger -->
+          <button
+            id="hamburger"
+            class="hamburger cursor-pointer lg:hidden focus:outline-none"
+            aria-label="Menu"
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Menu -->
+      <nav id="mobileMenu" class="mobile-menu h-screen lg:hidden shadow-md">
+        <ul
+          class="flex flex-col space-y-4 p-3 text-sm font-medium h-screen md:w-1/2 bg-white backdrop-blur-2xl"
+        >
+          <!-- Home dropDown  -->
+          <div class="relative">
+            <button class="flex items-center gap-1 w-full text-left lg:hidden">
+              <a href="./index.html">Home</a>
+              <i
+                id="mobileToggle"
+                class="fa-solid fa-caret-down cursor-pointer"
+              ></i>
+            </button>
+
+            <!-- Dropdown Menu -->
+            <ul
+              id="mobileLink"
+              class="hidden bg-white text-black mt-2 rounded w-full md:absolute"
+            >
+              <li>
+                <a href="" class="block px-2 py-2"> Home 2 </a>
+              </li>
+            </ul>
+          </div>
+          <!-- About -->
+          <li>
+            <a href="./about.html" class="nav-link block">About</a>
+          </li>
+          <!-- Services -->
+          <li>
+            <a href="./service.html" class="nav-link block">Services</a>
+          </li>
+          <!-- Products -->
+          <li>
+            <a href="./product.html" class="nav-link block">Products</a>
+          </li>
+          <!-- Contact -->
+          <li>
+            <a href="./contact.html" class="nav-link block">Contact</a>
+          </li>
+          <!-- Dashboard -->
+          <li>
+            <a href="./dashboard.html" class="nav-link block">Dashboard</a>
+          </li>
+          <!-- login  -->
+          <li>
+            <a href="./signin.html" class="flex items-center gap-2 nav-link"
+              ><svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="size-5"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
+                />
+              </svg>
+              Login</a
+            >
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Dropdown script  -->
+      <script>
+        const homeToggle = document.getElementById("homeToggle");
+        const homeMenu = document.getElementById("homeMenu");
+
+        homeToggle.addEventListener("click", () => {
+          homeMenu.classList.toggle("hidden");
+        });
+
+        const mobileToggle = document.getElementById("mobileToggle");
+        const mobileLink = document.getElementById("mobileLink");
+
+        // Home dropdown toggle (mobile only)
+        mobileToggle.addEventListener("click", () => {
+          mobileLink.classList.toggle("hidden");
+        });
+
+        // Optional: close menu if clicked outside
+        window.addEventListener("click", (e) => {
+          if (!homeToggle.contains(e.target) && !homeMenu.contains(e.target)) {
+            homeMenu.classList.add("hidden");
+          }
+        });
+      </script>
+    </header>
+
+    <!-- HERO -->
+    <main class="relative px-3 py-10 lg:py-20 overflow-hidden">
+      <div class="mx-auto grid lg:grid-cols-2 gap-12 items-center">
+        <!-- Left copy -->
+        <div class="relative z-20" data-aos="fade-right">
+          <p
+            class="text-xs font-semibold uppercase tracking-widest text-primary mb-3"
+          >
+            About MedEquip
+          </p>
+          <h1
+            class="hero-title text-xl md:text-4xl xl:text-5xl font-extrabold leading-tight mb-6"
+          >
+            We design, deliver and maintain medical equipment that powers modern
+            care.
+          </h1>
+          <p class="muted max-w-xl mb-8 text-sm md:text-lg">
+            MedEquip combines clinical expertise with engineering discipline to
+            supply hospitals and clinics with reliable devices, safe
+            installations, and dependable lifetime support.
+          </p>
+
+          <div class="flex gap-4 flex-wrap">
+            <a
+              href="#journey"
+              class="inline-flex items-center gap-3 bg-primary text-white px-5 py-3 rounded-lg shadow hover:brightness-95 transition"
+            >
+              <i class="fas fa-handshake"></i> Our Journey
+            </a>
+            <a
+              href="#team"
+              class="inline-flex items-center gap-3 border border-gray-200 px-5 py-3 rounded-lg text-sm hover:bg-gray-50 transition"
+            >
+              Meet the Team
+            </a>
+          </div>
+
+          <!-- Stats -->
+          <div class="mt-10 grid grid-cols-2 sm:grid-cols-4 gap-4">
+            <div class="glass p-4 rounded-xl text-center">
+              <div class="text-2xl font-bold text-primary">10+</div>
+              <div class="text-xs muted mt-1">Years Experience</div>
+            </div>
+            <div class="glass p-4 rounded-xl text-center">
+              <div class="text-2xl font-bold text-primary">500+</div>
+              <div class="text-xs muted mt-1">Healthcare Clients</div>
+            </div>
+            <div class="glass p-4 rounded-xl text-center">
+              <div class="text-2xl font-bold text-primary">24/7</div>
+              <div class="text-xs muted mt-1">Technical Support</div>
+            </div>
+            <div class="glass p-4 rounded-xl text-center">
+              <div class="text-2xl font-bold text-primary">99%</div>
+              <div class="text-xs muted mt-1">Service Reliability</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right visual (uses uploaded image) -->
+        <div class="relative hidden lg:block" data-aos="fade-left">
+          <div class="rounded-3xl overflow-hidden shadow-2xl">
+            <img
+              src="./assets/06-per.webp"
+              alt="Medical professional"
+              class="w-full h-[520px] object-contain"
+            />
+          </div>
+
+          <!-- curved SVG overlay -->
+          <div class="hero-curve" aria-hidden="true">
+            <svg
+              viewBox="0 0 100 100"
+              preserveAspectRatio="none"
+              class="w-full h-full"
+            >
+              <defs>
+                <linearGradient id="gA" x1="0" x2="1">
+                  <stop offset="0%" stop-color="#ffffff" stop-opacity="0.06" />
+                  <stop
+                    offset="100%"
+                    stop-color="#00544f"
+                    stop-opacity="0.06"
+                  />
+                </linearGradient>
+              </defs>
+              <path
+                d="M0,0 L70,0 C85,10 100,25 100,40 L100,100 L0,100 Z"
+                fill="url(#gA)"
+              />
+            </svg>
+          </div>
+
+          <!-- floating icons -->
+          <div class="absolute -left-8 -top-8">
+            <div class="float-icon p-3 glass">
+              <i class="fas fa-stethoscope"></i>
+            </div>
+          </div>
+          <div class="absolute -right-8 bottom-12">
+            <div class="float-icon p-3 glass">
+              <i class="fas fa-tools"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- STORY -->
+    <section class="mx-auto px-3 py-12 overflow-hidden">
+      <div class="grid md:grid-cols-2 gap-10 items-center">
+        <div
+          data-aos="fade-right"
+          class="rounded-2xl overflow-hidden shadow-lg"
+        >
+          <img
+            src="https://images.pexels.com/photos/7088522/pexels-photo-7088522.jpeg"
+            alt="Team"
+            class="w-full h-72 object-cover"
+          />
+        </div>
+        <div data-aos="fade-left">
+          <h2 class="text-3xl font-bold mb-4">Our Story</h2>
+          <p class="muted mb-4">
+            Founded by clinical engineers and healthcare leaders, MedEquip began
+            with a simple aim — make hospital equipment reliable and
+            predictable. Over the years we expanded through partnerships,
+            technology, and a relentless focus on service quality.
+          </p>
+
+          <ul class="grid gap-3">
+            <li class="flex gap-3 items-start">
+              <div class="text-primary mt-1">
+                <i class="fas fa-check-circle"></i>
+              </div>
+              <div class="muted">
+                Clinical-grade procurement & rigorous quality assurance
+              </div>
+            </li>
+            <li class="flex gap-3 items-start">
+              <div class="text-primary mt-1">
+                <i class="fas fa-check-circle"></i>
+              </div>
+              <div class="muted">
+                Certified installations, calibration and preventive maintenance
+              </div>
+            </li>
+            <li class="flex gap-3 items-start">
+              <div class="text-primary mt-1">
+                <i class="fas fa-check-circle"></i>
+              </div>
+              <div class="muted">
+                Hands-on training programs for clinical staff
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- MISSION / VISION / VALUES -->
+    <section class="bg-secondary py-12 px-3 overflow-hidden">
+      <div class="mx-auto grid md:grid-cols-3 gap-6">
+        <div
+          class="p-6 rounded-2xl glass"
+          data-aos="zoom-in"
+          data-aos-delay="50"
+        >
+          <div
+            class="w-12 h-12 rounded-lg bg-primary/10 text-primary grid place-items-center mb-4"
+          >
+            <i class="fas fa-bullseye"></i>
+          </div>
+          <h3 class="font-semibold">Mission</h3>
+          <p class="muted text-sm mt-2">
+            Deliver reliable medical equipment and services that empower
+            healthcare teams to deliver superior patient care.
+          </p>
+        </div>
+
+        <div
+          class="p-6 rounded-2xl glass"
+          data-aos="zoom-in"
+          data-aos-delay="80"
+        >
+          <div
+            class="w-12 h-12 rounded-lg bg-primary/10 text-primary grid place-items-center mb-4"
+          >
+            <i class="fas fa-eye"></i>
+          </div>
+          <h3 class="font-semibold">Vision</h3>
+          <p class="muted text-sm mt-2">
+            A world where technology and service remove barriers to quality care
+            — everywhere.
+          </p>
+        </div>
+
+        <div
+          class="p-6 rounded-2xl glass"
+          data-aos="zoom-in"
+          data-aos-delay="160"
+        >
+          <div
+            class="w-12 h-12 rounded-lg bg-primary/10 text-primary grid place-items-center mb-4"
+          >
+            <i class="fas fa-heart"></i>
+          </div>
+          <h3 class="font-semibold">Values</h3>
+          <p class="muted text-sm mt-2">
+            Integrity, reliability, clinical safety and people-first support.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- TIMELINE (redesigned premium zig-zag with floating icons & animated fill) -->
+    <section id="journey" class="py-20 px-3 overflow-hidden">
+      <div class="mx-auto timeline">
+        <h2 class="text-3xl font-bold text-gray-900 text-center mb-12">
+          Our Journey
+        </h2>
+
+        <!-- Spine and fill -->
+        <div class="timeline-spine" aria-hidden="true"></div>
+        <div id="timelineFill" class="timeline-fill" aria-hidden="true"></div>
+
+        <div class="space-y-12">
+          <!-- Row 1 (left content) -->
+          <div class="timeline-row" data-aos="fade-right">
+            <div class="content-left">
+              <div
+                class="bg-white p-6 rounded-2xl shadow"
+                style="display: inline-block"
+              >
+                <div class="text-2xl font-bold">2014</div>
+                <h3 class="text-lg font-semibold mt-2">Company Founded</h3>
+                <p class="muted mt-2">
+                  Started by a small team of biomedical engineers focused on
+                  service excellence and patient outcomes.
+                </p>
+              </div>
+            </div>
+
+            <div class="center">
+              <div class="timeline-icon">
+                <i class="fas fa-seedling fa-lg"></i>
+              </div>
+            </div>
+
+            <div class="content-right"></div>
+          </div>
+
+          <!-- Row 2 (right content) -->
+          <div class="timeline-row" data-aos="fade-left">
+            <div class="content-left"></div>
+
+            <div class="center">
+              <div class="timeline-icon">
+                <i class="fas fa-hospital fa-lg"></i>
+              </div>
+            </div>
+
+            <div class="content-right">
+              <div
+                class="bg-white p-6 rounded-2xl shadow"
+                style="display: inline-block"
+              >
+                <div class="text-2xl font-bold">2017</div>
+                <h3 class="text-lg font-semibold mt-2">
+                  Partnerships with Hospitals
+                </h3>
+                <p class="muted mt-2">
+                  Expanded installations and service agreements with regional
+                  hospital networks.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Row 3 (left content) -->
+          <div class="timeline-row" data-aos="fade-right">
+            <div class="content-left">
+              <div
+                class="bg-white p-6 rounded-2xl shadow"
+                style="display: inline-block"
+              >
+                <div class="text-2xl font-bold">2020</div>
+                <h3 class="text-lg font-semibold mt-2">
+                  Scaling Support Services
+                </h3>
+                <p class="muted mt-2">
+                  Launched 24/7 remote triage, logistics and rapid spare parts
+                  provisioning.
+                </p>
+              </div>
+            </div>
+
+            <div class="center">
+              <div class="timeline-icon">
+                <i class="fas fa-tools fa-lg"></i>
+              </div>
+            </div>
+
+            <div class="content-right"></div>
+          </div>
+
+          <!-- Row 4 (right content) -->
+          <div class="timeline-row" data-aos="fade-left">
+            <div class="content-left"></div>
+
+            <div class="center">
+              <div class="timeline-icon">
+                <i class="fas fa-award fa-lg"></i>
+              </div>
+            </div>
+
+            <div class="content-right">
+              <div
+                class="bg-white p-6 rounded-2xl shadow"
+                style="display: inline-block"
+              >
+                <div class="text-2xl font-bold">2023</div>
+                <h3 class="text-lg font-semibold mt-2">
+                  Certified Service Provider
+                </h3>
+                <p class="muted mt-2">
+                  Achieved multiple accreditations for safety, compliance and
+                  quality.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TEAM -->
+    <section id="team" class="py-12 px-3 bg-secondary">
+      <div class=" mx-auto ">
+        <h2 class="text-3xl font-bold text-gray-900 mb-8">Leadership Team</h2>
+        <div class="grid md:grid-cols-3 gap-6">
+          <div class="bg-white p-6 rounded-2xl shadow" data-aos="fade-up">
+            <img
+              src="https://images.pexels.com/photos/3874762/pexels-photo-3874762.jpeg"
+              class="w-16 h-16 rounded-lg object-cover mb-4"
+              alt=""
+            />
+            <div class="font-semibold">Dr. Asha Kapoor</div>
+            <div class="text-xs muted">CEO & Co-Founder</div>
+            <p class="muted text-sm mt-3">
+              Clinical engineer with 15+ years experience in biomedical
+              equipment and hospital workflows.
+            </p>
+          </div>
+
+          <div
+            class="bg-white p-6 rounded-2xl shadow"
+            data-aos="fade-up"
+            data-aos-delay="80"
+          >
+            <img
+              src="https://images.pexels.com/photos/1181690/pexels-photo-1181690.jpeg"
+              class="w-16 h-16 rounded-lg object-cover mb-4"
+              alt=""
+            />
+            <div class="font-semibold">Ravi Menon</div>
+            <div class="text-xs muted">Head of Engineering</div>
+            <p class="muted text-sm mt-3">
+              Leads installations and technical teams with a focus on uptime and
+              safety.
+            </p>
+          </div>
+
+          <div
+            class="bg-white p-6 rounded-2xl shadow"
+            data-aos="fade-up"
+            data-aos-delay="160"
+          >
+            <img
+              src="https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg"
+              class="w-16 h-16 rounded-lg object-cover mb-4"
+              alt=""
+            />
+            <div class="font-semibold">Meera Singh</div>
+            <div class="text-xs muted">Head of Operations</div>
+            <p class="muted text-sm mt-3">
+              Coordinates field teams, spare parts and rapid response
+              operations.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CERTIFICATIONS -->
+    <section class="py-12">
+      <div class=" mx-auto px-3">
+        <h3 class="text-xl font-semibold mb-6">Certifications & Partners</h3>
+        <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-6">
+          <div class="bg-white p-4 rounded-lg shadow-sm text-center">
+            <img
+              src="https://images.pexels.com/photos/3846142/pexels-photo-3846142.jpeg"
+              class="mx-auto mb-2 w-full h-[200px] object-cover"
+              alt=""
+            />
+            <div class="muted text-sm">ISO 9001</div>
+          </div>
+          <div class="bg-white p-4 rounded-lg shadow-sm text-center">
+            <img
+              src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg"
+              class="mx-auto mb-2 w-full h-[200px] object-cover"
+              alt=""
+            />
+            <div class="muted text-sm">CE / EMC</div>
+          </div>
+          <div class="bg-white p-4 rounded-lg shadow-sm text-center">
+            <img
+              src="https://images.pexels.com/photos/265087/pexels-photo-265087.jpeg"
+              class="mx-auto mb-2 w-full h-[200px] object-cover"
+              alt=""
+            />
+            <div class="muted text-sm">Healthcare Partner</div>
+          </div>
+          <div class="bg-white p-4 rounded-lg shadow-sm text-center">
+            <img
+              src="https://images.pexels.com/photos/373543/pexels-photo-373543.jpeg"
+              class="mx-auto mb-2 w-full h-[200px] object-cover"
+              alt=""
+            />
+            <div class="muted text-sm">Safety Accreditation</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="bg-primary text-white py-12">
+      <div
+        class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6"
+      >
+        <div>
+          <h3 class="text-2xl font-bold">
+            Ready to partner for reliable medical equipment?
+          </h3>
+          <p class="muted text-sm mt-1 text-white/90">
+            Let's design a plan tailored to your facility.
+          </p>
+        </div>
+        <div>
+          <a
+            href="#"
+            class="inline-flex gap-3 items-center bg-white text-primary px-5 py-3 rounded-lg font-medium shadow"
+            >Contact Sales</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- footer -->
+    <footer class="px-3 mt-10 overflow-hidden">
+      <div
+        class="flex justify-between flex-wrap w-full md:gap-20 gap-8 pb-6"
+        data-aos="fade-up"
+        data-aos-delay="150"
+      >
+        <div class="md:max-w-96 flex flex-col items-start space-y-2">
+          <img class="h-8" src="./assets/logo.webp" alt="logo" />
+          <p class="mt-2 text-sm md:text-lg">
+            MedEquip Store is a trusted provider of high-quality medical
+            equipment and supplies for hospitals, clinics, and home care. We are
+            committed to delivering reliable & safe.
+          </p>
+        </div>
+
+        <div class="flex flex-col lg:items-center lg:justify-center">
+          <div class="flex flex-col text-sm md:text-lg space-y-2.5 md:px-8">
+            <h2 class="font-semibold mb-5 text-primary uppercase">
+              Easier Acces
+            </h2>
+            <a class="hover:text-slate-600 transition" href="./index.html"
+              >Home</a
+            >
+            <a class="hover:text-slate-600 transition" href="./about.html"
+              >About us</a
+            >
+            <a class="hover:text-slate-600 transition" href="./service.html"
+              >Services<span
+                class="text-xs text-white bg-gray-600 rounded-bl-xl rounded-tr-xl ml-2 px-2 py-1"
+                >New</span
+              ></a
+            >
+            <a class="hover:text-slate-600 transition" href="./product.html"
+              >Products</a
+            >
+            <a class="hover:text-slate-600 transition" href="./contact.html"
+              >Contact us</a
+            >
+          </div>
+        </div>
+
+        <div>
+          <h2
+            class="font-semibold mb-5 text-sm md:text-lg text-primary uppercase"
+          >
+            Subscribe to our newsletter
+          </h2>
+          <div class="text-sm md:text-lg space-y-6 max-w-sm">
+            <p>
+              The latest news, articles, and resources, sent to your inbox
+              weekly.
+            </p>
+            <form
+              id="sub-form"
+              method="get"
+              action="./404.html"
+              class="flex items-center justify-center gap-2 p-2 rounded-xl bg-primary/5"
+            >
+              <input
+                pattern=".+@gmail\.com$"
+                title="Email must end with @gmail.com"
+                required
+                class="focus:ring-0 outline-none w-full max-w-64 py-2 rounded px-2"
+                type="email"
+                placeholder="Enter your email"
+              />
+              <button
+                type="submit"
+                class="bg-primary px-4 py-2 rounded-lg cursor-pointer transform hover:scale-95 transition duration-500 ease-out text-white"
+              >
+                Subscribe
+              </button>
+            </form>
+          </div>
+        </div>
+
+        <div class="flex items-start">
+          <div class="">
+            <h2
+              class="font-semibold mb-5 text-sm md:text-lg text-primary uppercase"
+            >
+              Get in touch
+            </h2>
+            <div class="text-sm md:text-lg space-y-2 flex flex-col items-start">
+              <a href="./404.html">+1-212-456-7890</a>
+              <a href="./404.html">contact@example.com</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="overflow-hidden">
+        <!-- Google Map -->
+        <div
+          data-aos="fade-up"
+          data-aos-delay="200"
+          class="rounded-2xl w-full overflow-hidden shadow-lg mb-3"
+        >
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3907.1616097152896!2d78.1739798!3d11.682956599999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3babefef7fd970bb%3A0xe11aef1a71994f9!2sStackly!5e0!3m2!1sen!2sin!4v1755667813665!5m2!1sen!2sin"
+            width="100%"
+            height="250"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+      </div>
+
+      <div
+        class="flex items-center justify-center text-center border-t border-gray-500/30"
+      >
+        <div>
+          <p class="pt-4 text-lg pb-4">
+            Copyright 2025 © <a href="./404.html">Stackly</a>. All Right
+            Reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Aos Animation  -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"
+      integrity="sha512-A7AYk1fGKX6S2SsHywmPkrnzTZHrgiVT7GcQkLGDe2ev0aWb8zejytzS8wjo7PGEXKqJOrjQ4oORtnimIRZBtw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <!-- mobile menu script -->
+    <script>
+      // sub-form reset
+      const form = document.querySelector("#sub-form");
+      form.addEventListener("submit", () => {
+        form.reset();
+      });
+
+      // Aos Animation Init
+      AOS.init({
+        duration: 800,
+        delay: 200, // default delay for all elements
+        once: false,
+        mirror: true,
+      });
+
+      // Hamburger Menu Toggle
+      const hamburger = document.getElementById("hamburger");
+      const mobileMenu = document.getElementById("mobileMenu");
+      const links = mobileMenu.querySelectorAll(".nav-link");
+
+      hamburger.addEventListener("click", () => {
+        hamburger.classList.toggle("active");
+        mobileMenu.classList.toggle("open");
+      });
+
+      links.forEach((link) => {
+        link.addEventListener("click", () => {
+          hamburger.classList.remove("active");
+          mobileMenu.classList.remove("open");
+        });
+      });
+
+      // Optional: close menu if clicked outside
+      window.addEventListener("click", (e) => {
+        if (!homeToggle.contains(e.target) && !homeMenu.contains(e.target)) {
+          homeMenu.classList.add("hidden");
+        }
+      });
+    </script>
+
+    <!-- SCRIPTS: timeline fill animation -->
+    <script>
+      // Timeline fill animation: fills proportionally as user scrolls the timeline section
+      (function () {
+        const fill = document.getElementById("timelineFill");
+        const timeline =
+          document.querySelector("#journey .max-w-6xl") ||
+          document.getElementById("journey");
+        const section =
+          document.getElementById("journey") ||
+          document.querySelector('[id="journey"]');
+
+        function updateFill() {
+          if (!fill || !section) return;
+          const rect = section.getBoundingClientRect();
+          const winH = window.innerHeight;
+          // calculate how much of the section is visible (0..1)
+          const visibleTop = Math.max(0, -rect.top);
+          const visible = Math.max(0, Math.min(rect.height, winH - rect.top));
+          const progress = Math.min(
+            1,
+            Math.max(0, (winH - rect.top) / rect.height)
+          );
+          // better mapping: when top enters viewport, start growing; when bottom reaches top, full
+          // compute ratio of how far through section's viewport we've scrolled
+          const start = Math.max(
+            0,
+            Math.min(1, (winH - rect.top) / (winH + rect.height))
+          );
+          const percentage = Math.min(
+            100,
+            Math.max(0, (visible / rect.height) * 100)
+          );
+          // smoother: map visible portion to height
+          fill.style.height = percentage + "%";
+        }
+
+        // initial
+        updateFill();
+        window.addEventListener("scroll", updateFill, { passive: true });
+        window.addEventListener("resize", updateFill);
+        // respect reduced motion
+        if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+          fill.style.transition = "none";
+        }
+      })();
+    </script>
+  </body>
+</html>
