@@ -150,7 +150,7 @@
         transform: translateX(-50%);
         width: 6px;
         height: 100%;
-        top: 5%;
+        top: 12%;
         background: rgba(0, 84, 79, 0.18);
         border-radius: 6px;
       }
@@ -161,7 +161,7 @@
         transform: translateX(-50%);
         width: 6px;
         height: 0%;
-        top: 5%;
+        top: 12%;
         background: linear-gradient(180deg, #00544f, rgba(0, 84, 79, 0.5));
         border-radius: 6px;
         transition: height 350ms ease-out;
@@ -321,7 +321,7 @@
               class="absolute hidden bg-white text-black backdrop-blur-2xl shadow-lg mt-2 rounded w-40 z-40"
             >
               <li>
-                <a href="" class="block px-4 py-2"> Home 2 </a>
+                <a href="./Home/index.html" class="block px-4 py-2"> Home 2 </a>
               </li>
             </ul>
           </div>
@@ -422,7 +422,7 @@
               class="hidden bg-white text-black mt-2 rounded w-full md:absolute"
             >
               <li>
-                <a href="" class="block px-2 py-2"> Home 2 </a>
+                <a href="./Home/index.html" class="block px-2 py-2"> Home 2 </a>
               </li>
             </ul>
           </div>
@@ -566,10 +566,78 @@
       </div>
     </main>
 
+    <!-- STORY -->
+    <section class="mx-auto px-3 py-12 overflow-hidden">
+      <div class="grid md:grid-cols-2 gap-10 items-center">
+        <div
+          data-aos="zoom-in-right"
+          data-aos-delay="50"
+          class="rounded-2xl overflow-hidden shadow-lg"
+        >
+          <img
+            src="./assets/story.webp"
+            alt="Team"
+            class="w-full h-72 object-cover object-top"
+          />
+        </div>
+        <div data-aos="zoom-in-left">
+          <h2 class="text-3xl font-bold mb-4">Our Story</h2>
+          <p class="muted mb-4">
+            Founded by clinical engineers and healthcare leaders, MedEquip began
+            with a simple aim — make hospital equipment reliable and
+            predictable. Over the years we expanded through partnerships,
+            technology, and a relentless focus on service quality.
+          </p>
+
+          <ul class="grid gap-3">
+            <li class="flex gap-3 items-start">
+              <div class="text-primary mt-1">
+                <i class="fas fa-check-circle"></i>
+              </div>
+              <div class="muted">
+                Clinical-grade procurement & rigorous quality assurance
+              </div>
+            </li>
+            <li class="flex gap-3 items-start">
+              <div class="text-primary mt-1">
+                <i class="fas fa-check-circle"></i>
+              </div>
+              <div class="muted">
+                Certified installations, calibration and preventive maintenance
+              </div>
+            </li>
+            <li class="flex gap-3 items-start">
+              <div class="text-primary mt-1">
+                <i class="fas fa-check-circle"></i>
+              </div>
+              <div class="muted">
+                Hands-on training programs for clinical staff
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
     <!-- MISSION / VISION / VALUES -->
     <section class="py-6 px-3 overflow-hidden">
-      <div data-aos="fade-right" class="mb-4">
-        <h1 class="text-2xl md:text-3xl font-bold">Mission & Vision</h1>
+      <div class="mb-4 text-center py-6">
+        <h1
+          data-aos="zoom-in"
+          data-aos-delay="50"
+          class="text-2xl md:text-3xl font-bold"
+        >
+          Mission & Vision
+        </h1>
+        <p
+          data-aos="zoom-in"
+          data-aos-delay="100"
+          class="text-sm md:text-lg max-w-3xl mx-auto"
+        >
+          Our vision is to modernize healthcare operations with intuitive,
+          efficient digital tools. We aim to empower administrators with
+          clarity, control, and real-time insights.
+        </p>
       </div>
       <div class="mx-auto grid md:grid-cols-3 gap-6">
         <div
@@ -578,14 +646,14 @@
           data-aos-delay="50"
         >
           <div
-            class="w-12 h-12 rounded-lg bg-primary/10 text-primary grid place-items-center mb-4"
+            class="size-16 rounded-full text-xl bg-primary/10 text-primary grid place-items-center mb-4"
           >
             <i class="fas fa-bullseye"></i>
           </div>
-          <h3 class="font-semibold">Mission</h3>
-          <p class="muted text-sm mt-2">
-            Deliver reliable medical equipment and services that empower
-            healthcare teams to deliver superior patient care.
+          <h3 class="font-semibold text-xl md:text-2xl">Mission</h3>
+          <p class="muted text-sm mt-2 md:text-lg">
+            Deliver reliable medical equipment that empower healthcare teams to
+            deliver superior patient care.
           </p>
         </div>
 
@@ -595,12 +663,12 @@
           data-aos-delay="80"
         >
           <div
-            class="w-12 h-12 rounded-lg bg-primary/10 text-primary grid place-items-center mb-4"
+            class="size-16 rounded-full text-xl bg-primary/10 text-primary grid place-items-center mb-4"
           >
             <i class="fas fa-eye"></i>
           </div>
-          <h3 class="font-semibold">Vision</h3>
-          <p class="muted text-sm mt-2">
+          <h3 class="font-semibold text-xl md:text-2xl">Vision</h3>
+          <p class="muted text-sm mt-2 md:text-lg">
             A world where technology and service remove barriers to quality care
             — everywhere.
           </p>
@@ -612,12 +680,12 @@
           data-aos-delay="160"
         >
           <div
-            class="w-12 h-12 rounded-lg bg-primary/10 text-primary grid place-items-center mb-4"
+            class="size-16 rounded-full text-xl bg-primary/10 text-primary grid place-items-center mb-4"
           >
             <i class="fas fa-heart"></i>
           </div>
-          <h3 class="font-semibold">Values</h3>
-          <p class="muted text-sm mt-2">
+          <h3 class="font-semibold text-xl md:text-2xl">Values</h3>
+          <p class="muted text-sm mt-2 md:text-lg">
             Integrity, reliability, clinical safety and people-first support.
           </p>
         </div>
@@ -627,9 +695,24 @@
     <!-- TIMELINE (redesigned premium zig-zag with floating icons & animated fill) -->
     <section id="journey" class="py-20 px-3 overflow-hidden">
       <div class="mx-auto timeline">
-        <h2 class="text-3xl font-bold text-gray-900 text-center mb-16">
-          Our Journey
-        </h2>
+        <div class="mb-16 text-center flex flex-col gap-2">
+          <h2
+            data-aos="fade-left"
+            data-aos-delay="50"
+            class="text-3xl font-bold text-gray-900"
+          >
+            Our Journey
+          </h2>
+          <p
+            data-aos="zoom-in"
+            data-aos-delay="80"
+            class="muted text-sm mt-2 md:text-lg"
+          >
+            We began with a mission to simplify and elevate medical
+            administration through innovation. Today, our platform supports
+            growing healthcare networks with reliable, scalable intelligence.
+          </p>
+        </div>
 
         <!-- Spine + Fill -->
         <div class="timeline-spine"></div>
@@ -728,17 +811,29 @@
     </section>
 
     <!-- TEAM -->
-    <section
-      id="team"
-      class="scroll-mt-6 py-12 px-3 bg-primary/80 overflow-hidden"
-    >
+    <section id="team" class="scroll-mt-6 py-12 px-3 overflow-hidden">
       <div class="mx-auto">
-        <h2 class="text-xl md:text-3xl font-bold text-gray-900 mb-8">
-          Leadership Team
-        </h2>
+        <div class="mb-8 text-center flex flex-col gap-2">
+          <h2
+            data-aos="fade-left"
+            data-aos-delay="50"
+            class="text-3xl font-bold text-gray-900"
+          >
+            Leadership Team
+          </h2>
+          <p
+            data-aos="zoom-in"
+            data-aos-delay="80"
+            class="muted text-sm mt-2 md:text-lg"
+          >
+            Our leadership team brings decades of experience in medical
+            technology and system management. They are committed to building
+            solutions that enhance care, workflow, and decision-making.
+          </p>
+        </div>
         <div class="grid md:grid-cols-3 gap-6">
           <div
-            class="bg-white p-6 rounded-2xl shadow text-center"
+            class="bg-white p-6 rounded-2xl shadow-md text-center border-l-8 border-primary"
             data-aos="zoom-in-up"
           >
             <img
@@ -755,7 +850,7 @@
           </div>
 
           <div
-            class="bg-white p-6 rounded-2xl shadow text-center"
+            class="bg-white p-6 rounded-2xl shadow-md text-center border-l-8 border-primary"
             data-aos="zoom-in-up"
             data-aos-delay="80"
           >
@@ -773,7 +868,7 @@
           </div>
 
           <div
-            class="bg-white p-6 rounded-2xl shadow text-center"
+            class="bg-white p-6 rounded-2xl shadow-md text-center border-l-8 border-primary"
             data-aos="zoom-in-up"
             data-aos-delay="160"
           >
@@ -793,66 +888,28 @@
       </div>
     </section>
 
-    <!-- STORY -->
-    <section class="mx-auto px-3 py-12 overflow-hidden">
-      <div class="grid md:grid-cols-2 gap-10 items-center">
-        <div
-          data-aos="fade-right"
-          class="rounded-2xl overflow-hidden shadow-lg"
-        >
-          <img
-            src="./assets/contact.webp"
-            alt="Team"
-            class="w-full h-72 object-cover"
-          />
-        </div>
-        <div data-aos="fade-left">
-          <h2 class="text-3xl font-bold mb-4">Our Story</h2>
-          <p class="muted mb-4">
-            Founded by clinical engineers and healthcare leaders, MedEquip began
-            with a simple aim — make hospital equipment reliable and
-            predictable. Over the years we expanded through partnerships,
-            technology, and a relentless focus on service quality.
-          </p>
-
-          <ul class="grid gap-3">
-            <li class="flex gap-3 items-start">
-              <div class="text-primary mt-1">
-                <i class="fas fa-check-circle"></i>
-              </div>
-              <div class="muted">
-                Clinical-grade procurement & rigorous quality assurance
-              </div>
-            </li>
-            <li class="flex gap-3 items-start">
-              <div class="text-primary mt-1">
-                <i class="fas fa-check-circle"></i>
-              </div>
-              <div class="muted">
-                Certified installations, calibration and preventive maintenance
-              </div>
-            </li>
-            <li class="flex gap-3 items-start">
-              <div class="text-primary mt-1">
-                <i class="fas fa-check-circle"></i>
-              </div>
-              <div class="muted">
-                Hands-on training programs for clinical staff
-              </div>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
     <!-- CERTIFICATIONS -->
     <section class="py-12 overflow-hidden">
       <div class="mx-auto px-3">
-        <h3 data-aos="zoom-in" class="text-xl md:text-3xl font-semibold mb-6">
-          Certifications & Partners
-        </h3>
+        <div class="mb-8 text-center flex flex-col gap-2">
+          <h2
+            data-aos="fade-left"
+            data-aos-delay="50"
+            class="text-3xl font-bold text-gray-900"
+          >
+            Certifications & Partners
+          </h2>
+          <p
+            data-aos="zoom-in"
+            data-aos-delay="80"
+            class="muted text-sm mt-2 md:text-lg"
+          >
+            Each credential ensures that our systems meet global healthcare and
+            administrative quality standards.
+          </p>
+        </div>
         <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-6">
-          <div class="bg-white p-4 rounded-lg shadow-sm text-center">
+          <div data-aos="zoom-in" data-aos-delay="50" class="bg-white p-4 rounded-lg shadow-sm text-center">
             <img
               src="./assets/iso.webp"
               class="mx-auto mb-2 w-full h-[100px] object-contain"
@@ -860,7 +917,7 @@
             />
             <div class="muted text-sm">ISO 9001</div>
           </div>
-          <div class="bg-white p-4 rounded-lg shadow-sm text-center">
+          <div data-aos="zoom-in" data-aos-delay="70" class="bg-white p-4 rounded-lg shadow-sm text-center">
             <img
               src="./assets/ce.webp"
               class="mx-auto mb-2 w-full h-[100px] object-contain"
@@ -868,7 +925,7 @@
             />
             <div class="muted text-sm">CE / EMC</div>
           </div>
-          <div class="bg-white p-4 rounded-lg shadow-sm text-center">
+          <div data-aos="zoom-in" data-aos-delay="90" class="bg-white p-4 rounded-lg shadow-sm text-center">
             <img
               src="./assets/hcp.webp"
               class="mx-auto mb-2 w-full h-[100px] object-contain"
@@ -876,7 +933,7 @@
             />
             <div class="muted text-sm">Healthcare Partner</div>
           </div>
-          <div class="bg-white p-4 rounded-lg shadow-sm text-center">
+          <div data-aos="zoom-in" data-aos-delay="110" class="bg-white p-4 rounded-lg shadow-sm text-center">
             <img
               src="./assets/hca.webp"
               class="mx-auto mb-2 w-full h-[100px] object-contain"
@@ -903,7 +960,7 @@
         </div>
         <div>
           <a
-            href="#"
+            href="./404.html"
             class="inline-flex gap-3 items-center bg-white text-primary px-5 py-3 rounded-lg font-medium shadow"
             >Contact Sales</a
           >

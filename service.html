@@ -138,7 +138,7 @@
               class="absolute hidden bg-white text-black backdrop-blur-2xl shadow-lg mt-2 rounded w-40 z-40"
             >
               <li>
-                <a href="" class="block px-4 py-2"> Home 2 </a>
+                <a href="./Home/index.html" class="block px-4 py-2"> Home 2 </a>
               </li>
             </ul>
           </div>
@@ -239,7 +239,7 @@
               class="hidden bg-white text-black mt-2 rounded w-full md:absolute"
             >
               <li>
-                <a href="" class="block px-2 py-2"> Home 2 </a>
+                <a href="./Home/index.html" class="block px-2 py-2"> Home 2 </a>
               </li>
             </ul>
           </div>
@@ -313,23 +313,39 @@
     </header>
 
     <!-- MAIN SERVICES SECTION -->
-    <section class="mx-auto px-3 py-12 lg:py-24 grid lg:grid-cols-2 gap-16 items-center">
+    <section
+      class="mx-auto px-3 py-12 lg:py-24 grid lg:grid-cols-2 gap-16 items-center overflow-hidden"
+    >
       <div>
         <p
+          data-aos="zoom-in"
+          data-aos-delay="50"
           class="text-sm font-semibold uppercase tracking-widest text-primary mb-2"
         >
           What We Offer
         </p>
-        <h2 class="text-4xl font-extrabold text-gray-900 leading-snug">
+        <h2
+          data-aos="zoom-in"
+          data-aos-delay="80"
+          class="text-4xl font-extrabold text-gray-900 leading-snug"
+        >
           Trusted Medical Equipment Services You Can Rely On
         </h2>
-        <p class="mt-5 text-gray-600 text-lg">
+        <p
+          data-aos="zoom-in"
+          data-aos-delay="110"
+          class="mt-5 text-gray-600 text-lg"
+        >
           From advanced diagnostic devices to preventive maintenance and
           technical training — we ensure your equipment performs flawlessly and
           elevates patient care.
         </p>
         <div class="mt-10 space-y-7">
-          <div class="flex items-center gap-4">
+          <div
+            data-aos="zoom-in-right"
+            data-aos-delay="50"
+            class="flex items-center gap-4"
+          >
             <i class="fas fa-laptop-medical text-primary text-2xl"></i>
             <div>
               <h3 class="font-semibold text-lg text-gray-900">
@@ -340,7 +356,11 @@
               </p>
             </div>
           </div>
-          <div class="flex items-center gap-4">
+          <div
+            data-aos="zoom-in-right"
+            data-aos-delay="70"
+            class="flex items-center gap-4"
+          >
             <i class="fas fa-cogs text-primary text-2xl"></i>
             <div>
               <h3 class="font-semibold text-lg text-gray-900">
@@ -351,7 +371,11 @@
               </p>
             </div>
           </div>
-          <div class="flex items-center gap-4">
+          <div
+            data-aos="zoom-in-right"
+            data-aos-delay="90"
+            class="flex items-center gap-4"
+          >
             <i class="fas fa-user-graduate text-primary text-2xl"></i>
             <div>
               <h3 class="font-semibold text-lg text-gray-900">
@@ -372,7 +396,7 @@
         </div>
       </div>
 
-      <div class="relative">
+      <div data-aos="zoom-in" data-aos-delay="100" class="relative">
         <div
           class="absolute -top-8 -left-3 smmd:-left-8 w-36 h-36 bg-primary opacity-10 rounded-xl"
         ></div>
@@ -387,7 +411,13 @@
     <!-- WHY CHOOSE US SECTION -->
     <section class="bg-primary/10 py-20 px-3 overflow-hidden">
       <div class="mx-auto px-6 text-center">
-        <h2 class="text-3xl font-bold text-gray-900 mb-12">Why Choose Us?</h2>
+        <div class="mb-12 flex flex-col gap-2">
+          <h2 data-aos="zoom-in" data-aos-delay="30" class="text-3xl font-bold text-gray-900">Why Choose Us?</h2>
+          <p data-aos="zoom-in" data-aos-delay="60" class="text-sm md:text-lg">
+            We combine advanced technology with deep healthcare expertise to
+            deliver solutions you can rely on.
+          </p>
+        </div>
 
         <div
           class="grid grid-cols-1 smmd:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10"
@@ -438,14 +468,22 @@
       id="services"
       class="scroll-mt-16 mx-auto px-3 py-24 overflow-hidden"
     >
-      <div class="flex flex-col items-start mb-12 gap-4">
-        <h2 class="text-xl md:text-3xl font-bold text-gray-900 ">
+      <div class="flex flex-col mb-12 gap-4 text-center w-full overflow-hidden">
+        <h2
+          data-aos="fade-right"
+          data-aos-delay="30"
+          class="text-xl md:text-3xl font-bold text-gray-900"
+        >
           Equipment We Specialize In
         </h2>
-        <p class="text-lg md:text-xl max-w-3xl">
+        <p
+          data-aos="fade-left"
+          data-aos-delay="60"
+          class="text-lg md:text-xl max-w-3xl mx-auto"
+        >
           From advanced diagnostic devices to preventive maintenance and
-          technical training and we ensure your equipment performs flawlessly and
-          elevates patient care.
+          technical training and we ensure your equipment performs flawlessly
+          and elevates patient care.
         </p>
       </div>
 
@@ -466,11 +504,13 @@
             services
               .map(
                 ([icon, title, desc]) => `
-          <div class="p-8 border border-gray-200 rounded-xl hover:shadow-xl hover:-translate-y-1 transition duration-500 ease-in-out">
+        <div data-aos='zoom-in' class='py-2'>
+            <div  class="p-8  border border-gray-200 rounded-xl hover:shadow-xl hover:-translate-y-1 transition duration-500 ease-in-out">
             <i class="fas ${icon} text-3xl text-primary mb-5"></i>
             <h3 class="font-semibold text-xl">${title}</h3>
             <p class="text-gray-600 text-sm mt-2">${desc}</p>
           </div>
+         </div> 
         `
               )
               .join("")
@@ -480,9 +520,28 @@
     </section>
 
     <!-- HOW WE WORK — NEW PREMIUM TIMELINE -->
-    <section class="bg-primary text-white py-24">
-      <div class="max-w-6xl mx-auto px-6">
-        <h2 class="text-3xl font-bold mb-20 text-center">How We Work</h2>
+    <section class="bg-primary text-white px-3 py-24 overflow-hidden">
+      <div class="mx-auto">
+        <div
+          class="flex flex-col mb-12 gap-4 text-center w-full overflow-hidden"
+        >
+          <h2
+            data-aos="fade-right"
+            data-aos-delay="30"
+            class="text-xl md:text-3xl font-bold"
+          >
+            How We Work
+          </h2>
+          <p
+            data-aos="fade-left"
+            data-aos-delay="60"
+            class="text-sm md:text-lg max-w-3xl mx-auto"
+          >
+            From advanced diagnostic devices to preventive maintenance and
+            technical training and we ensure your equipment performs flawlessly
+            and elevates patient care.
+          </p>
+        </div>
 
         <div class="relative">
           <div
@@ -549,15 +608,16 @@
     </section>
 
     <!-- CTA SECTION -->
-    <section class="text-center py-20">
-      <h2 class="text-3xl font-bold text-gray-900">
+    <section class="text-center py-20 overflow-hidden">
+      <h2 data-aos="fade-right" data-aos-delay="30" class="text-3xl font-bold text-gray-900">
         Ready to Upgrade Your Facility?
       </h2>
-      <p class="text-gray-600 mt-3 mb-8">
+      <p data-aos="fade-left" data-aos-delay="60" class="text-gray-600 mt-3 mb-8">
         Let’s build a safer and smarter healthcare environment.
       </p>
-      <a href="./404.html"
-        class=" bg-primary text-white px-10 py-3 rounded-lg text-sm font-medium hover:bg-teal-900 transition"
+      <a
+        href="./404.html"
+        class="bg-primary text-white px-10 py-3 rounded-lg text-sm font-medium hover:bg-teal-900 transition"
       >
         Request Callback
       </a>

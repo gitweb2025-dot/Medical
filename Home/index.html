@@ -1,0 +1,1125 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Medical</title>
+
+    <meta
+      name="medical care"
+      content="It provides high-quality medical services, advanced healthcare equipment, diagnostic tools, and professional support for hospitals, clinics, and home care needs."
+    />
+    <meta
+      name="keywords"
+      content="medical services, medical equipment, healthcare devices, diagnostic tools, hospital supplies, clinic equipment, medical technology"
+    />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Advanced Medical Services & Equipment" />
+    <meta
+      property="og:description"
+      content="Trusted provider of medical services, diagnostic solutions, and world-class healthcare equipment for hospitals, clinics, and home care."
+    />
+
+    <!-- Font Awesome Cdn Link -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+      integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- Aos Cdn Link -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
+      integrity="sha512-1cK78a1o+ht2JcaW6g8OXYwqpev9+6GqOkz9xmBN9iUUhIndKtxwILGWYOSibOKjLsEdjyjZvYDq/cZwNeak0w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Tailwind CSS  -->
+    <link rel="stylesheet" href="../src/output.css" />
+
+    <!-- <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script> -->
+
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Lora:ital,wght@0,400..700;1,400..700&family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap");
+
+      @import url("https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap");
+
+      body {
+        font-family: "EB Garamond", serif;
+        overflow-x: hidden;
+      }
+
+      /* Hamburger animation */
+      .hamburger span {
+        display: block;
+        width: 1.5rem;
+        height: 0.125rem;
+        margin: 0.4rem auto;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        background-color: currentColor;
+      }
+
+      .hamburger.active span:nth-child(1) {
+        transform: rotate(45deg) translate(6px, 6px);
+      }
+
+      .hamburger.active span:nth-child(2) {
+        opacity: 0;
+      }
+
+      .hamburger.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(6px, -6px);
+      }
+
+      /* Mobile menu slide + fade */
+      .mobile-menu {
+        max-height: 0;
+        opacity: 0;
+        /* height: 100vh; */
+        transform: translateX(-100%);
+        /* overflow: hidden; */
+        transition: all 0.8s ease-in-out;
+      }
+
+      .mobile-menu.open {
+        /* max-height: 1000px; */
+        /* enough for nav links */
+        opacity: 1;
+        transform: translateX(0);
+      }
+    </style>
+  </head>
+
+  <body class="antialiased bg-white text-black">
+    <!-- Navbar  -->
+    <header class="sticky top-0 z-40 w-full mx-auto">
+      <div
+        class="flex items-center justify-between h-16 px-5 bg-white shadow-lg shadow-tertiary backdrop-blur-2xl"
+      >
+        <!-- Logo -->
+        <a class="" href="./index.html">
+          <img class="h-8" src="../assets/logo.webp" alt="logo" />
+        </a>
+
+        <!-- Desktop Nav -->
+        <nav
+          class="hidden md:flex items-center space-x-2 md:space-x-3 lg:space-x-5 text-sm font-medium"
+        >
+          <!-- Home with Dropdown -->
+          <div class="relative">
+            <!-- Parent Button -->
+            <button
+              class="relative text-primary inline-block after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full cursor-pointer"
+            >
+              <a href="./index.html">Home</a>
+              <i id="homeToggle" class="fa-solid fa-caret-down"></i>
+            </button>
+
+            <!-- Dropdown Menu -->
+            <ul
+              id="homeMenu"
+              class="absolute hidden bg-white text-black backdrop-blur-2xl shadow-lg mt-2 rounded w-40 z-40"
+            >
+              <li>
+                <a href="../index.html" class="block px-4 py-2"> Home 1 </a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- About -->
+          <a
+            href="./about.html"
+            class="relative inline-block after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full"
+          >
+            About
+          </a>
+
+          <!-- Services -->
+          <a
+            href="./service.html"
+            class="relative inline-block after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full"
+          >
+            Services
+          </a>
+          <!-- Products -->
+          <a
+            href="./product.html"
+            class="relative inline-block after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full"
+          >
+            Products
+          </a>
+          <!-- Contact -->
+          <a
+            href="./contact.html"
+            class="relative inline-block after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full"
+          >
+            Contact
+          </a>
+          <!-- Dashboard -->
+          <a
+            href="./dashboard.html"
+            class="relative inline-block after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full"
+          >
+            Dashboard
+          </a>
+        </nav>
+
+        <!-- login -->
+        <div class="flex text-sm gap-4 font-medium">
+          <div class="relative flex items-center gap-2">
+            <a
+              class="md:flex items-center gap-2 rounded-3xl text-sm transform hover:scale-95 transition duration-200 ease-out hidden"
+              href="./signin.html"
+              ><svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="size-6"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
+                />
+              </svg>
+              Login
+            </a>
+          </div>
+
+          <!-- Hamburger -->
+          <button
+            id="hamburger"
+            class="hamburger cursor-pointer lg:hidden focus:outline-none"
+            aria-label="Menu"
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Menu -->
+      <nav id="mobileMenu" class="mobile-menu h-screen lg:hidden shadow-md">
+        <ul
+          class="flex flex-col space-y-4 p-3 text-sm font-medium h-screen md:w-1/2 bg-white backdrop-blur-2xl"
+        >
+          <!-- Home dropDown  -->
+          <div class="relative">
+            <button class="flex items-center gap-1 w-full text-left lg:hidden">
+              <a href="./index.html">Home</a>
+              <i
+                id="mobileToggle"
+                class="fa-solid fa-caret-down cursor-pointer"
+              ></i>
+            </button>
+
+            <!-- Dropdown Menu -->
+            <ul
+              id="mobileLink"
+              class="hidden bg-white text-black mt-2 rounded w-full md:absolute"
+            >
+              <li>
+                <a href="../index.html" class="block px-2 py-2"> Home 1 </a>
+              </li>
+            </ul>
+          </div>
+          <!-- About -->
+          <li>
+            <a href="./about.html" class="nav-link block">About</a>
+          </li>
+          <!-- Services -->
+          <li>
+            <a href="./service.html" class="nav-link block">Services</a>
+          </li>
+          <!-- Products -->
+          <li>
+            <a href="./product.html" class="nav-link block">Products</a>
+          </li>
+          <!-- Contact -->
+          <li>
+            <a href="./contact.html" class="nav-link block">Contact</a>
+          </li>
+          <!-- Dashboard -->
+          <li>
+            <a href="./dashboard.html" class="nav-link block">Dashboard</a>
+          </li>
+          <!-- login  -->
+          <li>
+            <a href="./signin.html" class="flex items-center gap-2 nav-link"
+              ><svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="size-5"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
+                />
+              </svg>
+              Login</a
+            >
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Dropdown script  -->
+      <script>
+        const homeToggle = document.getElementById("homeToggle");
+        const homeMenu = document.getElementById("homeMenu");
+
+        homeToggle.addEventListener("click", () => {
+          homeMenu.classList.toggle("hidden");
+        });
+
+        const mobileToggle = document.getElementById("mobileToggle");
+        const mobileLink = document.getElementById("mobileLink");
+
+        // Home dropdown toggle (mobile only)
+        mobileToggle.addEventListener("click", () => {
+          mobileLink.classList.toggle("hidden");
+        });
+
+        // Optional: close menu if clicked outside
+        window.addEventListener("click", (e) => {
+          if (!homeToggle.contains(e.target) && !homeMenu.contains(e.target)) {
+            homeMenu.classList.add("hidden");
+          }
+        });
+      </script>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="w-full px-3 bg-white overflow-hidden">
+      <div
+        class="mx-auto py-6 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center"
+      >
+        <!-- LEFT IMAGE MOCKUP -->
+        <div data-aos="zoom-in-right" data-aos-delay="50" class="relative">
+          <img
+            src="../assets/slider-mobile1.webp"
+            alt="home-bg"
+            class="relative w-full xsmd:h-[400px] object-top rounded-3xl shadow-lg object-cover"
+          />
+        </div>
+
+        <!-- TEXT RIGHT -->
+        <div class="space-y-6">
+          <h1
+            data-aos="zoom-in"
+            data-aos-delay="50"
+            class="text-2xl md:text-4xl font-extrabold leading-tight text-gray-900"
+          >
+            Premium <span class="text-primary">Medical Equipments</span><br />
+            Delivered With Trust
+          </h1>
+
+          <p
+            data-aos="zoom-in"
+            data-aos-delay="70"
+            class="text-gray-600 text-lg md:text-xl max-w-lg"
+          >
+            Explore a wide range of top-grade medical devices with fast
+            delivery, affordable rentals, professional servicing and 24/7
+            support.
+          </p>
+
+          <!-- CTA BUTTONS -->
+          <div
+            data-aos="zoom-in"
+            data-aos-delay="90"
+            class="flex flex-wrap gap-4"
+          >
+            <a
+              href="./product.html"
+              class="bg-primary text-white px-6 py-3 rounded-lg font-semibold shadow-lg hover:bg-[#064f4b] transition"
+            >
+              Shop Equipments
+            </a>
+
+            <a
+              href="./service.html"
+              class="border border-primary text-primary px-6 py-3 rounded-lg font-semibold hover:bg-primary hover:text-white transition"
+            >
+              Our Services
+            </a>
+          </div>
+
+          <!-- FEATURES -->
+          <div class="flex flex-wrap items-center gap-6 pt-4">
+            <div
+              data-aos="zoom-in"
+              data-aos-delay="50"
+              class="flex items-center gap-2"
+            >
+              <i class="fa-solid fa-truck-fast text-primary text-xl"></i>
+              <span class="text-gray-700 font-medium">Fast Delivery</span>
+            </div>
+            <div
+              data-aos="zoom-in"
+              data-aos-delay="70"
+              class="flex items-center gap-2"
+            >
+              <i class="fa-solid fa-shield-heart text-primary text-xl"></i>
+              <span class="text-gray-700 font-medium">Trusted Quality</span>
+            </div>
+            <div
+              data-aos="zoom-in"
+              data-aos-delay="90"
+              class="flex items-center gap-2"
+            >
+              <i class="fa-solid fa-headset text-primary text-xl"></i>
+              <span class="text-gray-700 font-medium">24/7 Support</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Categories -->
+    <section class="py-16 px-3 bg-white overflow-hidden">
+      <div class="mx-auto">
+        <!-- Section Header -->
+        <div class="flex flex-wrap gap-4 items-center justify-between mb-10">
+          <h2 class="text-4xl font-bold text-gray-900">Medical categories</h2>
+          <span class="text-primary font-semibold text-lg underline"
+            >500+ MEDICAL EQUIPMENT</span
+          >
+        </div>
+
+        <!-- Grid (2 per row like screenshot) -->
+        <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
+          <!-- CARD -->
+          <div
+            data-aos="zoom-in"
+            data-aos-delay="50"
+            class="flex border border-black/5 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition duration-300 ease-in-out"
+          >
+            <div class="w-1/2 bg-gray-50 flex items-center justify-center p-1">
+              <img
+                src="../assets/therm.webp"
+                alt="therm"
+                class="h-full w-full object-cover"
+              />
+            </div>
+
+            <div class="w-2/3 p-6 flex flex-col justify-center">
+              <p class="text-primary font-semibold text-sm mb-1">9+ PRODUCT</p>
+              <h3 class="text-2xl font-semibold mb-4">Thermometer</h3>
+              <a
+                href="./product.html"
+                class="px-4 py-2 border border-primary text-primary font-medium rounded hover:bg-primary hover:text-white transition duration-300 ease-in-out w-fit"
+              >
+                Shop Now
+              </a>
+            </div>
+          </div>
+
+          <!-- CARD -->
+          <div data-aos="zoom-in" data-aos-delay="50"
+            class="flex border border-black/5 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition duration-300 ease-in-out"
+          >
+            <div class="w-1/2 bg-gray-50 flex items-center justify-center">
+              <img
+                src="../assets/gm.webp"
+                alt="gm"
+                class="w-full h-full object-cover"
+              />
+            </div>
+
+            <div class="w-2/3 p-6 flex flex-col justify-center">
+              <p class="text-primary font-semibold text-sm mb-1">2+ PRODUCT</p>
+              <h3 class="text-2xl font-semibold mb-4">Glucose Meter</h3>
+              <a
+                href="./product.html"
+                class="px-4 py-2 border border-primary text-primary font-medium rounded hover:bg-primary hover:text-white transition duration-300 ease-in-out w-fit"
+              >
+                Shop Now
+              </a>
+            </div>
+          </div>
+
+          <!-- CARD -->
+          <div data-aos="zoom-in" data-aos-delay="70"
+            class="flex border border-black/5 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition duration-300 ease-in-out"
+          >
+            <div class="w-1/2 bg-gray-50 flex items-center justify-center">
+              <img
+                src="../assets/oto.webp"
+                alt="oto"
+                class="h-full w-full object-cover"
+              />
+            </div>
+
+            <div class="w-2/3 p-6 flex flex-col justify-center">
+              <p class="text-primary font-semibold text-sm mb-1">15+ PRODUCT</p>
+              <h3 class="text-2xl font-semibold mb-4">Otoscope</h3>
+              <a
+                href="./product.html"
+                class="px-4 py-2 border border-primary text-primary font-medium rounded hover:bg-primary hover:text-white transition duration-300 ease-in-out w-fit"
+              >
+                Shop Now
+              </a>
+            </div>
+          </div>
+
+          <!-- CARD -->
+          <div data-aos="zoom-in" data-aos-delay="90"
+            class="flex border border-black/5 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition duration-300 ease-in-out"
+          >
+            <div class="w-1/2 bg-gray-50 flex items-center justify-center">
+              <img
+                src="../assets/ts.webp"
+                alt="ts"
+                class="h-full w-full object-cover"
+              />
+            </div>
+
+            <div class="w-2/3 p-6 flex flex-col justify-center">
+              <p class="text-primary font-semibold text-sm mb-1">20+ PRODUCT</p>
+              <h3 class="text-2xl font-semibold mb-4">Thermal Scanner</h3>
+              <a
+                href="./product.html"
+                class="px-4 py-2 border border-primary text-primary font-medium rounded hover:bg-primary hover:text-white transition w-fit duration-300 ease-in-out"
+              >
+                Shop Now
+              </a>
+            </div>
+          </div>
+
+          <!-- CARD -->
+          <div data-aos="zoom-in" data-aos-delay="110"
+            class="flex border border-black/5 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition duration-300 ease-in-out"
+          >
+            <div class="w-1/2 bg-gray-50 flex items-center justify-center">
+              <img
+                src="../assets/pulse.webp"
+                alt="pulse"
+                class="h-full w-full object-cover"
+              />
+            </div>
+
+            <div class="w-2/3 p-6 flex flex-col justify-center">
+              <p class="text-primary font-semibold text-sm mb-1">19+ PRODUCT</p>
+              <h3 class="text-2xl font-semibold mb-4">Pulse Oximeter</h3>
+              <a
+                href="./product.html"
+                class="px-4 py-2 border border-primary text-primary font-medium rounded hover:bg-primary hover:text-white transition w-fit duration-300 ease-in-out"
+              >
+                Shop Now
+              </a>
+            </div>
+          </div>
+
+          <!-- CARD -->
+          <div data-aos="zoom-in" data-aos-delay="130"
+            class="flex border border-black/5 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition duration-300 ease-in-out"
+          >
+            <div class="w-1/2 bg-gray-50 flex items-center justify-center">
+              <img
+                src="../assets/nebu.webp"
+                alt="nebu"
+                class="h-full w-full object-cover"
+              />
+            </div>
+
+            <div class="w-2/3 p-6 flex flex-col justify-center">
+              <p class="text-primary font-semibold text-sm mb-1">9+ PRODUCT</p>
+              <h3 class="text-2xl font-semibold mb-4">Nebulizer</h3>
+              <a
+                href="./product.html"
+                class="px-4 py-2 border border-primary text-primary font-medium rounded hover:bg-primary hover:text-white transition w-fit duration-300 ease-in-out"
+              >
+                Shop Now
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--HAPPY CLIENT SECTION-->
+    <section class="py-16 px-3 bg-gray-50 overflow-hidden">
+      <div class="mx-auto grid lg:grid-cols-2 gap-14">
+        <!-- FEATURED TESTIMONIAL CARD -->
+        <div
+          id="testimonialCard"
+          class="relative p-10 bg-white rounded-3xl shadow-xl border border-gray-200 transition-all duration-500"
+        >
+          <!-- Decorative Quote Badge -->
+          <div
+            class="absolute -top-6 left-8 bg-teal-600 text-white p-4 rounded-full shadow-lg text-3xl"
+          >
+            <i class="fa-solid fa-quote-left"></i>
+          </div>
+
+          <!-- Avatar -->
+          <div
+            id="avatarWrapper"
+            class="absolute -top-10 right-8 transition-all duration-500"
+          >
+            <img
+              id="bigAvatar"
+              src="../assets/doc1.webp"
+              class="w-20 h-20 rounded-full shadow-xl border-4 border-white object-cover transform transition-all duration-500"
+            />
+          </div>
+
+          <!-- Text -->
+          <p
+            id="bigTestimonial"
+            class="mt-12 text-gray-600 text-lg leading-relaxed opacity-100 transition-opacity duration-500"
+          >
+            Loading...
+          </p>
+
+          <!-- Stars -->
+          <div
+            id="bigStars"
+            class="flex text-yellow-400 text-2xl gap-1 mt-6 transition-opacity duration-500"
+          ></div>
+
+          <!-- Name -->
+          <h3
+            id="bigName"
+            class="text-xl font-bold text-gray-800 mt-5 transition-opacity duration-500"
+          >
+            Client Name
+          </h3>
+          <p
+            id="bigRole"
+            class="text-gray-500 -mt-1 transition-opacity duration-500"
+          >
+            Profession
+          </p>
+        </div>
+
+        <!-- RIGHT SIDE USER LIST -->
+        <div class="space-y-6">
+          <h2 class="text-2xl md:text-3xl font-bold text-gray-800 mb-5">
+            What Our Clients Say
+          </h2>
+
+          <!-- User Buttons -->
+          <div
+            class="testimonial-btn flex items-center gap-4 p-4 bg-white rounded-xl shadow-md border border-gray-200 cursor-pointer transition-all hover:shadow-xl"
+            data-index="0"
+          >
+            <img
+              src="../assets/doc1.webp"
+              class="w-14 h-14 rounded-full object-cover shadow-md"
+            />
+            <div>
+              <h3 class="text-lg font-semibold text-gray-800">David Brown</h3>
+              <p class="text-gray-500 text-sm">Dental Surgeon</p>
+            </div>
+          </div>
+
+          <div
+            class="testimonial-btn flex items-center gap-4 p-4 bg-white rounded-xl shadow-md border border-gray-200 cursor-pointer transition-all hover:shadow-xl"
+            data-index="1"
+          >
+            <img
+              src="../assets/doc2.webp"
+              class="w-14 h-14 rounded-full object-cover shadow-md"
+            />
+            <div>
+              <h3 class="text-lg font-semibold text-gray-800">Wesley Bates</h3>
+              <p class="text-gray-500 text-sm">Dental Specialist</p>
+            </div>
+          </div>
+
+          <div
+            class="testimonial-btn flex items-center gap-4 p-4 bg-white rounded-xl shadow-md border border-gray-200 cursor-pointer transition-all hover:shadow-xl"
+            data-index="2"
+          >
+            <img
+              src="../assets/doc3.webp"
+              class="w-14 h-14 rounded-full object-cover shadow-md"
+            />
+            <div>
+              <h3 class="text-lg font-semibold text-gray-800">Anshika Smith</h3>
+              <p class="text-gray-500 text-sm">Brain Surgeon</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- our teams  -->
+    <section class="px-3 py-8 overflow-x-hidden">
+      <div class="space-y-3 text-center py-6">
+        <h1
+          class="text-xl md:text-3xl lg:text-4xl font-bold"
+          data-aos="zoom-in-left"
+          data-aos-delay="100"
+          class="text-xl"
+        >
+          Meet Our People
+        </h1>
+        <p
+          data-aos="zoom-in-right"
+          data-aos-delay="50"
+          class="md:w-3/5 text-sm md:text-lg mx-auto"
+        >
+          Lorem Ipsum is simply dummy text of the printing and typesetting
+          industry. Lorem Ipsum has been the industry's standard dummy text.
+        </p>
+      </div>
+      <div class="grid grid-cols-1 xl:grid-cols-2 gap-12">
+        <div
+          data-aos="zoom-in-right"
+          data-aos-delay="50"
+          class="grid grid-cols-1 md:grid-cols-2 gap-6 w-full items-center bg-white border border-black/10 px-4 py-8 rounded-2xl"
+        >
+          <div class="relative w-full flex items-center justify-center">
+            <img src="../assets/01-per.webp" alt="card-img" />
+            <div
+              class="absolute bottom-0 flex items-center justify-center w-72 h-72 rounded-full bg-secondary z-[-1]"
+            ></div>
+          </div>
+          <div class="flex flex-col justify-center h-full space-y-2.5">
+            <h1 class="text-3xl font-normal">Pooja Tej</h1>
+            <p class="text-lg">CEO</p>
+            <p class="">
+              Completey conceplua high quality nice markes rather than long term
+              impact human capital
+            </p>
+            <ul class="flex items-center gap-6 text-xl pt-4 text-primary">
+              <li
+                class="transform hover:scale-125 transition-all duration-500 ease-out"
+              >
+                <a href="./404.html"><i class="fab fa-instagram"></i></a>
+              </li>
+              <li
+                class="transform hover:scale-125 transition-all duration-500 ease-out"
+              >
+                <a href="./404.html"><i class="fab fa-facebook"></i></a>
+              </li>
+              <li
+                class="transform hover:scale-125 transition-all duration-500 ease-out"
+              >
+                <a href="./404.html"><i class="fab fa-linkedin"></i></a>
+              </li>
+              <li
+                class="transform hover:scale-125 transition-all duration-500 ease-out"
+              >
+                <a href="./404.html"><i class="fab fa-pinterest"></i></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div
+          data-aos="zoom-in-left"
+          data-aos-delay="100"
+          class="grid grid-cols-1 md:grid-cols-2 gap-6 w-full items-center bg-white border border-black/10 px-4 py-8 rounded-2xl"
+        >
+          <div class="relative w-full flex items-center justify-center">
+            <img src="../assets/02-per.webp" alt="card-img" />
+            <div
+              class="absolute bottom-0 flex items-center justify-center w-72 h-72 rounded-full bg-secondary z-[-1]"
+            ></div>
+          </div>
+          <div class="flex flex-col justify-center h-full space-y-2.5">
+            <h1 class="text-3xl font-normal">Ravi Tej</h1>
+            <p class="text-lg">Managing Director</p>
+            <p class="">
+              Completey conceplua high quality nice markes rather than long term
+              impact human capital
+            </p>
+            <ul class="flex items-center gap-6 text-xl pt-4 text-primary">
+              <li
+                class="transform hover:scale-125 transition-all duration-500 ease-out"
+              >
+                <a href="./404.html"><i class="fab fa-instagram"></i></a>
+              </li>
+              <li
+                class="transform hover:scale-125 transition-all duration-500 ease-out"
+              >
+                <a href="./404.html"><i class="fab fa-facebook"></i></a>
+              </li>
+              <li
+                class="transform hover:scale-125 transition-all duration-500 ease-out"
+              >
+                <a href="./404.html"><i class="fab fa-linkedin"></i></a>
+              </li>
+              <li
+                class="transform hover:scale-125 transition-all duration-500 ease-out"
+              >
+                <a href="./404.html"><i class="fab fa-pinterest"></i></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div
+          data-aos="zoom-in-right"
+          data-aos-delay="150"
+          class="grid grid-cols-1 md:grid-cols-2 gap-6 w-full items-center bg-white border border-black/10 px-4 py-8 rounded-2xl"
+        >
+          <div class="relative w-full flex items-center justify-center">
+            <img src="../assets/03-per.webp" alt="card-img" />
+            <div
+              class="absolute bottom-0 flex items-center justify-center w-72 h-72 rounded-full bg-secondary z-[-1]"
+            ></div>
+          </div>
+          <div class="flex flex-col justify-center h-full space-y-2.5">
+            <h1 class="text-3xl font-normal">Edwin Mayor</h1>
+            <p class="text-lg">Auditor</p>
+            <p class="">
+              Completey conceplua high quality nice markes rather than long term
+              impact human capital
+            </p>
+            <ul class="flex items-center gap-6 text-xl pt-4 text-primary">
+              <li
+                class="transform hover:scale-125 transition-all duration-500 ease-out"
+              >
+                <a href="./404.html"><i class="fab fa-instagram"></i></a>
+              </li>
+              <li
+                class="transform hover:scale-125 transition-all duration-500 ease-out"
+              >
+                <a href="./404.html"><i class="fab fa-facebook"></i></a>
+              </li>
+              <li
+                class="transform hover:scale-125 transition-all duration-500 ease-out"
+              >
+                <a href="./404.html"><i class="fab fa-linkedin"></i></a>
+              </li>
+              <li
+                class="transform hover:scale-125 transition-all duration-500 ease-out"
+              >
+                <a href="./404.html"><i class="fab fa-pinterest"></i></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div
+          data-aos="zoom-in-left"
+          data-aos-delay="200"
+          class="grid grid-cols-1 md:grid-cols-2 gap-6 w-full items-center bg-white border border-black/10 px-4 py-8 rounded-2xl"
+        >
+          <div class="relative w-full flex items-center justify-center">
+            <img src="../assets/04-per.webp" alt="card-img" />
+            <div
+              class="absolute bottom-0 flex items-center justify-center w-72 h-72 rounded-full bg-secondary z-[-1]"
+            ></div>
+          </div>
+          <div class="flex flex-col justify-center h-full space-y-2.5">
+            <h1 class="text-3xl font-normal">Sandy Tej</h1>
+            <p class="text-lg">Management</p>
+            <p class="">
+              Completey conceplua high quality nice markes rather than long term
+              impact human capital
+            </p>
+            <ul class="flex items-center gap-6 text-xl pt-4 text-primary">
+              <li
+                class="transform hover:scale-125 transition-all duration-500 ease-out"
+              >
+                <a href="./404.html"><i class="fab fa-instagram"></i></a>
+              </li>
+              <li
+                class="transform hover:scale-125 transition-all duration-500 ease-out"
+              >
+                <a href="./404.html"><i class="fab fa-facebook"></i></a>
+              </li>
+              <li
+                class="transform hover:scale-125 transition-all duration-500 ease-out"
+              >
+                <a href="./404.html"><i class="fab fa-linkedin"></i></a>
+              </li>
+              <li
+                class="transform hover:scale-125 transition-all duration-500 ease-out"
+              >
+                <a href="./404.html"><i class="fab fa-pinterest"></i></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- footer -->
+    <footer class="px-3 mt-10 overflow-hidden">
+      <div
+        class="flex justify-between flex-wrap w-full md:gap-20 gap-8 pb-6"
+        data-aos="fade-up"
+        data-aos-delay="150"
+      >
+        <div class="md:max-w-96 flex flex-col items-start space-y-2">
+          <img class="h-8" src="../assets/logo.webp" alt="logo" />
+          <p class="mt-2 text-sm md:text-lg">
+            MedEquip Store is a trusted provider of high-quality medical
+            equipment and supplies for hospitals, clinics, and home care. We are
+            committed to delivering reliable & safe.
+          </p>
+        </div>
+
+        <div class="flex flex-col lg:items-center lg:justify-center">
+          <div class="flex flex-col text-sm md:text-lg space-y-2.5 md:px-8">
+            <h2 class="font-semibold mb-5 text-primary uppercase">
+              Easier Acces
+            </h2>
+            <a class="hover:text-slate-600 transition" href="./index.html"
+              >Home</a
+            >
+            <a class="hover:text-slate-600 transition" href="./about.html"
+              >About us</a
+            >
+            <a class="hover:text-slate-600 transition" href="./service.html"
+              >Services<span
+                class="text-xs text-white bg-gray-600 rounded-bl-xl rounded-tr-xl ml-2 px-2 py-1"
+                >New</span
+              ></a
+            >
+            <a class="hover:text-slate-600 transition" href="./product.html"
+              >Products</a
+            >
+            <a class="hover:text-slate-600 transition" href="./contact.html"
+              >Contact us</a
+            >
+          </div>
+        </div>
+
+        <div>
+          <h2
+            class="font-semibold mb-5 text-sm md:text-lg text-primary uppercase"
+          >
+            Subscribe to our newsletter
+          </h2>
+          <div class="text-sm md:text-lg space-y-6 max-w-sm">
+            <p>
+              The latest news, articles, and resources, sent to your inbox
+              weekly.
+            </p>
+            <form
+              id="sub-form"
+              method="get"
+              action="./404.html"
+              class="flex items-center justify-center gap-2 p-2 rounded-xl bg-primary/5"
+            >
+              <input
+                pattern=".+@gmail\.com$"
+                title="Email must end with @gmail.com"
+                required
+                class="focus:ring-0 outline-none w-full max-w-64 py-2 rounded px-2"
+                type="email"
+                placeholder="Enter your email"
+              />
+              <button
+                type="submit"
+                class="bg-primary px-4 py-2 rounded-lg cursor-pointer transform hover:scale-95 transition duration-500 ease-out text-white"
+              >
+                Subscribe
+              </button>
+            </form>
+          </div>
+        </div>
+
+        <div class="flex items-start">
+          <div class="">
+            <h2
+              class="font-semibold mb-5 text-sm md:text-lg text-primary uppercase"
+            >
+              Get in touch
+            </h2>
+            <div class="text-sm md:text-lg space-y-2 flex flex-col items-start">
+              <a href="./404.html">+1-212-456-7890</a>
+              <a href="./404.html">contact@example.com</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="overflow-hidden">
+        <!-- Google Map -->
+        <div
+          data-aos="fade-up"
+          data-aos-delay="200"
+          class="rounded-2xl w-full overflow-hidden shadow-lg mb-3"
+        >
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3907.1616097152896!2d78.1739798!3d11.682956599999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3babefef7fd970bb%3A0xe11aef1a71994f9!2sStackly!5e0!3m2!1sen!2sin!4v1755667813665!5m2!1sen!2sin"
+            width="100%"
+            height="250"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+      </div>
+
+      <div
+        class="flex items-center justify-center text-center border-t border-gray-500/30"
+      >
+        <div>
+          <p class="pt-4 text-lg pb-4">
+            Copyright 2025 © <a href="./404.html">Stackly</a>. All Right
+            Reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Aos Animation  -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"
+      integrity="sha512-A7AYk1fGKX6S2SsHywmPkrnzTZHrgiVT7GcQkLGDe2ev0aWb8zejytzS8wjo7PGEXKqJOrjQ4oORtnimIRZBtw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <!-- mobile menu script -->
+    <script>
+      // sub-form reset
+      const form = document.querySelector("#sub-form");
+      form.addEventListener("submit", () => {
+        form.reset();
+      });
+
+      // Aos Animation Init
+      AOS.init({
+        duration: 800,
+        delay: 200, // default delay for all elements
+        once: false,
+        mirror: true,
+      });
+
+      // Hamburger Menu Toggle
+      const hamburger = document.getElementById("hamburger");
+      const mobileMenu = document.getElementById("mobileMenu");
+      const links = mobileMenu.querySelectorAll(".nav-link");
+
+      hamburger.addEventListener("click", () => {
+        hamburger.classList.toggle("active");
+        mobileMenu.classList.toggle("open");
+      });
+
+      links.forEach((link) => {
+        link.addEventListener("click", () => {
+          hamburger.classList.remove("active");
+          mobileMenu.classList.remove("open");
+        });
+      });
+
+      // Optional: close menu if clicked outside
+      window.addEventListener("click", (e) => {
+        if (!homeToggle.contains(e.target) && !homeMenu.contains(e.target)) {
+          homeMenu.classList.add("hidden");
+        }
+      });
+    </script>
+
+    <!-- feedback js  -->
+    <script>
+      const testimonials = [
+        {
+          text: `"The service was excellent! Quick delivery, great instructions, and top-quality medical equipment." Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora dolorem natus voluptatum saepe fugit praesentium doloribus non, officia ipsa eum facere esse quibusdam.`,
+          name: "David Brown",
+          role: "Dental Surgeon",
+          stars: 5,
+          avatar: "../assets/doc1.webp",
+        },
+        {
+          text: `"Highly professional and very reliable. Their customer support is top-notch. Truly impressive experience." Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora dolorem natus voluptatum saepe fugit praesentium doloribus non, officia ipsa eum facere esse quibusdam.`,
+          name: "Wesley Bates",
+          role: "Dental Specialist",
+          stars: 4,
+          avatar: "../assets/doc2.webp",
+        },
+        {
+          text: `"Top quality products and fantastic service! Equipment arrived in perfect condition and on time." Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora dolorem natus voluptatum saepe fugit praesentium doloribus non, officia ipsa eum facere esse quibusdam.`,
+          name: "Anshika Smith",
+          role: "Brain Surgeon",
+          stars: 5,
+          avatar: "../assets/doc3.webp",
+        },
+      ];
+
+      const bigTestimonial = document.getElementById("bigTestimonial");
+      const bigName = document.getElementById("bigName");
+      const bigRole = document.getElementById("bigRole");
+      const bigAvatar = document.getElementById("bigAvatar");
+      const bigStars = document.getElementById("bigStars");
+      const avatarWrapper = document.getElementById("avatarWrapper");
+      const buttons = document.querySelectorAll(".testimonial-btn");
+
+      let current = 0;
+
+      function animateSmoothChange(element) {
+        element.classList.add("opacity-0");
+        setTimeout(() => {
+          element.classList.remove("opacity-0");
+        }, 200);
+      }
+
+      function updateCard(index) {
+        const t = testimonials[index];
+        current = index;
+
+        // Smooth Fade Animations
+        animateSmoothChange(bigTestimonial);
+        animateSmoothChange(bigName);
+        animateSmoothChange(bigRole);
+        animateSmoothChange(bigStars);
+        bigAvatar.classList.add("scale-75", "opacity-0");
+
+        setTimeout(() => {
+          bigTestimonial.textContent = t.text;
+          bigName.textContent = t.name;
+          bigRole.textContent = t.role;
+          bigAvatar.src = t.avatar;
+          bigStars.innerHTML = "★".repeat(t.stars);
+
+          bigAvatar.classList.remove("scale-75", "opacity-0");
+        }, 200);
+
+        // Highlight Active Button
+        buttons.forEach((btn) =>
+          btn.classList.remove("border-teal-600", "shadow-xl", "scale-[1.02]")
+        );
+        buttons[index].classList.add(
+          "border-teal-600",
+          "shadow-xl",
+          "scale-[1.02]"
+        );
+      }
+
+      // Event Listeners
+      buttons.forEach((btn) => {
+        btn.addEventListener("click", () => updateCard(btn.dataset.index));
+      });
+
+      // Auto Slide
+      setInterval(() => {
+        current = (current + 1) % testimonials.length;
+        updateCard(current);
+      }, 4500);
+
+      updateCard(0);
+    </script>
+  </body>
+</html>

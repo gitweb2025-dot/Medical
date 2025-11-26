@@ -138,7 +138,7 @@
               class="absolute hidden bg-white text-black backdrop-blur-2xl shadow-lg mt-2 rounded w-40 z-40"
             >
               <li>
-                <a href="" class="block px-4 py-2"> Home 2 </a>
+                <a href="./Home/index.html" class="block px-4 py-2"> Home 2 </a>
               </li>
             </ul>
           </div>
@@ -239,7 +239,7 @@
               class="hidden bg-white text-black mt-2 rounded w-full md:absolute"
             >
               <li>
-                <a href="" class="block px-2 py-2"> Home 2 </a>
+                <a href="./Home/index.html" class="block px-2 py-2"> Home 2 </a>
               </li>
             </ul>
           </div>
@@ -420,7 +420,6 @@
           class="grid lg:grid-cols-5 items-center p-2 shadow-lg shadow-tertiary rounded-lg mt-12"
         >
           <div
-            data-aos="zoom-in"
             class="lg:col-span-2 rounded-lg p-6 h-full max-lg:order-1 relative overflow-hidden max-lg:mt-12"
           >
             <h3 class="text-[24px] text-white font-medium">
@@ -1137,6 +1136,18 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     ></script>
+
+    <!-- contact form  -->
+    <script>
+      const form1 = document.querySelector("#contact-form1");
+
+      form1.addEventListener("submit", function (e) {
+        e.preventDefault(); // Stop the form from reloading the page
+        form1.reset(); // Clear all input fields
+
+        window.location.href = "./404.html";
+      });
+    </script>
 
     <!-- mobile menu script -->
     <script>

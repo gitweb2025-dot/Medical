@@ -52,7 +52,7 @@
     />
 
     <!-- Tailwind CSS  -->
-    <link rel="stylesheet" href="./src/output.css" />
+    <link rel="stylesheet" href="../src/output.css" />
 
     <!-- <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script> -->
 
@@ -139,7 +139,7 @@
       >
         <!-- Logo -->
         <a class="" href="./index.html">
-          <img class="h-8" src="./assets/logo.webp" alt="logo" />
+          <img class="h-8" src="../assets/logo.webp" alt="logo" />
         </a>
 
         <!-- Desktop Nav -->
@@ -162,7 +162,7 @@
               class="absolute hidden bg-white text-black backdrop-blur-2xl shadow-lg mt-2 rounded w-40 z-40"
             >
               <li>
-                <a href="./Home/index.html" class="block px-4 py-2"> Home 2 </a>
+                <a href="../index.html" class="block px-4 py-2"> Home 1 </a>
               </li>
             </ul>
           </div>
@@ -263,7 +263,7 @@
               class="hidden bg-white text-black mt-2 rounded w-full md:absolute"
             >
               <li>
-                <a href="./Home/index.html" class="block px-2 py-2"> Home 2 </a>
+                <a href="../index.html" class="block px-2 py-2"> Home 1 </a>
               </li>
             </ul>
           </div>
@@ -396,6 +396,7 @@
         >
           <i class="fa-solid fa-xmark"></i>
         </button>
+
         <img id="modalImg" class="w-full h-56 object-cover rounded-lg mt-2" />
         <h2 id="modalTitle" class="text-2xl font-semibold mt-4"></h2>
         <div id="modalRating" class="text-yellow-500 mt-1"></div>
@@ -413,7 +414,7 @@
           price: 999,
           rating: 4.7,
           desc: "High-accuracy body temperature measurement.",
-          img: "./assets/therm.webp",
+          img: "../assets/therm.webp",
         },
         {
           id: 2,
@@ -421,7 +422,7 @@
           price: 1499,
           rating: 4.5,
           desc: "Professional heart/lung auscultation.",
-          img: "./assets/seth.webp",
+          img: "../assets/seth.webp",
         },
         {
           id: 3,
@@ -429,7 +430,7 @@
           price: 699,
           rating: 4.3,
           desc: "Measures SpO2 accurately.",
-          img: "./assets/pulse.webp",
+          img: "../assets/pulse.webp",
         },
         {
           id: 4,
@@ -437,7 +438,7 @@
           price: 2799,
           rating: 4.6,
           desc: "Automatic arm BP monitor.",
-          img: "./assets/bp.webp",
+          img: "../assets/bp.webp",
         },
         {
           id: 5,
@@ -445,7 +446,7 @@
           price: 499,
           rating: 4.2,
           desc: "Powder-free latex gloves.",
-          img: "./assets/gloves.webp",
+          img: "../assets/gloves.webp",
         },
         {
           id: 6,
@@ -453,7 +454,7 @@
           price: 699,
           rating: 4.3,
           desc: "Protective disposable masks.",
-          img: "./assets/mask.webp",
+          img: "../assets/mask.webp",
         },
         {
           id: 7,
@@ -461,7 +462,7 @@
           price: 2599,
           rating: 4.5,
           desc: "Compact nebulization unit.",
-          img: "./assets/nebu.webp",
+          img: "../assets/nebu.webp",
         },
         {
           id: 8,
@@ -469,7 +470,7 @@
           price: 7999,
           rating: 4.7,
           desc: "Lightweight foldable wheelchair.",
-          img: "./assets/wc.webp",
+          img: "../assets/wc.webp",
         },
         {
           id: 9,
@@ -477,7 +478,7 @@
           price: 15999,
           rating: 4.6,
           desc: "Adjustable patient bed.",
-          img: "./assets/bed.webp",
+          img: "../assets/bed.webp",
         },
         {
           id: 10,
@@ -485,7 +486,7 @@
           price: 299,
           rating: 4.1,
           desc: "Durable stainless steel scissors.",
-          img: "./assets/scisor.webp",
+          img: "../assets/scisor.webp",
         },
         {
           id: 11,
@@ -493,7 +494,7 @@
           price: 899,
           rating: 4.4,
           desc: "Accurate glucose monitoring.",
-          img: "./assets/gm.webp",
+          img: "../assets/gm.webp",
         },
         {
           id: 12,
@@ -501,7 +502,7 @@
           price: 2999,
           rating: 4.5,
           desc: "Ear examination device.",
-          img: "./assets/oto.webp",
+          img: "../assets/oto.webp",
         },
         {
           id: 13,
@@ -509,7 +510,7 @@
           price: 24999,
           rating: 4.9,
           desc: "Portable emergency defibrillator.",
-          img: "./assets/defi.webp",
+          img: "../assets/defi.webp",
         },
         {
           id: 14,
@@ -517,7 +518,7 @@
           price: 1999,
           rating: 4.3,
           desc: "Adjustable IV stand.",
-          img: "./assets/iv.webp",
+          img: "../assets/iv.webp",
         },
         {
           id: 15,
@@ -525,7 +526,7 @@
           price: 1499,
           rating: 4.6,
           desc: "Emergency medical essentials.",
-          img: "./assets/fid.webp",
+          img: "../assets/fid.webp",
         },
         {
           id: 16,
@@ -533,7 +534,7 @@
           price: 3999,
           rating: 4.5,
           desc: "Infrared temp scanner.",
-          img: "./assets/ts.webp",
+          img: "../assets/ts.webp",
         },
         {
           id: 17,
@@ -541,7 +542,7 @@
           price: 1199,
           rating: 4.4,
           desc: "Manual BP monitor.",
-          img: "./assets/sp.webp",
+          img: "../assets/sp.webp",
         },
       ];
 
@@ -559,12 +560,12 @@
       const modalDesc = document.getElementById("modalDesc");
       const modalPrice = document.getElementById("modalPrice");
 
-      /* ----------- RENDER AMAZON STYLE CARDS ----------- */
+      /* AMAZON STYLE CARD UI */
       function render(list) {
         productsGrid.innerHTML = "";
 
         if (list.length === 0) {
-          productsGrid.innerHTML = `<p class='col-span-full text-red-500 text-center text-gray-500 text-lg py-40'>No products found.</p>`;
+          productsGrid.innerHTML = `<p class='col-span-full text-center text-red-500 text-lg py-40'>No products found.</p>`;
           return;
         }
 
@@ -572,27 +573,44 @@
           const card = document.createElement("div");
 
           card.className =
-            "bg-white rounded-xl border border-gray-200 shadow-sm hover:shadow-xl transition duration-500 cursor-pointer group overflow-hidden ease-out";
+            "bg-white border border-gray-200 rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 cursor-pointer flex flex-col overflow-hidden";
 
           card.innerHTML = `
-        <div class="relative">
-          <img src="${p.img}" class="w-full h-52 object-cover rounded-t-xl" />
+        <!-- Image Section -->
+        <div class="w-full h-52 flex items-center justify-center p-4">
+          <img src="${
+            p.img
+          }" class="h-full w-full  object-cover transition-transform duration-300" />
         </div>
 
-        <div class="p-4">
-          <h3 class="text-lg font-semibold group-hover:text-primary">${p.name}</h3>
-          <p class="text-gray-500 text-sm mt-1 line-clamp-2">${p.desc}</p>
+        <!-- Content -->
+        <div class="px-4 pb-4 mt-2">
 
-          <div class="flex items-center justify-between gap-2 mt-2">
-            <span class="text-yellow-500">⭐ ${p.rating}</span>
-            <p class="text-primary font-bold text-xl mt-2">₹${p.price}</p>
+          <!-- Name -->
+          <h3 class="text-md font-semibold text-gray-800 line-clamp-2 min-h-[45px]">${
+            p.name
+          }</h3>
+
+          <!-- Rating -->
+          <div class="flex items-center gap-2 mt-2">
+            <span class="text-yellow-500 text-sm">⭐ ${p.rating}</span>
+            <span class="text-gray-500 text-xs">(150+)</span>
           </div>
 
-          
+          <!-- Price -->
+          <div class="flex items-center gap-2 mt-2">
+            <p class="text-xl font-bold text-primary">₹${p.price}</p>
+            <p class="text-gray-400 text-sm line-through">₹${Math.round(
+              p.price * 1.2
+            )}</p>
+            <p class="text-green-600 text-sm font-semibold">20% off</p>
+          </div>
 
-          <button class="mt-3 w-full bg-primary text-white py-2 rounded-lg text-sm font-medium hover:bg-primary/90">
-            View Details
-          </button>
+          <!-- Badge -->
+          <span class="inline-block bg-primary text-white text-xs font-semibold px-2 py-1 rounded mt-3">
+            Best Seller
+          </span>
+
         </div>
       `;
 
@@ -601,7 +619,7 @@
         });
       }
 
-      /* ---------- MODAL ----------- */
+      /* MODAL */
       function showModal(p) {
         modalImg.src = p.img;
         modalTitle.textContent = p.name;
@@ -619,7 +637,7 @@
         if (e.target === modal) modal.classList.remove("show");
       });
 
-      /* ---------- SEARCH + FILTER + SORT ---------- */
+      /* FILTER + SORT */
       function filterSort() {
         let list = products.filter((p) =>
           p.name.toLowerCase().includes(searchInput.value.toLowerCase())
@@ -648,7 +666,7 @@
     <footer class="px-3 mt-10 overflow-hidden">
       <div class="flex justify-between flex-wrap w-full md:gap-20 gap-8 pb-6">
         <div class="md:max-w-96 flex flex-col items-start space-y-2">
-          <img class="h-8" src="./assets/logo.webp" alt="logo" />
+          <img class="h-8" src="../assets/logo.webp" alt="logo" />
           <p class="mt-2 text-sm md:text-lg">
             MedEquip Store is a trusted provider of high-quality medical
             equipment and supplies for hospitals, clinics, and home care. We are

@@ -162,7 +162,7 @@
               class="absolute hidden bg-white text-black backdrop-blur-2xl shadow-lg mt-2 rounded w-40 z-40"
             >
               <li>
-                <a href="" class="block px-4 py-2"> Home 2 </a>
+                <a href="./Home/index.html" class="block px-4 py-2"> Home 2 </a>
               </li>
             </ul>
           </div>
@@ -263,7 +263,7 @@
               class="hidden bg-white text-black mt-2 rounded w-full md:absolute"
             >
               <li>
-                <a href="" class="block px-2 py-2"> Home 2 </a>
+                <a href="./Home/index.html" class="block px-2 py-2"> Home 2 </a>
               </li>
             </ul>
           </div>
@@ -348,26 +348,26 @@
 
     <main class="px-3 py-4 mx-auto">
       <!-- Stats -->
-      <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        <div class="bg-white rounded-xl shadow p-5 border-l-4 border-primary">
+      <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 overflow-hidden">
+        <div class="bg-white rounded-xl shadow p-5 border-l-4 border-primary my-2">
           <div class=" text-gray-500 text-lg md:text-xl">Total Equipments</div>
           <div class="mt-2 text-2xl font-bold text-primary">132</div>
           <div class="text-xs text-gray-400 mt-1">+10 this week</div>
         </div>
 
-        <div class="bg-white rounded-xl shadow p-5 border-l-4 border-red-500">
+        <div class="bg-white rounded-xl shadow p-5 border-l-4 border-red-500 my-2">
           <div class="text-lg md:text-xl text-gray-500">Out of Stock</div>
           <div class="mt-2 text-2xl font-bold text-red-600">7</div>
           <div class="text-xs text-gray-400 mt-1">Needs restock</div>
         </div>
 
-        <div class="bg-white rounded-xl shadow p-5 border-l-4 border-primary">
+        <div class="bg-white rounded-xl shadow p-5 border-l-4 border-primary my-2">
           <div class="text-lg md:text-xl text-gray-500">Services Running</div>
           <div class="mt-2 text-2xl font-bold text-primary">23</div>
           <div class="text-xs text-gray-400 mt-1">5 new this month</div>
         </div>
 
-        <div class="bg-white rounded-xl shadow p-5 border-l-4 border-green-500">
+        <div class="bg-white rounded-xl shadow p-5 border-l-4 border-green-500 my-2">
           <div class="text-lg md:text-xl text-gray-500">Revenue</div>
           <div class="mt-2 text-2xl font-bold text-green-700">$52K</div>
           <div class="text-xs text-gray-400 mt-1">+8% growth</div>
@@ -375,21 +375,21 @@
       </section>
 
       <!-- Charts -->
-      <section class="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-6">
-        <div class="bg-white rounded-xl shadow p-5">
+      <section class="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-6 overflow-hidden">
+        <div class="bg-white rounded-xl shadow p-5 my-2">
           <h3 class="font-semibold mb-3 text-lg md:text-xl">Equipment Stock Trend</h3>
           <canvas id="stockChart" height="160"></canvas>
         </div>
 
-        <div class="bg-white rounded-xl shadow p-5">
+        <div class="bg-white rounded-xl shadow p-5 my-2">
           <h3 class="font-semibold mb-3 text-lg md:text-xl">Service Revenue Growth</h3>
           <canvas id="revenueChart" height="160"></canvas>
         </div>
       </section>
 
       <!-- Orders + Timeline -->
-      <section class="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-6">
-        <div class="bg-white rounded-xl shadow p-5">
+      <section class="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-6 overflow-hidden">
+        <div class="bg-white rounded-xl shadow p-5 my-2">
           <h3 class="font-semibold mb-3 text-lg md:text-xl">Recent Orders</h3>
           <div class="overflow-x-auto">
             <table class="min-w-full text-left border rounded-2xl">
@@ -425,7 +425,7 @@
           </div>
         </div>
 
-        <div class="bg-white rounded-xl shadow p-5">
+        <div class="bg-white rounded-xl shadow p-5 my-2">
           <h3 class="font-semibold mb-3 text-lg md:text-xl">Activity Timeline</h3>
 
           <div class="relative timeline pl-6">
@@ -465,8 +465,8 @@
       </section>
 
       <!-- Categories + Services + Maintenance -->
-      <section class="grid grid-cols-1 lg:grid-cols-3 gap-6 mt-6">
-        <div class="bg-white rounded-xl shadow p-5">
+      <section class="grid grid-cols-1 lg:grid-cols-3 gap-6 mt-6 overflow-hidden">
+        <div class="bg-white rounded-xl shadow p-5 my-2">
           <h4 class="font-semibold mb-3 text-lg md:text-xl">Equipment Categories</h4>
           <div class="grid grid-cols-2 gap-3 text-sm">
             <div class="p-3 border rounded-lg">Diagnostics • 37</div>
@@ -476,7 +476,7 @@
           </div>
         </div>
 
-        <div class="bg-white rounded-xl shadow p-5">
+        <div class="bg-white rounded-xl shadow p-5 my-2">
           <h4 class="font-semibold mb-3 text-lg md:text-xl">Service Packages</h4>
           <ul class="text-sm space-y-3">
             <li>Ambulance Support</li>
@@ -485,7 +485,7 @@
           </ul>
         </div>
 
-        <div class="bg-white rounded-xl shadow p-5">
+        <div class="bg-white rounded-xl shadow p-5 my-2">
           <h4 class="font-semibold mb-3 text-lg md:text-xl">Maintenance Schedule</h4>
           <ul class="text-sm space-y-3">
             <li>MRI Machine • Jan 12</li>
@@ -496,7 +496,7 @@
       </section>
 
       <!-- Staff -->
-      <section class="mt-6 bg-white rounded-xl shadow p-5">
+      <section class="mt-6 bg-white rounded-xl shadow p-5 my-2 overflow-hidden">
         <h4 class="font-semibold mb-3 text-lg md:text-xl">Technicians & Staff</h4>
         <div
           class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 text-sm text-center"
