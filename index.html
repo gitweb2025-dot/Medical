@@ -62,6 +62,14 @@
       href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
     />
 
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- gsap  -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+
+    <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
+
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Lora:ital,wght@0,400..700;1,400..700&family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap");
 
@@ -177,7 +185,7 @@
     <!-- Navbar  -->
     <header class="sticky top-0 z-40 w-full mx-auto">
       <div
-        class="flex items-center justify-between h-16 px-5 bg-white shadow-lg shadow-tertiary backdrop-blur-2xl"
+        class="flex items-center justify-between h-16 px-4 md:px-8 lg:px-12 bg-white shadow-lg shadow-tertiary backdrop-blur-2xl"
       >
         <!-- Logo -->
         <a class="" href="./index.html">
@@ -291,7 +299,9 @@
         >
           <!-- Home dropDown  -->
           <div class="relative">
-            <button class="flex items-center text-primary gap-1 w-full text-left lg:hidden">
+            <button
+              class="flex items-center text-primary gap-1 w-full text-left lg:hidden"
+            >
               <a href="./index.html">Home</a>
               <i
                 id="mobileToggle"
@@ -379,14 +389,14 @@
     </header>
 
     <!-- home -->
-    <main class="px-3 py-6 overflow-hidden text-white">
+    <main class="px-4 md:px-8 lg:px-12 py-6 overflow-hidden text-white">
       <div class="relative">
         <div class="swiper mySwiper">
           <div class="swiper-wrapper">
             <!-- img1 -->
             <div class="swiper-slide">
               <img
-                class="h-full w-full object-cover object-left md:object-[20%_20%] rounded-3xl hidden md:block"
+                class="slide-image h-full w-full object-cover object-center md:object-[20%_20%] rounded-3xl hidden md:block"
                 src="./assets/home.webp"
                 alt="home1"
               />
@@ -395,21 +405,13 @@
               <div
                 class="absolute inset-0 z-10 p-3 md:pl-20 h-[420px] w-full flex flex-col items-start justify-center gap-6 bg-linear-to-b from-transparent to-primary/60 rounded-3xl"
               >
-                <p data-aos="fade-up" data-aos-delay="50" class="z-30">
-                  Weekly 60% Off
-                </p>
+                <p class="z-30 slide-tag">Weekly 60% Off</p>
                 <h1
-                  data-aos="fade-up"
-                  data-aos-delay="75"
-                  class="text-2xl md:text-5xl font-primary font-bold z-30 md:max-w-2xl"
+                  class="slide-title text-2xl md:text-5xl font-primary font-bold z-30 md:max-w-2xl"
                 >
                   Advanced Medical Equipment & Professional Healthcare Services
                 </h1>
-                <p
-                  data-aos="fade-up"
-                  data-aos-delay="100"
-                  class="text-sm md:text-lg z-30 md:max-w-5xl"
-                >
+                <p class="slide-desc text-sm md:text-lg z-30 md:max-w-5xl">
                   We are a trusted provider of premium medical equipment,
                   healthcare supplies, and professional services designed to
                   support patients, caregivers, and healthcare facilities. With
@@ -417,7 +419,7 @@
                   expertise.
                 </p>
                 <a
-                  class="px-6 py-3 border border-white/50 transform hover:scale-95 transition duration-300 ease-in-out z-30"
+                  class="slide-btn px-6 py-3 border border-white/50 transform hover:scale-95 transition duration-300 ease-in-out z-30"
                   href="./product.html"
                   >View More</a
                 >
@@ -426,7 +428,7 @@
             <!-- img2 -->
             <div class="swiper-slide">
               <img
-                class="h-full w-full object-cover object-right md:object-[20%_20%] rounded-3xl"
+                class="slide-image h-full w-full object-cover object-center md:object-[20%_20%] rounded-3xl"
                 src="./assets/home2.webp"
                 alt="home2"
               />
@@ -434,25 +436,19 @@
               <div
                 class="absolute inset-0 z-10 p-3 md:pl-20 h-[420px] flex flex-col items-start justify-center gap-6 bg-linear-to-b from-transparent to-primary/60 rounded-3xl"
               >
-                <p data-aos="fade-up" data-aos-delay="50" class="z-30">
-                  Trusted Medical Solutions
-                </p>
+                <p class="z-30 slide-tag">Trusted Medical Solutions</p>
                 <h1
-                  data-aos="fade-up"
-                  data-aos-delay="75"
-                  class="text-2xl md:text-5xl font-primary font-bold z-30 md:max-w-2xl"
+                  class="slide-title text-2xl md:text-5xl font-primary font-bold z-30 md:max-w-2xl"
                 >
                   Your Trusted Partner in Medical Equipment & Healthcare
                   Services
                 </h1>
-                <p class="text-sm md:text-lg z-30 md:max-w-5xl">
+                <p class="slide-desc text-sm md:text-lg z-30 md:max-w-5xl">
                   Delivering certified medical devices, home-care solutions, and
                   professional support for hospitals, clinics, and families.
                 </p>
                 <a
-                  data-aos="fade-up"
-                  data-aos-delay="50"
-                  class="px-6 py-3 border border-white/50 transform hover:scale-95 transition duration-300 ease-in-out z-30"
+                  class="slide-btn px-6 py-3 border border-white/50 transform hover:scale-95 transition duration-300 ease-in-out z-30"
                   href="./product.html"
                   >View Products</a
                 >
@@ -461,7 +457,7 @@
             <!-- img3 -->
             <div class="swiper-slide">
               <img
-                class="h-full w-full object-cover object-right md:object-[20%_20%] rounded-3xl"
+                class="slide-image h-full w-full object-cover object-right md:object-[20%_20%] rounded-3xl"
                 src="./assets/home3.webp"
                 alt="home3"
               />
@@ -469,26 +465,18 @@
               <div
                 class="absolute inset-0 z-10 p-3 md:pl-20 h-[420px] flex flex-col items-start justify-center gap-6 bg-linear-to-b from-transparent to-primary/60 rounded-3xl"
               >
-                <p data-aos="fade-up" data-aos-delay="50" class="z-30">
-                  Care & Comfort
-                </p>
+                <p class="z-30 slide-tag">Care & Comfort</p>
                 <h1
-                  data-aos="fade-up"
-                  data-aos-delay="75"
-                  class="text-2xl md:text-5xl font-primary font-bold z-30 md:max-w-2xl"
+                  class="slide-title text-2xl md:text-5xl font-primary font-bold z-30 md:max-w-2xl"
                 >
                   Quality Medical Equipment for Health, Comfort & Care
                 </h1>
-                <p
-                  data-aos="fade-up"
-                  data-aos-delay="100"
-                  class="text-sm md:text-lg z-30 md:max-w-5xl"
-                >
+                <p class="slide-desc text-sm md:text-lg z-30 md:max-w-5xl">
                   Helping patients and families access reliable, easy-to-use
                   medical devices at home or in healthcare facilities.
                 </p>
                 <a
-                  class="px-6 py-3 border border-white/50 transform hover:scale-95 transition duration-300 ease-in-out z-30"
+                  class="slide-btn px-6 py-3 border border-white/50 transform hover:scale-95 transition duration-300 ease-in-out z-30"
                   href="./product.html"
                   >View Products</a
                 >
@@ -497,7 +485,7 @@
             <!-- img4 -->
             <div class="swiper-slide">
               <img
-                class="h-full w-full object-cover object-right md:object-[20%_20%] rounded-3xl"
+                class="slide-image h-full w-full object-cover object-center md:object-[20%_20%] rounded-3xl"
                 src="./assets/home4.webp"
                 alt="home4"
               />
@@ -505,28 +493,18 @@
               <div
                 class="absolute inset-0 z-10 p-3 md:pl-20 h-[420px] flex flex-col items-start justify-center gap-6 bg-linear-to-b from-transparent to-primary/60 rounded-3xl"
               >
-                <p data-aos="fade-up" data-aos-delay="50" class="z-30">
-                  Medical Excellence
-                </p>
+                <p class="slide-tag z-30">Medical Excellence</p>
                 <h1
-                  data-aos="fade-up"
-                  data-aos-delay="75"
-                  class="text-2xl md:text-5xl font-primary font-bold z-30 md:max-w-2xl"
+                  class="slide-title text-2xl md:text-5xl font-primary font-bold z-30 md:max-w-2xl"
                 >
                   Top-Quality Medical Equipment & Home Healthcare Services
                 </h1>
-                <p
-                  data-aos="fade-up"
-                  data-aos-delay="100"
-                  class="text-sm md:text-lg z-30 md:max-w-5xl"
-                >
+                <p class="slide-desc text-sm md:text-lg z-30 md:max-w-5xl">
                   We supply a full range of hospital equipment, home-care
                   devices, diagnostic tools, and disposable medical supplies.
                 </p>
                 <a
-                  data-aos="fade-up"
-                  data-aos-delay="50"
-                  class="px-6 py-3 border border-white/50 transform hover:scale-95 transition duration-300 ease-in-out z-30"
+                  class="slide-btn px-6 py-3 border border-white/50 transform hover:scale-95 transition duration-300 ease-in-out z-30"
                   href="./product.html"
                   >View Products</a
                 >
@@ -539,15 +517,110 @@
         </div>
       </div>
 
-      <!-- Swiper JS -->
-      <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
-      <!-- Initialize Swiper -->
       <script>
+        /**
+         * Set initial visibility for slide elements
+         */
+        function prepareSlide(slide) {
+          if (!slide) return;
+
+          gsap.set(
+            slide.querySelectorAll(
+              ".slide-image, .slide-tag, .slide-title, .slide-desc, .slide-btn"
+            ),
+            {
+              opacity: 1,
+              visibility: "visible",
+            }
+          );
+        }
+
+        /**
+         * Animate active slide
+         */
+        function animateSlide(slide) {
+          if (!slide) return;
+
+          const image = slide.querySelector(".slide-image");
+          const tag = slide.querySelector(".slide-tag");
+          const title = slide.querySelector(".slide-title");
+          const desc = slide.querySelector(".slide-desc");
+          const btn = slide.querySelector(".slide-btn");
+
+          const tl = gsap.timeline({
+            defaults: { ease: "power4.out" },
+          });
+
+          // IMAGE
+          if (image) {
+            tl.fromTo(
+              image,
+              { scale: 1.15, opacity: 0 },
+              { scale: 1, opacity: 1, duration: 1.5 }
+            );
+          }
+
+          // TAG
+          if (tag) {
+            tl.from(tag, { y: -20, opacity: 0, duration: 0.5 }, "-=1.1");
+          }
+
+          // TITLE
+          if (title) {
+            tl.from(title, { x: -100, opacity: 0, duration: 0.8 }, "-=0.5");
+          }
+
+          // DESC
+          if (desc) {
+            tl.from(desc, { x: 100, opacity: 0, duration: 0.8 }, "-=0.6");
+          }
+
+          // BUTTON (FIXED)
+          if (btn) {
+            tl.from(
+              btn,
+              {
+                y: 30,
+                opacity: 0,
+                scale: 0.95,
+                duration: 0.5,
+                clearProps: "transform",
+              },
+              "-=0.5"
+            );
+          }
+        }
+
+        /**
+         * Reset previous slide safely
+         */
+        function resetSlide(slide) {
+          if (!slide) return;
+
+          gsap.killTweensOf(
+            slide.querySelectorAll(
+              ".slide-image, .slide-tag, .slide-title, .slide-desc, .slide-btn"
+            )
+          );
+
+          gsap.set(
+            slide.querySelectorAll(
+              ".slide-image, .slide-tag, .slide-title, .slide-desc, .slide-btn"
+            ),
+            {
+              opacity: 1,
+              clearProps: "transform",
+            }
+          );
+        }
+
+        /**
+         * Initialize Swiper
+         */
         var swiper = new Swiper(".mySwiper", {
           slidesPerView: 1,
           spaceBetween: 30,
-          speed: 3000,
+          speed: 1200,
           loop: true,
           autoplay: {
             delay: 5000,
@@ -561,12 +634,25 @@
             nextEl: ".swiper-button-next",
             prevEl: ".swiper-button-prev",
           },
+          on: {
+            init: function () {
+              prepareSlide(this.slides[this.activeIndex]);
+              animateSlide(this.slides[this.activeIndex]);
+            },
+            slideChangeTransitionStart: function () {
+              resetSlide(this.slides[this.previousIndex]);
+            },
+            slideChangeTransitionEnd: function () {
+              prepareSlide(this.slides[this.activeIndex]);
+              animateSlide(this.slides[this.activeIndex]);
+            },
+          },
         });
       </script>
     </main>
 
     <!-- products grid -->
-    <section class="p-3 overflow-hidden text-black">
+    <section class="px-4 md:px-8 lg:px-12 py-4 overflow-hidden text-black">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         <!-- group-1 -->
         <div data-aos="fade-right" data-aos-delay="50">
@@ -636,8 +722,740 @@
       </div>
     </section>
 
+    <!-- partner  -->
+    <section
+      class="bg-white py-8 lg:py-16 px-4 md:px-8 lg:px-12 overflow-hidden"
+    >
+      <div class="mx-auto grid lg:grid-cols-2 gap-16 items-center">
+        <!-- TEXT SIDE -->
+        <div class="medical-text">
+          <h1
+            class="text-2xl md:text-3xl font-semibold leading-tight text-[#0a2a36] mb-8"
+          >
+            Your Trusted Partner In Providing<br />
+            Quality Medical Tools For Clinical<br />
+            Excellence
+          </h1>
+
+          <p class="font-medium text-[#0a2a36] mb-6">
+            Providing Quality & Reliable Health Solutions.
+          </p>
+
+          <p class="text-gray-500 leading-relaxed max-w-xl mb-16">
+            Delivering certified medical equipment, advanced clinical tools, and
+            dependable healthcare solutions for hospitals, clinics, and
+            home-care environments.
+          </p>
+
+          <!-- FEATURES -->
+          <div class="grid sm:grid-cols-2 gap-12">
+            <div class="feature-item">
+              <div class="w-32">
+                <div class="feature-icon"><i class="fa-solid fa-tag"></i></div>
+              </div>
+              <div>
+                <h3>Affordable Price</h3>
+                <div class="divider"></div>
+                <p>
+                  Partnering with globally recognized medical brands to ensure
+                  safety, reliability, and clinical-grade performance.
+                </p>
+              </div>
+            </div>
+
+            <div class="feature-item">
+              <div class="w-32">
+                <div class="feature-icon">
+                  <i class="fa-solid fa-certificate"></i>
+                </div>
+              </div>
+              <div>
+                <h3>Trusted Brands</h3>
+                <div class="divider"></div>
+                <p>
+                  High-quality medical equipment offered at competitive prices
+                  without compromising on standards.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- IMAGE SIDE -->
+        <div class="medical-image w-full h-full">
+          <img
+            src="./assets/home.webp"
+            alt="medical"
+            class="rounded-3xl shadow-xl object-cover object-left w-full lg:h-full"
+          />
+        </div>
+      </div>
+    </section>
+
+    <style>
+      .feature-item {
+        display: flex;
+        gap: 20px;
+      }
+
+      .feature-icon {
+        width: 56px;
+        height: 56px;
+        background: #00544f;
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 22px;
+      }
+
+      .feature-item h3 {
+        font-size: 20px;
+        color: #0a2a36;
+      }
+
+      .feature-item p {
+        color: #7a8a90;
+        margin-top: 8px;
+      }
+
+      .divider {
+        width: 60px;
+        height: 2px;
+        background: #1e8b9d;
+        margin: 10px 0;
+      }
+    </style>
+
+    <script>
+      gsap.registerPlugin(ScrollTrigger);
+
+      gsap.from(".medical-text", {
+        scrollTrigger: { trigger: ".medical-text", start: "top 80%" },
+        x: -80,
+        opacity: 0,
+        duration: 1,
+        ease: "power3.out",
+      });
+
+      gsap.from(".medical-image", {
+        scrollTrigger: { trigger: ".medical-image", start: "top 80%" },
+        x: 80,
+        opacity: 0,
+        duration: 1,
+        ease: "power3.out",
+      });
+
+      gsap.from(".feature-item", {
+        scrollTrigger: { trigger: ".feature-item", start: "top 85%" },
+        y: 40,
+        opacity: 0,
+        duration: 0.7,
+        stagger: 0.15,
+      });
+    </script>
+
+    <!-- Our Only Priority -->
+    <section
+      class="bg-[#eef6f7] px-4 md:px-8 lg:px-12 overflow-hidden py-10 md:py-20"
+    >
+      <div class="mx-auto">
+        <div
+          class="bg-white rounded-3xl px-4 py-10 lg:p-16 shadow-lg priority-card"
+        >
+          <!-- Header -->
+          <div class="grid lg:grid-cols-2 gap-8 lg:gap-16 items-start mb-16">
+            <h2
+              class="text-3xl md:text-4xl lg:text-5xl font-semibold leading-tight text-[#0a2a36] priority-title"
+            >
+              Our Only Priority Is To Keep You Healthy
+            </h2>
+
+            <p class="text-gray-500 text-lg leading-relaxed priority-text">
+              We provide trusted medical equipment and clinical solutions that
+              enhance patient comfort, safety, and treatment outcomes across
+              healthcare settings. From advanced medical devices to essential
+              healthcare supplies, we help medical professionals deliver safe,
+              efficient, and high-quality patient care.
+            </p>
+          </div>
+
+          <!-- Stats -->
+          <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-12 priority-stats">
+            <div class="stat-item">
+              <div class="icon-box"><i class="fa-solid fa-users"></i></div>
+              <div>
+                <h3 class="stat-num" data-target="15">0</h3>
+                <p>Years Experience</p>
+              </div>
+            </div>
+
+            <div class="stat-item">
+              <div class="icon-box"><i class="fa-solid fa-briefcase"></i></div>
+              <div>
+                <h3 class="stat-num" data-target="9862">0</h3>
+                <p>Finished Works</p>
+              </div>
+            </div>
+
+            <div class="stat-item">
+              <div class="icon-box"><i class="fa-solid fa-globe"></i></div>
+              <div>
+                <h3 class="stat-num" data-target="6534">0</h3>
+                <p>Global Brands</p>
+              </div>
+            </div>
+
+            <div class="stat-item">
+              <div class="icon-box"><i class="fa-solid fa-heart"></i></div>
+              <div>
+                <h3 class="stat-num" data-target="2560">0</h3>
+                <p>Satisfied Clients</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <style>
+      .stat-item {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+      }
+
+      .icon-box {
+        width: 64px;
+        height: 64px;
+        background: #00544f;
+        color: white;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 24px;
+      }
+
+      .stat-num {
+        font-size: 32px;
+        font-weight: 700;
+        color: #0a2a36;
+      }
+
+      .stat-item p {
+        color: #7a8a90;
+        margin-top: 4px;
+      }
+    </style>
+
+    <script>
+      gsap.registerPlugin(ScrollTrigger);
+
+      // Entrance
+      gsap.from(".priority-title", {
+        scrollTrigger: { trigger: ".priority-title", start: "top 85%" },
+        y: 40,
+        opacity: 0,
+        duration: 0.9,
+      });
+      gsap.from(".priority-text", {
+        scrollTrigger: { trigger: ".priority-text", start: "top 85%" },
+        y: 40,
+        opacity: 0,
+        duration: 0.9,
+      });
+
+      gsap.from(".stat-item", {
+        scrollTrigger: { trigger: ".priority-stats", start: "top 85%" },
+        y: 50,
+        opacity: 0,
+        duration: 0.8,
+        stagger: 0.15,
+      });
+
+      // Count Up
+      let counterPlayed = false;
+      function animateCounters() {
+        if (counterPlayed) return;
+        counterPlayed = true;
+
+        document.querySelectorAll(".stat-num").forEach((el) => {
+          const target = +el.dataset.target;
+          let start = 0;
+          const duration = 1800;
+          const startTime = performance.now();
+
+          function update(now) {
+            const progress = Math.min((now - startTime) / duration, 1);
+            const value = Math.floor(progress * target);
+            el.textContent = value.toLocaleString() + " +";
+            if (progress < 1) requestAnimationFrame(update);
+          }
+          requestAnimationFrame(update);
+        });
+      }
+
+      ScrollTrigger.create({
+        trigger: ".priority-stats",
+        start: "top 85%",
+        onEnter: animateCounters,
+      });
+    </script>
+
+    <!-- categories -->
+    <section
+      class="bg-white py-6 md:py-12 px-4 md:px-8 lg:px-12 overflow-hidden"
+    >
+      <div class="mx-auto text-center">
+        <h2 class="text-4xl font-semibold mb-16">Popular Categories</h2>
+
+        <div
+          class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-10 categories-grid"
+        >
+          <div class="category-item text-center">
+            <a
+              href="./404.html"
+              class="icon-circle group relative isolate flex items-center justify-center overflow-hidden"
+            >
+              <i
+                class="fa-solid fa-bandage relative z-10  transition-colors duration-300 group-hover:text-white"
+              ></i>
+
+              <!-- hover bg -->
+              <span
+                class="absolute inset-0 bg-primary rounded-full scale-0 transition-transform duration-900 ease-out group-hover:scale-100"
+              ></span>
+            </a>
+
+            <h4 class="mt-3 font-semibold">Band Aid</h4>
+            <p class="text-sm text-gray-500">6 Items</p>
+          </div>
+          <div class="category-item text-center">
+            <a
+              href="./404.html"
+              class="icon-circle group relative isolate flex items-center justify-center overflow-hidden"
+            >
+              <i
+                class="fa-solid fa-capsules relative z-10  transition-colors duration-300 group-hover:text-white"
+              ></i>
+
+              <!-- hover bg -->
+              <span
+                class="absolute inset-0 bg-primary rounded-full scale-0 transition-transform duration-900 ease-out group-hover:scale-100"
+              ></span>
+            </a>
+
+            <h4 class="mt-3 font-semibold">Capsules</h4>
+            <p class="text-sm text-gray-500">16 Items</p>
+          </div>
+          <div class="category-item text-center">
+            <a
+              href="./404.html"
+              class="icon-circle group relative isolate flex items-center justify-center overflow-hidden"
+            >
+              <i
+                class="fa-solid fa-tooth relative z-10  transition-colors duration-300 group-hover:text-white"
+              ></i>
+
+              <!-- hover bg -->
+              <span
+                class="absolute inset-0 bg-primary rounded-full scale-0 transition-transform duration-900 ease-out group-hover:scale-100"
+              ></span>
+            </a>
+
+            <h4 class="mt-3 font-semibold">Tooth</h4>
+            <p class="text-sm text-gray-500">5 Items</p>
+          </div>
+          <div class="category-item text-center">
+            <a
+              href="./404.html"
+              class="icon-circle group relative isolate flex items-center justify-center overflow-hidden"
+            >
+              <i
+                class="fa-solid fa-thermometer relative z-10  transition-colors duration-300 group-hover:text-white"
+              ></i>
+
+              <!-- hover bg -->
+              <span
+                class="absolute inset-0 bg-primary rounded-full scale-0 transition-transform duration-900 ease-out group-hover:scale-100"
+              ></span>
+            </a>
+
+            <h4 class="mt-3 font-semibold">Thermometer</h4>
+            <p class="text-sm text-gray-500">10 Items</p>
+          </div>
+          <div class="category-item text-center">
+            <a
+              href="./404.html"
+              class="icon-circle group relative isolate flex items-center justify-center overflow-hidden"
+            >
+              <i
+                class="fa-solid fa-head-side-mask relative z-10  transition-colors duration-300 group-hover:text-white"
+              ></i>
+
+              <!-- hover bg -->
+              <span
+                class="absolute inset-0 bg-primary rounded-full scale-0 transition-transform duration-900 ease-out group-hover:scale-100"
+              ></span>
+            </a>
+
+            <h4 class="mt-3 font-semibold">Face Masks</h4>
+            <p class="text-sm text-gray-500">23 Items</p>
+          </div>
+          <div class="category-item text-center">
+            <a
+              href="./404.html"
+              class="icon-circle group relative isolate flex items-center justify-center overflow-hidden"
+            >
+              <i
+                class="fa-solid fa-stethoscope relative z-10  transition-colors duration-300 group-hover:text-white"
+              ></i>
+
+              <!-- hover bg -->
+              <span
+                class="absolute inset-0 bg-primary rounded-full scale-0 transition-transform duration-900 ease-out group-hover:scale-100"
+              ></span>
+            </a>
+
+            <h4 class="mt-3 font-semibold">Stethoscope</h4>
+            <p class="text-sm text-gray-500">19 Items</p>
+          </div>
+          <div class="category-item text-center">
+            <a
+              href="./404.html"
+              class="icon-circle group relative isolate flex items-center justify-center overflow-hidden"
+            >
+              <i
+                class="fa-solid fa-kit-medical relative z-10  transition-colors duration-300 group-hover:text-white"
+              ></i>
+
+              <!-- hover bg -->
+              <span
+                class="absolute inset-0 bg-primary rounded-full scale-0 transition-transform duration-900 ease-out group-hover:scale-100"
+              ></span>
+            </a>
+
+            <h4 class="mt-3 font-semibold">First Aid Kit</h4>
+            <p class="text-sm text-gray-500">13 Items</p>
+          </div>
+          <div class="category-item text-center">
+            <a
+              href="./404.html"
+              class="icon-circle group relative isolate flex items-center justify-center overflow-hidden"
+            >
+              <i
+                class="fa-solid fa-microscope relative z-10  transition-colors duration-300 group-hover:text-white"
+              ></i>
+
+              <!-- hover bg -->
+              <span
+                class="absolute inset-0 bg-primary rounded-full scale-0 transition-transform duration-900 ease-out group-hover:scale-100"
+              ></span>
+            </a>
+
+            <h4 class="mt-3 font-semibold">Microscope</h4>
+            <p class="text-sm text-gray-500">7 Items</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <style>
+      .category-item {
+        text-align: center;
+      }
+
+      .icon-circle {
+        width: 110px;
+        height: 110px;
+        background: #f3f3f3;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 16px;
+        color: #00544f;
+        font-size: 40px;
+      }
+
+      .category-item h4 {
+        font-size: 16px;
+        font-weight: 600;
+      }
+
+      .category-item p {
+        font-size: 14px;
+        color: #7a8a90;
+      }
+    </style>
+
+    <script>
+      gsap.registerPlugin(ScrollTrigger);
+
+      gsap.from(".category-item", {
+        scrollTrigger: { trigger: ".categories-grid", start: "top 85%" },
+        y: 40,
+        opacity: 0,
+        duration: 0.8,
+        stagger: 0.08,
+        ease: "power2.out",
+      });
+    </script>
+
+    <!-- Latest Products -->
+    <section
+      class="bg-white py-6 md:py-12 px-4 md:px-8 lg:px-12 overflow-hidden"
+    >
+      <div class="mx-auto">
+        <h2 class="text-3xl font-semibold text-center mb-14">
+          Latest Products
+        </h2>
+
+        <div class="relative overflow-hidden">
+          <div
+            class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-6 latest-grid"
+          >
+            <!-- PRODUCT -->
+            <div class="product-card">
+              <img src="./assets/oto.webp" alt="oto" class="product-img" />
+              <div class="stars">
+                <i class="fa-solid fa-star"></i
+                ><i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+              </div>
+              <h3>SmartCheck Digital Ear Scope from Children's Tylenol</h3>
+              <p class="price">$15.00</p>
+              <a href="./404.html" class="btn-secondary">ADD TO CART</a>
+            </div>
+
+            <div class="product-card">
+              <img src="./assets/n95.webp" alt="n95" class="product-img" />
+              <div class="stars">
+                <i class="fa-solid fa-star"></i
+                ><i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+              </div>
+              <h3>Featured Status N95 Mask With Respirator Green Pack</h3>
+              <p class="price text-teal-500">$12.00</p>
+              <a href="./404.html" class="btn-secondary">ADD TO CART</a>
+            </div>
+
+            <div class="product-card sale">
+              <span class="badge">-5%</span>
+              <img src="./assets/ts.webp" alt="temp" class="product-img" />
+              <div class="stars">
+                <i class="fa-solid fa-star"></i
+                ><i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+              </div>
+              <h3>Forehead Temperature Gun CQR-T800 Thermometer</h3>
+              <p class="price"><span class="old">$22.00</span> $21.00</p>
+              <a href="./404.html" class="btn-secondary">ADD TO CART</a>
+            </div>
+
+            <div class="product-card sale">
+              <span class="badge">-17%</span>
+              <img
+                src="./assets/sani.webp"
+                alt="sanitizer"
+                class="product-img"
+              />
+              <div class="stars">
+                <i class="fa-solid fa-star"></i
+                ><i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+              </div>
+              <h3>Austro Labs Swachh Hand Sanitizer Liquid Spray</h3>
+              <p class="price"><span class="old">$12.00</span> $10.00</p>
+              <a href="./404.html" class="btn-secondary">ADD TO CART</a>
+            </div>
+
+            <div class="product-card">
+              <img src="./assets/glove.webp" alt="glove" class="product-img" />
+              <div class="stars">
+                <i class="fa-solid fa-star"></i
+                ><i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+              </div>
+              <h3>Blue Disposable Nitrile Examination Gloves</h3>
+              <p class="price">$16.00</p>
+              <a href="./404.html" class="btn-secondary">ADD TO CART</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <style>
+      .product-card {
+        border: 1px solid #e5e5e5;
+        padding: 22px;
+        position: relative;
+        text-align: center;
+      }
+
+      .product-img {
+        height: 150px;
+        object-fit: contain;
+        margin: 0 auto 12px;
+      }
+
+      .stars {
+        color: hsl(41, 98%, 54%);
+        margin-bottom: 6px;
+      }
+      .product-card h3 {
+        font-size: 14px;
+        min-height: 48px;
+      }
+      .price {
+        margin: 10px 0;
+        font-weight: 600;
+      }
+      .old {
+        color: #999;
+        text-decoration: line-through;
+        margin-right: 6px;
+      }
+
+      .btn-secondary {
+        border: 1px solid #ddd;
+        padding: 8px 14px;
+        font-size: 12px;
+      }
+
+      .badge {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        background: #e53935;
+        color: white;
+        padding: 2px 8px;
+        font-size: 11px;
+      }
+    </style>
+
+    <script>
+      gsap.registerPlugin(ScrollTrigger);
+
+      gsap.from(".product-card", {
+        scrollTrigger: { trigger: ".latest-grid", start: "top 85%" },
+        y: 40,
+        opacity: 0,
+        duration: 0.8,
+        stagger: 0.12,
+      });
+    </script>
+
+    <!-- policy  -->
+    <section
+      class="bg-white px-4 md:px-8 lg:px-12 py-8 lg:py-16 overflow-hidden"
+    >
+      <div class="mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
+        <div class="trust-item">
+          <div class="trust-icon"><i class="fa-solid fa-right-left"></i></div>
+          <h3>14-Day Return</h3>
+          <div class="divider"></div>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit
+            tellus, luctus nec.
+          </p>
+        </div>
+
+        <div class="trust-item">
+          <div class="trust-icon"><i class="fa-solid fa-truck-fast"></i></div>
+          <h3>Free Shipping</h3>
+          <div class="divider"></div>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit
+            tellus, luctus nec.
+          </p>
+        </div>
+
+        <div class="trust-item">
+          <div class="trust-icon"><i class="fa-solid fa-headset"></i></div>
+          <h3>24/7 Support</h3>
+          <div class="divider"></div>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit
+            tellus, luctus nec.
+          </p>
+        </div>
+
+        <div class="trust-item">
+          <div class="trust-icon"><i class="fa-solid fa-user-tag"></i></div>
+          <h3>Member Discount</h3>
+          <div class="divider"></div>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit
+            tellus, luctus nec.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <style>
+      .trust-item {
+        text-align: left;
+      }
+
+      .trust-icon {
+        width: 48px;
+        height: 48px;
+        background: #00544f;
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 20px;
+        margin-bottom: 14px;
+      }
+
+      .trust-item h3 {
+        font-size: 20px;
+        font-weight: 600;
+        color: #0a2a36;
+      }
+
+      .trust-item p {
+        color: #7a8a90;
+        margin-top: 10px;
+        line-height: 1.5;
+      }
+
+      .divider {
+        width: 70px;
+        height: 1px;
+        background: #ccc;
+        margin: 10px 0;
+      }
+    </style>
+
+    <script>
+      gsap.registerPlugin(ScrollTrigger);
+
+      gsap.from(".trust-item", {
+        scrollTrigger: { trigger: ".trust-item", start: "top 85%" },
+        y: 40,
+        opacity: 0,
+        duration: 0.7,
+        stagger: 0.15,
+      });
+    </script>
+
     <!-- What we promise -->
-    <section class="px-3 py-16 bg-white overflow-hidden">
+    <section
+      class="px-4 md:px-8 lg:px-12 py-8 lg:py-16 bg-white overflow-hidden"
+    >
       <div class="mx-auto">
         <!-- Heading -->
         <h2
@@ -779,8 +1597,160 @@
       </div>
     </section>
 
+    <!-- blog -->
+    <section
+      class="bg-white px-4 md:px-8 lg:px-12 py-6 lg:py-12 overflow-hidden"
+    >
+      <div class="mx-auto">
+        <h2
+          class="text-4xl font-semibold text-[#0a2a36] mb-3 md:mb-4 blog-title"
+        >
+          Latest News & Blog
+        </h2>
+        <p class="text-[#0a2a36] blog-title mb-6 md:mb-14">
+          Read our latest blogs and news to explore our supremacy and legacy of
+          our medical systems.
+        </p>
+
+        <div class="grid md:grid-cols-3 gap-10 blog-grid">
+          <!-- CARD -->
+          <article class="blog-card">
+            <div class="relative overflow-hidden rounded-t-xl">
+              <img
+                src="./assets/medical.webp"
+                alt="med1"
+                class="w-full h-56 object-cover"
+              />
+              <span class="blog-tag">UNCATEGORIZED</span>
+            </div>
+
+            <div class="bg-[#eef6f7] p-6">
+              <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+              <a href="#" class="blog-link"
+                >READ MORE <i class="fa-solid fa-arrow-right"></i
+              ></a>
+            </div>
+
+            <div class="blog-meta">June 9, 2025 &nbsp;•&nbsp; No Comments</div>
+          </article>
+
+          <!-- CARD -->
+          <article class="blog-card">
+            <div class="relative overflow-hidden rounded-t-xl">
+              <img
+                src="./assets/medical1.webp"
+                alt="med2"
+                class="w-full h-56 object-cover"
+              />
+              <span class="blog-tag">UNCATEGORIZED</span>
+            </div>
+
+            <div class="bg-[#eef6f7] p-6">
+              <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+              <a href="#" class="blog-link"
+                >READ MORE <i class="fa-solid fa-arrow-right"></i
+              ></a>
+            </div>
+
+            <div class="blog-meta">June 9, 2025 &nbsp;•&nbsp; No Comments</div>
+          </article>
+
+          <!-- CARD -->
+          <article class="blog-card">
+            <div class="relative overflow-hidden rounded-t-xl">
+              <img
+                src="./assets/medical2.webp"
+                alt="med3"
+                class="w-full h-56 object-cover"
+              />
+              <span class="blog-tag">UNCATEGORIZED</span>
+            </div>
+
+            <div class="bg-[#eef6f7] p-6">
+              <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+              <a href="#" class="blog-link"
+                >READ MORE <i class="fa-solid fa-arrow-right"></i
+              ></a>
+            </div>
+
+            <div class="blog-meta">June 9, 2025 &nbsp;•&nbsp; No Comments</div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <style>
+      .blog-card {
+        border-radius: 18px;
+        overflow: hidden;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+        background: #eef6f7;
+      }
+
+      .blog-card h3 {
+        font-size: 18px;
+        font-weight: 600;
+        color: #0a2a36;
+      }
+
+      .blog-card p {
+        margin-top: 6px;
+        color: #7a8a90;
+      }
+
+      .blog-tag {
+        position: absolute;
+        top: 14px;
+        right: 14px;
+        background: #0a2a36;
+        color: white;
+        font-size: 11px;
+        padding: 4px 10px;
+        border-radius: 999px;
+      }
+
+      .blog-link {
+        display: inline-block;
+        margin-top: 10px;
+        font-size: 13px;
+        font-weight: 600;
+        color: #0a2a36;
+      }
+
+      .blog-meta {
+        padding: 12px 18px;
+        font-size: 13px;
+        color: #7a8a90;
+        border-top: 1px solid #dde7ea;
+      }
+    </style>
+
+    <script>
+      gsap.registerPlugin(ScrollTrigger);
+
+      gsap.from(".blog-title", {
+        scrollTrigger: { trigger: ".blog-title", start: "top 85%" },
+        y: 40,
+        opacity: 0,
+        duration: 0.8,
+        ease: "power3.out",
+      });
+
+      gsap.from(".blog-card", {
+        scrollTrigger: { trigger: ".blog-grid", start: "top 85%" },
+        y: 140,
+        opacity: 0,
+        duration: 0.9,
+        stagger: 0.35,
+        ease: "power3.out",
+      });
+    </script>
+
     <!-- scroll -->
-    <section class="pt-10 px-3 bg-gray-50">
+    <section class="pt-10 px-4 md:px-8 lg:px-12 bg-gray-50 overflow-hidden">
       <div class="mx-auto">
         <h2 class="text-4xl font-bold text-center mb-12 text-gray-800">
           What Our Clients Say
@@ -950,7 +1920,9 @@
     </section>
 
     <!-- Your faithful partners Medical Goods -->
-    <section class="p-3 overflow-hidden text-black mx-auto py-20">
+    <section
+      class="px-4 md:px-8 lg:px-12 py-10 overflow-hidden text-black mx-auto md:py-20"
+    >
       <div class="flex flex-col lg:flex-row items-center gap-12">
         <!-- Left Image -->
         <div
@@ -1112,7 +2084,7 @@
     </section>
 
     <!-- Contact Us -->
-    <section class="p-3 overflow-hidden text-black">
+    <section class="px-4 md:px-8 lg:px-12 overflow-hidden text-black">
       <div class="flex flex-col items-center text-center">
         <h3
           data-aos="fade-right"
@@ -1333,7 +2305,7 @@
     </section>
 
     <!-- footer -->
-    <footer class="px-3 mt-10 overflow-hidden">
+    <footer class="px-4 md:px-8 lg:px-12 mt-10 overflow-hidden">
       <div
         class="flex justify-between flex-wrap w-full md:gap-20 gap-8 pb-6"
         data-aos="fade-up"
@@ -1508,7 +2480,7 @@
     <script>
       const counters = document.querySelectorAll(".counter");
 
-      const animateCounters = () => {
+      const animateCounters1 = () => {
         counters.forEach((counter) => {
           const update = () => {
             const target = +counter.getAttribute("data-target");
@@ -1529,7 +2501,7 @@
       // Trigger animation when visible
       const observer = new IntersectionObserver((entries) => {
         if (entries[0].isIntersecting) {
-          animateCounters();
+          animateCounters1();
           observer.disconnect();
         }
       });

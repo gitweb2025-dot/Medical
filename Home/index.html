@@ -56,6 +56,11 @@
 
     <!-- <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script> -->
 
+    <!-- gsap  -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+
+    <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
+
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Lora:ital,wght@0,400..700;1,400..700&family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap");
 
@@ -111,7 +116,7 @@
     <!-- Navbar  -->
     <header class="sticky top-0 z-40 w-full mx-auto">
       <div
-        class="flex items-center justify-between h-16 px-5 bg-white shadow-lg shadow-tertiary backdrop-blur-2xl"
+        class="flex items-center justify-between h-16 px-4 md:px-8 lg:px-12 bg-white shadow-lg shadow-tertiary backdrop-blur-2xl"
       >
         <!-- Logo -->
         <a class="" href="./index.html">
@@ -225,7 +230,9 @@
         >
           <!-- Home dropDown  -->
           <div class="relative">
-            <button class="flex items-center text-primary gap-1 w-full text-left lg:hidden">
+            <button
+              class="flex items-center text-primary gap-1 w-full text-left lg:hidden"
+            >
               <a href="./index.html">Home</a>
               <i
                 id="mobileToggle"
@@ -313,7 +320,7 @@
     </header>
 
     <!-- HERO SECTION -->
-    <section class="w-full px-3 bg-white overflow-hidden">
+    <main class="w-full px-4 md:px-8 lg:px-12 bg-white overflow-hidden">
       <div
         class="mx-auto py-6 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center"
       >
@@ -397,15 +404,188 @@
           </div>
         </div>
       </div>
+    </main>
+
+    <!-- grid -->
+    <section class="bg-white px-4 md:px-8 lg:px-12 py-6 overflow-hidden">
+      <div class="mx-auto grid md:grid-cols-2 gap-8">
+        <!-- LEFT BANNER -->
+        <div class="promo-card left-card">
+          <div class="promo-text">
+            <span>FABRIC SURGICAL MASK</span>
+            <h3>Ply Surgical Mask<br />With Filter</h3>
+            <a href="./404.html" class="promo-btn">
+              <i class="fa-solid fa-bag-shopping"></i> SHOP NOW
+            </a>
+          </div>
+          <img src="../assets/sub-banner-1.webp" alt="sub1" class="promo-img" />
+        </div>
+
+        <!-- RIGHT BANNER -->
+        <div class="promo-card right-card">
+          <div class="promo-text">
+            <span>SMART CARE STETHOSCOPES</span>
+            <h3>Digital Stethoscope<br />For Doctors</h3>
+            <a href="./404.html" class="promo-btn">
+              <i class="fa-solid fa-bag-shopping"></i> SHOP NOW
+            </a>
+          </div>
+          <img src="../assets/sub-banner-2.webp" alt="sub2" class="promo-img" />
+        </div>
+      </div>
     </section>
 
+    <style>
+      .promo-card {
+        width: 100%;
+        border-radius: 16px;
+        padding: 32px;
+        display: flex;
+        align-items: center;
+        justify-content: end;
+        overflow: hidden;
+        position: relative;
+      }
+
+      .left-card {
+        background: #e3f7e6;
+      }
+      .right-card {
+        background: #f6eddc;
+      }
+
+      .promo-text span {
+        font-size: 12px;
+        letter-spacing: 1px;
+        color: #444;
+      }
+
+      .promo-text h3 {
+        font-size: 26px;
+        font-weight: 600;
+        margin: 14px 0 18px;
+        color: #222;
+      }
+
+      .promo-btn {
+        background: #00a7a0;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 6px;
+        font-size: 14px;
+      }
+
+      .promo-img {
+        width: 100%;
+        height: 100%;
+        inset: 0;
+        object-fit: cover;
+        position: absolute;
+        z-index: -1;
+      }
+    </style>
+
+    <script>
+      gsap.registerPlugin(ScrollTrigger);
+
+      gsap.from(".left-card", {
+        scrollTrigger: { trigger: ".left-card", start: "top 85%" },
+        x: -80,
+        opacity: 0,
+        duration: 1,
+        ease: "power3.out",
+      });
+
+      gsap.from(".right-card", {
+        scrollTrigger: { trigger: ".right-card", start: "top 85%" },
+        x: 80,
+        opacity: 0,
+        duration: 1,
+        ease: "power3.out",
+      });
+    </script>
+
+    <!-- policy  -->
+    <section class="bg-primary/5 px-4 md:px-8 lg:px-12">
+      <div class="mx-auto grid sm:grid-cols-2 lg:grid-cols-4 text-center">
+        <!-- ITEM -->
+        <div class="trust-item">
+          <i class="fa-solid fa-truck"></i>
+          <h4>Free Shipping</h4>
+          <p>on all orders above $75.0</p>
+        </div>
+
+        <div class="trust-item">
+          <i class="fa-solid fa-headset"></i>
+          <h4>24/7 Support</h4>
+          <p>Available to help at anytime</p>
+        </div>
+
+        <div class="trust-item">
+          <i class="fa-solid fa-rotate-left"></i>
+          <h4>Easy Returns</h4>
+          <p>Moneyback upto 30 days</p>
+        </div>
+
+        <div class="trust-item">
+          <i class="fa-solid fa-credit-card"></i>
+          <h4>Secure Payments</h4>
+          <p>100% Safe and Secure</p>
+        </div>
+      </div>
+    </section>
+
+    <style>
+      .trust-item {
+        padding: 40px 0px;
+      }
+
+      .trust-item:last-child {
+        border-right: none;
+      }
+
+      .trust-item i {
+        font-size: 32px;
+        color: #00544f;
+        margin-bottom: 12px;
+      }
+
+      .trust-item h4 {
+        font-size: 16px;
+        font-weight: 600;
+      }
+
+      .trust-item p {
+        font-size: 14px;
+        color: #6b7280;
+      }
+    </style>
+
+    <script>
+      gsap.registerPlugin(ScrollTrigger);
+
+      gsap.from(".trust-item", {
+        scrollTrigger: {
+          trigger: ".trust-item",
+          start: "top 85%",
+          toggleActions: "play none none none",
+        },
+        y: 40,
+        opacity: 0,
+        duration: 0.8,
+        ease: "power3.out",
+        stagger: 0.15,
+        clearProps: "all",
+      });
+    </script>
+
     <!-- Categories -->
-    <section class="py-16 px-3 bg-white overflow-hidden">
+    <section class="px-4 md:px-8 lg:px-12 py-6 bg-white overflow-hidden">
       <div class="mx-auto">
         <!-- Section Header -->
         <div class="flex flex-wrap gap-4 items-center justify-between mb-10">
           <h2 class="text-4xl font-bold text-gray-900">Medical categories</h2>
-          <span class="text-primary font-semibold text-lg underline"
+          <span class="text-primary font-semibold text-sm underline"
             >500+ MEDICAL EQUIPMENT</span
           >
         </div>
@@ -422,7 +602,7 @@
               <img
                 src="../assets/therm.webp"
                 alt="therm"
-                class="h-full w-full object-cover"
+                class="h-[200px] md:h-full w-full object-cover"
               />
             </div>
 
@@ -439,14 +619,16 @@
           </div>
 
           <!-- CARD -->
-          <div data-aos="zoom-in" data-aos-delay="50"
+          <div
+            data-aos="zoom-in"
+            data-aos-delay="50"
             class="flex border border-black/5 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition duration-300 ease-in-out"
           >
             <div class="w-1/2 bg-gray-50 flex items-center justify-center">
               <img
                 src="../assets/gm.webp"
                 alt="gm"
-                class="w-full h-full object-cover"
+                class="w-full h-[200px] md:h-full object-cover"
               />
             </div>
 
@@ -463,14 +645,16 @@
           </div>
 
           <!-- CARD -->
-          <div data-aos="zoom-in" data-aos-delay="70"
+          <div
+            data-aos="zoom-in"
+            data-aos-delay="70"
             class="flex border border-black/5 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition duration-300 ease-in-out"
           >
             <div class="w-1/2 bg-gray-50 flex items-center justify-center">
               <img
                 src="../assets/oto.webp"
                 alt="oto"
-                class="h-full w-full object-cover"
+                class="h-[200px] md:h-full w-full object-cover"
               />
             </div>
 
@@ -487,14 +671,16 @@
           </div>
 
           <!-- CARD -->
-          <div data-aos="zoom-in" data-aos-delay="90"
+          <div
+            data-aos="zoom-in"
+            data-aos-delay="90"
             class="flex border border-black/5 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition duration-300 ease-in-out"
           >
             <div class="w-1/2 bg-gray-50 flex items-center justify-center">
               <img
                 src="../assets/ts.webp"
                 alt="ts"
-                class="h-full w-full object-cover"
+                class="h-[200px] md:h-full w-full object-cover"
               />
             </div>
 
@@ -511,14 +697,16 @@
           </div>
 
           <!-- CARD -->
-          <div data-aos="zoom-in" data-aos-delay="110"
+          <div
+            data-aos="zoom-in"
+            data-aos-delay="110"
             class="flex border border-black/5 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition duration-300 ease-in-out"
           >
             <div class="w-1/2 bg-gray-50 flex items-center justify-center">
               <img
                 src="../assets/pulse.webp"
                 alt="pulse"
-                class="h-full w-full object-cover"
+                class="h-[200px] dm:h-full w-full object-cover"
               />
             </div>
 
@@ -535,14 +723,16 @@
           </div>
 
           <!-- CARD -->
-          <div data-aos="zoom-in" data-aos-delay="130"
+          <div
+            data-aos="zoom-in"
+            data-aos-delay="130"
             class="flex border border-black/5 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition duration-300 ease-in-out"
           >
             <div class="w-1/2 bg-gray-50 flex items-center justify-center">
               <img
                 src="../assets/nebu.webp"
                 alt="nebu"
-                class="h-full w-full object-cover"
+                class="h-[200px] md:h-full w-full object-cover"
               />
             </div>
 
@@ -561,8 +751,469 @@
       </div>
     </section>
 
+    <!-- top categories -->
+    <section
+      class="bg-white px-4 md:px-8 lg:px-12 py-6 lg:py-16 overflow-hidden"
+    >
+      <!-- Section Header -->
+      <div class="flex flex-wrap gap-4 items-center justify-between mb-10">
+        <h2 class="text-4xl font-bold text-gray-900">Top categories</h2>
+        <a
+          href="./404.html"
+          class="text-primary font-semibold text-sm px-4 py-2 rounded-full border"
+          >View All Products</a
+        >
+      </div>
+      <div class="mx-auto">
+        <div class="grid smmd:grid-cols-2 lg:grid-cols-4 gap-8 product-grid">
+          <!-- CARD -->
+          <div class="product-card">
+            <span class="badge-sale">Sale! -10%</span>
+            <img src="../assets/glove.webp" alt="glove" class="product-img" />
+
+            <p class="category">Medicines</p>
+            <h3>Gloves X24</h3>
+
+            <div class="stars">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              <i class="fa-regular fa-star"></i>
+            </div>
+
+            <p class="price">$3.99 <span>$4.99</span></p>
+
+            <div class="stock">
+              <span>Stock Level</span>
+              <div class="bar"><div class="fill"></div></div>
+            </div>
+
+            <a href="./404.html" class="cart-btn">
+              <i class="fa-solid fa-bag-shopping"></i>
+            </a>
+          </div>
+
+          <div class="product-card">
+            <span class="badge-sale">Sale! -18%</span>
+            <img src="../assets/n95.webp" alt="n95" class="product-img" />
+
+            <p class="category">Medicines</p>
+            <h3>Kurofen N95 Mask</h3>
+
+            <div class="stars">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              <i class="fa-regular fa-star"></i>
+            </div>
+
+            <p class="price">$9.99 <span>$14.99</span></p>
+
+            <div class="stock">
+              <span>Stock Level</span>
+              <div class="bar"><div class="fill"></div></div>
+            </div>
+
+            <a href="./404.html" class="cart-btn">
+              <i class="fa-solid fa-bag-shopping"></i>
+            </a>
+          </div>
+
+          <div class="product-card">
+            <span class="badge-sale">Sale! -25%</span>
+            <img src="../assets/ts.webp" alt="temp" class="product-img" />
+
+            <p class="category">Medicines</p>
+            <h3>Temperature</h3>
+
+            <div class="stars">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              <i class="fa-regular fa-star"></i>
+            </div>
+
+            <p class="price">$61.99 <span>$65.99</span></p>
+
+            <div class="stock">
+              <span>Stock Level</span>
+              <div class="bar"><div class="fill"></div></div>
+            </div>
+
+            <a href="./404.html" class="cart-btn">
+              <i class="fa-solid fa-bag-shopping"></i>
+            </a>
+          </div>
+
+          <div class="product-card">
+            <span class="badge-sale">Sale! -50%</span>
+            <img
+              src="../assets/sani.webp"
+              alt="Sanitizure"
+              class="product-img"
+            />
+
+            <p class="category">Medicines</p>
+            <h3>Sanitizure</h3>
+
+            <div class="stars">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              <i class="fa-regular fa-star"></i>
+            </div>
+
+            <p class="price">$8.99 <span>$16.99</span></p>
+
+            <div class="stock">
+              <span>Stock Level</span>
+              <div class="bar"><div class="fill"></div></div>
+            </div>
+
+            <a href="./404.html" class="cart-btn">
+              <i class="fa-solid fa-bag-shopping"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <style>
+      .product-card {
+        border: 1px solid #e5e7eb;
+        border-radius: 14px;
+        padding: 22px;
+        position: relative;
+      }
+
+      .product-img {
+        height: 160px;
+        object-fit: contain;
+        margin: 0 auto 12px;
+      }
+
+      .category {
+        font-size: 12px;
+        color: #6b7280;
+      }
+      .product-card h3 {
+        font-size: 15px;
+        font-weight: 600;
+        margin: 4px 0;
+      }
+
+      .stars {
+        color: #facc15;
+        font-size: 13px;
+        margin-bottom: 6px;
+      }
+
+      .price {
+        color: #00544f;
+        font-weight: 700;
+      }
+      .price span {
+        text-decoration: line-through;
+        color: #9ca3af;
+        font-weight: 500;
+        margin-left: 6px;
+      }
+
+      .stock {
+        margin-top: 10px;
+        font-size: 12px;
+      }
+      .bar {
+        height: 4px;
+        background: #e5e7eb;
+        border-radius: 99px;
+        margin-top: 4px;
+      }
+      .fill {
+        height: 100%;
+        width: 70%;
+        background: #00544f;
+        border-radius: 99px;
+      }
+
+      .badge-sale {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        background: #ef4444;
+        color: white;
+        font-size: 11px;
+        padding: 4px 8px;
+        border-radius: 999px;
+      }
+
+      .cart-btn {
+        position: absolute;
+        right: 14px;
+        bottom: 14px;
+        background: #00544f;
+        color: white;
+        width: 36px;
+        height: 36px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+      }
+    </style>
+
+    <script>
+      gsap.registerPlugin(ScrollTrigger);
+
+      gsap.from(".product-card", {
+        scrollTrigger: { trigger: ".product-grid", start: "top 85%" },
+        y: 40,
+        opacity: 0,
+        duration: 0.9,
+        stagger: 0.12,
+      });
+    </script>
+
+    <!-- work process -->
+    <section
+      class="bg-white px-4 md:px-8 lg:px-12 py-6 lg:py-12 overflow-hidden"
+    >
+      <div class="mx-auto text-center">
+        <span
+          class="inline-flex items-center gap-2 px-4 py-1 rounded-full border mb-4 text-sm text-primary"
+        >
+          <i class="fa-solid fa-circle text-xs"></i> Working Process
+        </span>
+
+        <h2 class="text-2xl md:text-3xl lg:text-4xl font-semibold mb-16">
+          Guiding You Through Every Step
+        </h2>
+
+        <div
+          class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 process-grid"
+        >
+          <!-- CARD -->
+          <div class="process-card">
+            <div class="icon-circle">
+              <i class="fa-solid fa-notes-medical"></i>
+            </div>
+            <h3>Health Assessment</h3>
+            <p>Comprehensive assessment personalized health care</p>
+            <div class="step-num">01</div>
+          </div>
+
+          <div class="process-card">
+            <div class="icon-circle">
+              <i class="fa-solid fa-file-prescription"></i>
+            </div>
+            <h3>Treatment Plant</h3>
+            <p>Customized treatment for health recovery and treatment.</p>
+            <div class="step-num">02</div>
+          </div>
+
+          <div class="process-card">
+            <div class="icon-circle">
+              <i class="fa-solid fa-briefcase-medical"></i>
+            </div>
+            <h3>Medical Guidance</h3>
+            <p>Expert advice for better health decisions and positon.</p>
+            <div class="step-num">03</div>
+          </div>
+
+          <div class="process-card">
+            <div class="icon-circle">
+              <i class="fa-solid fa-headset"></i>
+            </div>
+            <h3>Monitoring & Support</h3>
+            <p>Ongoing care for continuous health improvement</p>
+            <div class="step-num">04</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <style>
+      .process-card {
+        border: 1px solid #e5e5e5;
+        border-radius: 14px;
+        padding: 34px 24px 44px;
+        position: relative;
+        background: white;
+      }
+
+      .icon-circle {
+        width: 72px;
+        height: 72px;
+        border-radius: 50%;
+        background: #00544f;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 26px;
+        margin: 0 auto 18px;
+      }
+
+      .process-card h3 {
+        font-size: 18px;
+        font-weight: 600;
+      }
+
+      .process-card p {
+        font-size: 14px;
+        color: #6b7280;
+        margin-top: 6px;
+      }
+
+      .step-num {
+        position: absolute;
+        bottom: -20px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 38px;
+        height: 38px;
+        border-radius: 50%;
+        border: 1px solid #e5e5e5;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 13px;
+        background: white;
+      }
+    </style>
+
+    <script>
+      gsap.registerPlugin(ScrollTrigger);
+
+      gsap.from(".process-card", {
+        scrollTrigger: { trigger: ".process-grid", start: "top 85%" },
+        y: 50,
+        opacity: 0,
+        duration: 0.9,
+        stagger: 0.15,
+        ease: "power3.out",
+      });
+    </script>
+
+    <!-- blog -->
+    <section
+      class="bg-white py-8 px-4 md:px-8 lg:px-12 lg:py-12 overflow-hidden"
+    >
+      <div class="mx-auto">
+        <div class="text-center mb-8 md:mb-16">
+          <span class="text-xs text-primary tracking-widest font-semibold"
+            >LATEST NEWS</span
+          >
+          <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold mt-3">
+            From our Blog
+          </h2>
+        </div>
+
+        <div
+          class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 blog-grid"
+        >
+          <!-- Card -->
+          <article class="blog-card">
+            <img src="../assets/about1.webp" alt="doc1" class="blog-img" />
+            <div class="pt-6">
+              <p class="meta">
+                By <strong>Qodex Web</strong> &nbsp;
+                <i class="fa-regular fa-calendar"></i> April 14 2025
+              </p>
+              <h3>Wheelchairs 101: Choosing the Right Model for Mobility</h3>
+              <p class="excerpt">
+                Augue ut lectus arcu bibendum at varius vel. Ipsum nunc aliquet
+                bibendum enim facilisis. Quam...
+              </p>
+              <a href="./404.html" class="btn-read">READ MORE</a>
+            </div>
+          </article>
+
+          <article class="blog-card">
+            <img src="../assets/about3.webp" alt="doc2" class="blog-img" />
+            <div class="pt-6">
+              <p class="meta">
+                By <strong>Qodex Web</strong> &nbsp;
+                <i class="fa-regular fa-calendar"></i> April 14 2025
+              </p>
+              <h3>
+                Digital Thermometers vs. Infrared Thermometers: What’s Better?
+              </h3>
+              <p class="excerpt">
+                Augue ut lectus arcu bibendum at varius vel. Ipsum nunc aliquet
+                bibendum enim facilisis. Quam...
+              </p>
+              <a href="./404.html" class="btn-read">READ MORE</a>
+            </div>
+          </article>
+
+          <article class="blog-card">
+            <img src="../assets/doc1.webp" alt="doc3" class="blog-img" />
+            <div class="pt-6">
+              <p class="meta">
+                By <strong>Qodex Web</strong> &nbsp;
+                <i class="fa-regular fa-calendar"></i> April 14 2025
+              </p>
+              <h3>Glucometers Explained: Managing Diabetes Effectively</h3>
+              <p class="excerpt">
+                Augue ut lectus arcu bibendum at varius vel. Ipsum nunc aliquet
+                bibendum enim facilisis. Quam...
+              </p>
+              <a href="./404.html" class="btn-read">READ MORE</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <style>
+      .blog-card img {
+        border-radius: 8px;
+        height: 250px;
+        width: 100%;
+        object-fit: cover;
+      }
+
+      .meta {
+        font-size: 13px;
+        color: #6b7280;
+      }
+
+      .blog-card h3 {
+        font-size: 20px;
+        font-weight: 600;
+        margin: 10px 0;
+      }
+
+      .excerpt {
+        color: #6b7280;
+        font-size: 14px;
+      }
+
+      .btn-read {
+        display: inline-block;
+        margin-top: 14px;
+        background: #00544f;
+        color: white;
+        padding: 8px 18px;
+        border-radius: 4px;
+        font-size: 13px;
+      }
+    </style>
+
+    <script>
+      gsap.registerPlugin(ScrollTrigger);
+
+      gsap.from(".blog-card", {
+        scrollTrigger: { trigger: ".blog-grid", start: "top 85%" },
+        y: 50,
+        opacity: 0,
+        duration: 0.9,
+        stagger: 0.15,
+        ease: "power3.out",
+      });
+    </script>
+
     <!--HAPPY CLIENT SECTION-->
-    <section class="py-16 px-3 bg-gray-50 overflow-hidden">
+    <section
+      class="py-12 px-4 md:px-8 lg:px-16 lg:py-20 bg-gray-50 overflow-hidden"
+    >
       <div class="mx-auto grid lg:grid-cols-2 gap-14">
         <!-- FEATURED TESTIMONIAL CARD -->
         <div
@@ -669,8 +1320,204 @@
       </div>
     </section>
 
+    <!-- faq -->
+    <section
+      class="px-4 md:px-8 lg:px-16 mx-auto py-12 grid md:grid-cols-2 gap-16 overflow-hidden"
+    >
+      <!-- LEFT -->
+      <div>
+        <img src="../assets/faq.webp" class="rounded-xl mb-8 faq-image" />
+
+        <div class="bg-[#eefaf7] p-6 rounded-xl flex items-center gap-4">
+          <div
+            class="w-12 h-12 rounded-full bg-primary flex items-center justify-center text-white"
+          >
+            <i class="fa-solid fa-phone"></i>
+          </div>
+          <div class="emergency-box">
+            <p class="text-sm">Emergency Call</p>
+            <p class="font-semibold text-lg">+1-868-842-7758</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT -->
+      <div class="faq-text">
+        <span class="inline-flex items-center gap-2 text-sm mb-4 text-primary">
+          <i class="fa-solid fa-circle text-xs"></i> FAQ's
+        </span>
+
+        <h2 class="text-2xl md:text-3xl lg:text-4xl font-semibold mb-6">
+          Medical FAQs – Everything<br />You Need to Know
+        </h2>
+
+        <p class="text-gray-500 mb-10">
+          Get answers to common medical questions, treatments & healthcare
+          services for informed decision-making.
+        </p>
+
+        <div class="faq-wrapper">
+          <!-- ITEM -->
+          <div class="faq-item open">
+            <button class="faq-btn">
+              How often should I have a general health check-up?
+              <i class="fa-solid fa-chevron-down"></i>
+            </button>
+            <div class="faq-content">
+              Seek emergency care if you experience severe chest pain,
+              difficulty breathing, sudden weakness, heavy bleeding, confusion,
+              or loss of consciousness.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-btn">
+              Are your medical products certified and safe to use?
+              <i class="fa-solid fa-chevron-down"></i>
+            </button>
+            <div class="faq-content">
+              Yes, all our medical products are sourced from trusted
+              manufacturers and comply with international quality and safety
+              standards to ensure reliable clinical performance.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-btn">
+              Do you provide support for hospitals and home-care patients?
+              <i class="fa-solid fa-chevron-down"></i>
+            </button>
+            <div class="faq-content">
+              Absolutely. We serve hospitals, clinics, and individual patients
+              by offering tailored solutions, expert guidance, and reliable
+              after-sales support.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-btn">
+              How do you ensure affordable pricing without compromising quality?
+              <i class="fa-solid fa-chevron-down"></i>
+            </button>
+            <div class="faq-content">
+              We work directly with authorized brands and optimize our supply
+              chain to deliver high-quality medical equipment at competitive and
+              transparent prices.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <style>
+      .faq-item {
+        border: 1px solid #e5e7eb;
+        border-radius: 12px;
+        margin-bottom: 12px;
+        overflow: hidden;
+      }
+
+      .faq-btn {
+        width: 100%;
+        padding: 18px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-weight: 600;
+        text-align: left;
+      }
+
+      .faq-content {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease, padding 0.4s ease;
+        padding: 0 20px;
+        color: #6b7280;
+      }
+
+      .faq-item.open .faq-content {
+        max-height: 200px;
+        padding: 16px 20px 20px;
+      }
+
+      .faq-item.open .faq-btn i {
+        transform: rotate(180deg);
+      }
+    </style>
+
+    <script>
+      const items = document.querySelectorAll(".faq-item");
+
+      items.forEach((item) => {
+        const btn = item.querySelector(".faq-btn");
+
+        btn.addEventListener("click", () => {
+          items.forEach((i) => {
+            if (i !== item) i.classList.remove("open");
+          });
+
+          item.classList.toggle("open");
+        });
+      });
+    </script>
+
+    <script>
+      gsap.registerPlugin(ScrollTrigger);
+
+      /* Left image */
+      gsap.from(".faq-image", {
+        scrollTrigger: {
+          trigger: ".faq-image",
+          start: "top 85%",
+        },
+        x: -60,
+        opacity: 0,
+        duration: 1,
+        ease: "power3.out",
+      });
+
+      /* Emergency call box */
+      gsap.from(".emergency-box", {
+        scrollTrigger: {
+          trigger: ".emergency-box",
+          start: "top 85%",
+        },
+        y: 40,
+        opacity: 0,
+        duration: 0.8,
+        ease: "power3.out",
+      });
+
+      /* Text block */
+      gsap.from(".faq-text", {
+        scrollTrigger: {
+          trigger: ".faq-text",
+          start: "top 85%",
+        },
+        y: 40,
+        opacity: 0,
+        duration: 0.8,
+        ease: "power3.out",
+      });
+
+      /* FAQ items */
+      gsap.from(".faq-item", {
+        scrollTrigger: {
+          trigger: ".faq-wrapper",
+          start: "top 85%",
+        },
+        y: 30,
+        opacity: 0,
+        duration: 0.7,
+        stagger: 0.12,
+        ease: "power3.out",
+      });
+    </script>
+
     <!-- our teams  -->
-    <section class="px-3 py-8 overflow-x-hidden">
+    <section
+      class="py-6 lg:py-12 px-4 md:px-8 lg:px-16 bg-gray-50 overflow-hidden"
+    >
       <div class="space-y-3 text-center py-6">
         <h1
           class="text-xl md:text-3xl lg:text-4xl font-bold"
@@ -698,7 +1545,7 @@
           <div class="relative w-full flex items-center justify-center">
             <img src="../assets/01-per.webp" alt="card-img" />
             <div
-              class="absolute bottom-0 flex items-center justify-center w-72 h-72 rounded-full bg-secondary z-[-1]"
+              class="absolute bottom-0 flex items-center justify-center w-64 h-64 rounded-full bg-secondary z-[-1]"
             ></div>
           </div>
           <div class="flex flex-col justify-center h-full space-y-2.5">
@@ -740,7 +1587,7 @@
           <div class="relative w-full flex items-center justify-center">
             <img src="../assets/02-per.webp" alt="card-img" />
             <div
-              class="absolute bottom-0 flex items-center justify-center w-72 h-72 rounded-full bg-secondary z-[-1]"
+              class="absolute bottom-0 flex items-center justify-center w-64 h-64 rounded-full bg-secondary z-[-1]"
             ></div>
           </div>
           <div class="flex flex-col justify-center h-full space-y-2.5">
@@ -782,7 +1629,7 @@
           <div class="relative w-full flex items-center justify-center">
             <img src="../assets/03-per.webp" alt="card-img" />
             <div
-              class="absolute bottom-0 flex items-center justify-center w-72 h-72 rounded-full bg-secondary z-[-1]"
+              class="absolute bottom-0 flex items-center justify-center w-64 h-64 rounded-full bg-secondary z-[-1]"
             ></div>
           </div>
           <div class="flex flex-col justify-center h-full space-y-2.5">
@@ -824,7 +1671,7 @@
           <div class="relative w-full flex items-center justify-center">
             <img src="../assets/04-per.webp" alt="card-img" />
             <div
-              class="absolute bottom-0 flex items-center justify-center w-72 h-72 rounded-full bg-secondary z-[-1]"
+              class="absolute bottom-0 flex items-center justify-center w-64 h-64 rounded-full bg-secondary z-[-1]"
             ></div>
           </div>
           <div class="flex flex-col justify-center h-full space-y-2.5">
@@ -862,7 +1709,7 @@
     </section>
 
     <!-- footer -->
-    <footer class="px-3 mt-10 overflow-hidden">
+    <footer class="px-4 md:px-8 lg:px-16 bg-gray-50 mt-10 overflow-hidden">
       <div
         class="flex justify-between flex-wrap w-full md:gap-20 gap-8 pb-6"
         data-aos="fade-up"
