@@ -135,7 +135,7 @@
     <!-- Navbar  -->
     <header class="sticky top-0 z-40 w-full mx-auto">
       <div
-        class="flex items-center justify-between h-16 px-5 bg-white shadow-lg shadow-tertiary backdrop-blur-2xl"
+        class="flex items-center justify-between h-16 px-4 md:px-8 lg:px-12 bg-white shadow-lg shadow-tertiary backdrop-blur-2xl"
       >
         <!-- Logo -->
         <a class="" href="./index.html">
@@ -285,7 +285,9 @@
           </li>
           <!-- Dashboard -->
           <li>
-            <a href="./dashboard.html" class="nav-link block text-primary">Dashboard</a>
+            <a href="./dashboard.html" class="nav-link block text-primary"
+              >Dashboard</a
+            >
           </li>
           <!-- login  -->
           <li>
@@ -337,7 +339,7 @@
     </header>
 
     <!-- Welcome Message -->
-    <section class="py-8 px-4 overflow-hidden">
+    <section class="py-8 px-4 md:px-8 lg:px-12 overflow-hidden">
       <div class="">
         <h1 class="text-xl md:text-2xl font-bold text-gray-900">
           Welcome back, Admin
@@ -348,10 +350,10 @@
       </div>
     </section>
 
-    <main class=" py-4 mx-auto">
+    <main class="py-4 mx-auto">
       <!-- Stats -->
       <section
-        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 px-3 overflow-hidden"
+        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 px-4 md:px-8 lg:px-12 overflow-hidden"
       >
         <div
           class="bg-white rounded-xl shadow p-5 border-l-4 border-primary my-2"
@@ -388,7 +390,7 @@
 
       <!-- Charts -->
       <section
-        class="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-6 px-3 overflow-hidden"
+        class="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-6 px-4 md:px-8 lg:px-12 overflow-hidden"
       >
         <div class="bg-white rounded-xl shadow p-5 my-2">
           <h3 class="font-semibold mb-3 text-lg md:text-xl">
@@ -406,8 +408,8 @@
       </section>
 
       <!-- stocks  -->
-      <section class="py-10 px-3 bg-gray-50 overflow-hidden">
-        <div class=" mx-auto ">
+      <section class="py-10 px-4 md:px-8 lg:px-12 bg-gray-50 overflow-hidden">
+        <div class="mx-auto">
           <h2 class="text-3xl font-bold mb-6">Available Stock</h2>
 
           <div class="grid md:grid-cols-3 gap-6">
@@ -446,7 +448,7 @@
 
       <!-- Orders + Timeline -->
       <section
-        class="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-6 overflow-hidden px-3"
+        class="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-6 overflow-hidden px-4 md:px-8 lg:px-12"
       >
         <div class="bg-white rounded-xl shadow p-5 my-2">
           <h3 class="font-semibold mb-3 text-lg md:text-xl">Recent Orders</h3>
@@ -527,7 +529,7 @@
 
       <!-- Order Status Summary -->
       <section class="py-10 overflow-hidden">
-        <div class="mx-auto px-3">
+        <div class="mx-auto px-4 md:px-8 lg:px-12">
           <h2 class="text-3xl font-bold mb-6">Order Status Summary</h2>
 
           <div class="grid md:grid-cols-3 gap-6">
@@ -557,7 +559,7 @@
 
       <!-- Categories + Services + Maintenance -->
       <section
-        class="grid grid-cols-1 lg:grid-cols-3 gap-6 mt-6 px-3 overflow-hidden"
+        class="grid grid-cols-1 lg:grid-cols-3 gap-6 mt-6 px-4 md:px-8 lg:px-12 overflow-hidden"
       >
         <div class="bg-white rounded-xl shadow p-5 my-2">
           <h4 class="font-semibold mb-3 text-lg md:text-xl">
@@ -595,7 +597,7 @@
       </section>
 
       <!-- Recent Sales Activity -->
-      <section class="py-10 px-3 bg-gray-50 overflow-hidden">
+      <section class="py-10 px-4 md:px-8 lg:px-12 bg-gray-50 overflow-hidden">
         <div class="mx-auto">
           <h2 class="text-2xl font-bold mb-6">Recent Sales Activity</h2>
 
@@ -705,7 +707,7 @@
     </script>
 
     <!-- footer -->
-    <footer class="px-3 mt-10 overflow-hidden">
+    <footer class="px-4 md:px-8 lg:px-12 mt-10 overflow-hidden">
       <div
         class="flex justify-between flex-wrap w-full md:gap-20 gap-8 pb-6"
         data-aos="fade-up"
@@ -718,6 +720,34 @@
             equipment and supplies for hospitals, clinics, and home care. We are
             committed to delivering reliable & safe.
           </p>
+
+          <!-- Social Icons -->
+          <div class="flex gap-4 mt-4">
+            <a
+              href="./404.html"
+              class="text-gray-400 hover:text-primary text-xl"
+            >
+              <i class="fab fa-facebook"></i>
+            </a>
+            <a
+              href="./404.html"
+              class="text-gray-400 hover:text-primary text-xl"
+            >
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a
+              href="./404.html"
+              class="text-gray-400 hover:text-primary text-xl"
+            >
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a
+              href="./404.html"
+              class="text-gray-400 hover:text-primary text-xl"
+            >
+              <i class="fab fa-linkedin"></i>
+            </a>
+          </div>
         </div>
 
         <div class="flex flex-col lg:items-center lg:justify-center">
@@ -742,6 +772,9 @@
             >
             <a class="hover:text-slate-600 transition" href="./contact.html"
               >Contact us</a
+            >
+            <a class="hover:text-slate-600 transition" href="./dashboard.html"
+              >Dashboard</a
             >
           </div>
         </div>
